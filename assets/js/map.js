@@ -20,7 +20,7 @@ var Mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
 Wikimedia.addTo(mymap)
 
 // Add GeoJson layer online from the url
-var url = "https://raw.githubusercontent.com/stefanocudini/leaflet-geojson-selector/master/examples/italy-regions.json"
+var url = "https://gist.githubusercontent.com/datajournalism-it/212e7134625fbee6f9f7/raw/dabd071fe607f5210921f138ad3c7276e3841166/province.geojson"
 var geojsonLayer = new L.GeoJSON.AJAX(url);
 geojsonLayer.addTo(mymap);
 
