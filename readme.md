@@ -2,13 +2,20 @@
 
 ## 1. Introduction
 
+Does the presence of libraries, museums and other cultural places in the surroundings of schools impact the way schools evaluate their teaching performance? Do building certifications also play a role in schools self-evaluation?
+
+When browsing the datasets provided by the italian Ministry of Education, University and Research (MIUR), the reasons behind the results of schools self-evaluation are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on the school. In the same way, statistics about students performance is provided without discussing the possible reasons behind performances. 
+
+This project will look at school self-evaluations according to a particular perspective to see if the unavailability of cultural places and the absence of building certifications can be annoverated among the reasons behind school poor performances. 
+
 ## 2. Application scenario
 
-Every year, italian schools are required to evaluate themselves on the basis of n criteria, among which are: 
+Every year, italian schools are required to evaluate themselves on the basis of 11 criteria, among which are: 
 - Risultati scolastici (Overall student performance);
 - Risultati nelle prove nazionali standardizzate INVALSI (Student performance in the national INVALSI standardized tests).
 
 This project aligns 1) the results of school evaluations for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the data related to cultural places such as libraries and museums in the school surroundings. 
+
 The aim is to find out whether building certification issues and scarcity of nearby cultural places correspond to lower results in school evaluations. 
 
 The schools are guided by a list of questions and grade themselves according to a 1-7 scale:
