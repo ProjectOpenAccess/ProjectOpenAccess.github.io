@@ -42,10 +42,11 @@ MIUR, 22 June 2018, Informazioni anagrafiche scuole statali, electronic dataset,
 
 ### 4.6 Summary
 
-| Dataset            | Location | Issue | Level | Type                                           | Proposed workaround |
-| ------------------ | ---------| ----- | ----- | ---------------------------------------------- | ------------------- |
-| D1, D2, D4.1, D4.2 | Column A | 		| G/Y/R |  syntactic/semantic (specify if legal/ethical) |                     |
-|                    |          |       |       |                                                |                     |
+| Id | Problem description | Severity (1-3) | Type (Syntax/Semantics) | Proposed solution |
+|-------------------------------|----------------------------|----------------|-------------------------|----------------------------|
+| D1, D2, D4.1, D4.2 / Column A | Ambiguous date format used | 1.5 | Syntax | Adopt ISO 8601 date format |
+|  |  |  |  |  |
+|  |  |  |  |  |
    
 
 ## 5. Visualization
