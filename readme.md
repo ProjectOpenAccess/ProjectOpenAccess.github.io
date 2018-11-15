@@ -8,7 +8,8 @@ Every year, italian schools are required to evaluate themselves on the basis of 
 - Risultati scolastici (Overall student performance);
 - Risultati nelle prove nazionali standardizzate INVALSI (Student performance in the national INVALSI standardized tests).
 
-This project's aim is to align 1) the results of school evaluations for a.y. 2016-2017, 2) the data related to school building certifications (especially habitability and earthquake resistance), 3) the data related to cultural places such as libraries and museums in the school surroundings to find out if building certification issues and scarcity of nearby cultural places correspond to lower results in school evaluations. 
+This project aligns 1) the results of school evaluations for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the data related to cultural places such as libraries and museums in the school surroundings. 
+The aim is to find out whether building certification issues and scarcity of nearby cultural places correspond to lower results in school evaluations. 
 
 The schools are guided by a list of questions and grade themselves according to a 1-7 scale:
 - 1 = Extremely critical
