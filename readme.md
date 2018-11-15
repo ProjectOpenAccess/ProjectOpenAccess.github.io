@@ -4,6 +4,15 @@
 
 ## 2. Application scenario
 
+Every year, italian schools are required to evaluate themselves on the basis of n criteria: 
+The schools are guided by a list of questions and grade themselves according to a 1-7 scale:
+- 1 = Extremely critical
+- 3 = Moderately critical
+- 5 = Positive
+- 7 = Excellent
+
+
+
 ## 3. Original datasets and mashup
 
 ### D1
