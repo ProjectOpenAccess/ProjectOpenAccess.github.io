@@ -6,7 +6,7 @@ Does the presence of libraries, museums and other cultural places in the surroun
 
 When browsing the datasets provided by the italian Ministry of Education, University and Research (MIUR), the reasons behind the results of schools self-evaluation are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on the school. In the same way, statistics about students performance is provided without discussing the possible reasons behind performances. 
 
-This project will look at school self-evaluations according to a particular perspective to see if the unavailability of cultural places and the absence of building certifications can be annoverated among the reasons behind school poor performances. 
+This project will look at school self-evaluations according to a particular perspective to see if the unavailability of cultural places nearby the schools and the absence of building certifications can be annoverated among the reasons behind poor school performances. 
 
 ## 2. Application scenario
 
