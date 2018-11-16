@@ -4,9 +4,7 @@
 
 Does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact the way schools evaluate their teaching performance? Do building certifications also play a role in school self-evaluation?
 
-When browsing the datasets provided by the italian Ministry of Education, University and Research (MIUR), the reasons behind the results of schools self-evaluation are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. In the same way, statistics about students performance is provided without discussing the underlying reasons. 
-
-This project will look at school self-evaluations in a particular perspective to find out if the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance. 
+This project will look at school self-evaluations from a particular perspective to find out if the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance. 
 
 ## 2. Application scenario
 
@@ -20,9 +18,15 @@ The schools are guided by a list of questions and grade themselves according to 
 - 5 = Positive
 - 7 = Excellent
 
+When browsing the datasets by the italian Ministry of Education, University and Research (MIUR) containing school self-evaluations, the reasons behind school grades  are not clear-cut. The grades are accompanied by free-format entries, meant to be a space for schools to explain the grades. 
+
+However, schools tend to use such free-format entries to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. Similarly, schoold provide statistics about students performance without discussing the underlying reasons. 
+
 This project aligns 1) the results of school evaluations for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
 
-The aim is to find out whether building certification and nearby cultural institutions affects the results in school evaluations. 
+The aim is to gain insights into the reasons behind school self-evaluations through data in order to find out whether building certification and nearby cultural institutions affects the results in school evaluations. 
+
+The data used for this experiment come from MIUR (Ministry of Education, University and Research) and MiBACT (Ministry of Cultural Heritage and Activities). 
 
 ## 3. Original datasets and mashup
 
