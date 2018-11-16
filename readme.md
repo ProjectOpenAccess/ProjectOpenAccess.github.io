@@ -24,7 +24,7 @@ However, schools tend to use such free-format entries to describe the activities
 
 This project aligns 1) the results of school evaluations for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
 
-The aim is to gain insights into the reasons behind school self-evaluations through data in order to find out whether building certification and nearby cultural institutions affects the results in school evaluations. 
+The aim is to gain insights into the reasons behind school self-evaluations through data, in order to find out whether building certifications and nearby cultural institutions affect the results in school evaluations. 
 
 The data used for this experiment come from MIUR (Ministry of Education, University and Research) and MiBACT (Ministry of Cultural Heritage and Activities). 
 
