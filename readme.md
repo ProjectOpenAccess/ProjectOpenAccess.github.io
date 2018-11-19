@@ -83,6 +83,8 @@ _Nel dataset D2 non ci sono dati relativi alle certificazioni in corso_
 
 _Nel dataset 2 ci sono dei trattini con un significato ambiguo_
 
+_I codici istituto sono da disambiguare (istituto Forlì usa vecchio codice provincia fo anziché FC)._
+
 ### 4.2 Juridical analysis (privacy, licenses, purposes, etc.)
 
 _Il Dataset 1 presenta problemi di privacy perché sono inclusi nel dataset i commenti dell’insegnante compilatore dell’autovalutazione che fanno riferimento a singoli studenti (es. ci dicono che c’è stato un unico studente straniero bocciato oppure che c’è uno studente con una determinata disabilità, parla in negativo delle “famiglie che non alzano la voce”). Usiamo dataset 17/18, ma menzioniamo nel documento comunque i problemi etico-legali dei dataset delle annate precedenti._
@@ -90,7 +92,21 @@ _Il Dataset 1 presenta problemi di privacy perché sono inclusi nel dataset i co
 _Il sito Portale Unico dei Dati della Scuola ha nel footer la dicitura “Tutti i diritti riservati”, mentre sotto a ogni dataset è riportata la licenza IO DL (https://www.dati.gov.it/content/italian-open-data-license-v20_
 
 
-Privacy: Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it is still possible to trace the individuals referenced. For example, 
+Privacy: Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it could still be possible to trace the individuals referenced. Some significant examples are:
+
+* "[...] come nella classe dove essendoci un alunno affetto da ipoacusia; tutta la classe ha voluto integrare il proprio curriculum con l'apprendimento del LIS (linguaggio dei segni) supportati dall'assistente alla comunicazione."
+* "Nell'anno scolastico in corso sono stati sospesi due alunni della scuola primaria per lesioni ai compagni."
+* "Le rarissime situazioni nelle quali si evidenzia l'assoluta necessita' di 'ripetere l'anno' (quest'anno un alunno diversamente abile di quinta; lo scorso anno due alunni Rom; inseriti solo a meta' anno in quinta; che finalmente avevano cominciato venire a scuola volentieri!)"
+* "La scarsa capacita' di concentrazione dei ragazzi e l'assenza delle famiglie; poco inclini ad alzare la voce quando e' necessario; portano al risultato che i ragazzi non ascoltano; a volte non riescono neanche a rimanere seduti al banco."
+* "Nel corrente anno scolastico nel nostro istituto ci sono stati solo due alunni non ammessi: un alunno straniero che non ha praticamente frequentato e un altro che non ha raggiunto gli obiettivi minimi previsti."
+
+
+We propose four solutions:
+
+-delete
+-questionnre
+-check automatically
+-check semi-automatically (ideal)
 
 The same dataset from a.y. 2015-2016 mentions
 
@@ -111,8 +127,7 @@ Durations in CSV could be specified as a time interval according to the standard
 	[description in slovenian]
 </miur:MOTIVAZIONEPUNTEGGIOSCUOLA>
 ```
-
-2. _I codici istituto sono da disambiguare (istituto Forlì usa vecchio codice provincia fo anziché FC)._
+ 
 
 3. _nella versione XML/RDF dei dataset MIUR sono specificati vari namespace fra i quali dicat, ma nessuno di essi è effettivamente impiegato_
 
@@ -124,7 +139,7 @@ Durations in CSV could be specified as a time interval according to the standard
 | Id | Problem description | Severity (1-3) | Type (Syntax/Semantics) | Proposed solution |
 |-------------------------------|----------------------------|----------------|-------------------------|----------------------------|
 | D1, D2, D4.1, D4.2 / Column A | Ambiguous date format used | 1.5 | Syntax | Adopt ISO 8601 date format |
-|  |  |  |  |  |
+| D1 | Indirect information about individuals | 3 | Semantics, Privacy | Remove information |
 |  |  |  |  |  |
    
 
