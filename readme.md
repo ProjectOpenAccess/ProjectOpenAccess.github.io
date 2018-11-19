@@ -37,7 +37,9 @@ The datasets used for this experiment come from MIUR (italian Ministry of Educat
 ## 3. Original datasets and mashup
 
 ### D1
-MIUR, 13 February 2018, Autovalutazione della scuola sezione Esiti. Scuola statale, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0500VALUTAZIONE_ESITI_STA
+MIUR, 13 February 2018, Autovalutazione della scuola sezione Esiti. Scuola statale, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0500VALUTAZIONE_ESITI_STA  
+
+License:https://www.dati.gov.it/content/italian-open-data-license-v20
 
 Content description:
 
@@ -45,20 +47,28 @@ Content description:
 ### D2
 MIUR, 27 September 2018, Certificazioni e documenti relativi alla sicurezza, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0280EDICONSICUREZZASTA
 
+License:https://www.dati.gov.it/content/italian-open-data-license-v20
+
 Content description:
 
 ### D3
-MiBACT, 10 November 2018 (modified), Luoghi della cultura, electronic dataset, Gli Open Data, viewed 11 November 2018, http://dati.beniculturali.it/dataset/dataset-luoghi.ttl
+MiBACT, 10 November 2018 (modified), Luoghi della cultura, electronic dataset, Gli Open Data, viewed 11 November 2018, http://dati.beniculturali.it/dataset/dataset-luoghi.ttl  
+
+License: https://creativecommons.org/licenses/by/3.0/
 
 Content description:
 
 ### D4.1 (auxiliary dataset)
 MIUR, 13 February 2018, Rubrica di valutazione utilizzata dalla scuola per l'autovalutazione, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0540RUBRICA_VAL
 
+License:https://www.dati.gov.it/content/italian-open-data-license-v20
+
 Content description:
 
 ### D4.2 (auxiliary dataset)
 MIUR, 22 June 2018, Informazioni anagrafiche scuole statali, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0400SCUANAGRAFESTAT
+
+License:https://www.dati.gov.it/content/italian-open-data-license-v20
 
 Content description:
 
@@ -87,12 +97,9 @@ _I codici istituto sono da disambiguare (istituto Forlì usa vecchio codice prov
 
 ### 4.2 Juridical analysis (privacy, licenses, purposes, etc.)
 
-_Il Dataset 1 presenta problemi di privacy perché sono inclusi nel dataset i commenti dell’insegnante compilatore dell’autovalutazione che fanno riferimento a singoli studenti (es. ci dicono che c’è stato un unico studente straniero bocciato oppure che c’è uno studente con una determinata disabilità, parla in negativo delle “famiglie che non alzano la voce”). Usiamo dataset 17/18, ma menzioniamo nel documento comunque i problemi etico-legali dei dataset delle annate precedenti._
+#### Privacy
 
-_Il sito Portale Unico dei Dati della Scuola ha nel footer la dicitura “Tutti i diritti riservati”, mentre sotto a ogni dataset è riportata la licenza IO DL (https://www.dati.gov.it/content/italian-open-data-license-v20_
-
-
-Privacy: Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it could still be possible to trace the individuals referenced. Some significant examples are:
+Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it could still be possible to trace the individuals referenced. Some significant examples are:
 
 * "[...] come nella classe dove essendoci un alunno affetto da ipoacusia; tutta la classe ha voluto integrare il proprio curriculum con l'apprendimento del LIS (linguaggio dei segni) supportati dall'assistente alla comunicazione."
 * "Nell'anno scolastico in corso sono stati sospesi due alunni della scuola primaria per lesioni ai compagni."
@@ -109,6 +116,11 @@ We propose three possibile solutions:
 2. Provide schools with pre-compiled questionnaire in place of free-text;
 4. Check text semi-automatically before publication (most ideal in order not to loose interesting information, but also most expensive).
 
+#### Licenses
+
+D1, D2, D4.1 and D4.2 (MIUR) are licensed under the Italian Open Data License (IODL) v2.0, very similar to a CC-BY 4.0. Each dataset is accompanyed by a clear license declaration. However, the whole website is covered by a "All rights reserved" copyright statement, which does not explicitly mentions the exclusion of the contents accompanied by a IODL 2.0 license. 
+
+The metadata of D3 (MiBACT) do not specify a license e.g. by using the property `dcterms:license` (see http://dati.beniculturali.it/lodview/resource/datasetLuoghiDellaCultura.html). Information about licenses is featured in the website footer only. The dataset about "Luoghi culturali" is licensed under CC BY-SA 3.0, which requires attribution and share-alike.
 
 ### 4.3 Ethical analysis
 
