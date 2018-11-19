@@ -99,16 +99,15 @@ Privacy: Although it does not contain any direct reference to natural persons (e
 * "Le rarissime situazioni nelle quali si evidenzia l'assoluta necessita' di 'ripetere l'anno' (quest'anno un alunno diversamente abile di quinta; lo scorso anno due alunni Rom; inseriti solo a meta' anno in quinta; che finalmente avevano cominciato venire a scuola volentieri!)"
 * "La scarsa capacita' di concentrazione dei ragazzi e l'assenza delle famiglie; poco inclini ad alzare la voce quando e' necessario; portano al risultato che i ragazzi non ascoltano; a volte non riescono neanche a rimanere seduti al banco."
 * "Nel corrente anno scolastico nel nostro istituto ci sono stati solo due alunni non ammessi: un alunno straniero che non ha praticamente frequentato e un altro che non ha raggiunto gli obiettivi minimi previsti."
+* "Nel presente anno scolastico non sono stati ammessi alla classe successiva due alunni della scuola primaria [...]. La motivazione delle non ammissioni si puo' riassumere nei seguenti punti: mancato raggiungimento degli obiettivi minimi programmati assenze (non giustificate da un valido motivo) oltre il limite previsto a livello normativo"
+* "Se si esclude un'alunna straniera che si e' ritirata per tornare in Romania (a.s. 2015/16), tutti gli alunni della Scuola primaria negli ultimi due anni scolastici sono stati ammessi alla classe successiva."
+* "Solo un'alunna delle nostre classi quinte dell'a.s. 2015/16 non e' stata ammessa alla classe successiva nella scuola secondaria di primo grado nel corrente anno scolastico."
+* "1 alunna disabile per fermo pedagogico e 4 trasferiti a.s. 2014/15"
 
-
-We propose four solutions:
-
--delete
--questionnre
--check automatically
--check semi-automatically (ideal)
-
-The same dataset from a.y. 2015-2016 mentions
+We propose three possibile solutions:
+1. Remove all free-text explanations for school self-evaluation;
+2. Provide schools with pre-compiled questionnaire in place of free-text;
+4. Check text semi-automatically before publication (most ideal in order not to loose interesting information, but also most expensive).
 
 
 ### 4.3 Ethical analysis
