@@ -24,6 +24,8 @@ The schools are guided by a list of questions and assign themselves grades accor
 
 The italian Ministry of Education, University and Research (MIUR) makes available yearly datasets of school self-evaluations. The datasets feature grades and free-text explanations for each grade. 
 
+However, 1328 schools chose not to give any explanations ('Motivazioni non dichiarate'), 6 schools filled the form with a single full-stop ('.'). It is also interesting that that IC San Giacomo in Trieste is the only school who decided to give an explanation in 
+
 Notwithstanding the presence of explanations, the reasons behind school grades are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. Similarly, schoold provide statistics about students performance without discussing the underlying reasons. 
 
 The aim of this project is to gain insight into the reasons behind the result of school self-evaluations through data, in order to find out whether building certifications and nearby cultural institutions affect the results in school evaluations. 
@@ -87,6 +89,12 @@ _Il Dataset 1 presenta problemi di privacy perché sono inclusi nel dataset i co
 
 _Il sito Portale Unico dei Dati della Scuola ha nel footer la dicitura “Tutti i diritti riservati”, mentre sotto a ogni dataset è riportata la licenza IO DL (https://www.dati.gov.it/content/italian-open-data-license-v20_
 
+
+Privacy: Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it is still possible to trace the individuals referenced. For example, 
+
+The same dataset from a.y. 2015-2016 mentions
+
+
 ### 4.3 Ethical analysis
 
 _e qui? Se affrontiamo il problema della privacy sopra, cosa scriviamo? Ripetere oppure unire i due punti in una sezione "Analisi etico-giuridica?"_
@@ -94,6 +102,9 @@ _e qui? Se affrontiamo il problema della privacy sopra, cosa scriviamo? Ripetere
 ### 4.4 Technical analysis (formats, metadata, URIs, provenance)
 
 1. All the MIUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017.   Durations in CSV could be specified as a time interval according to the standard ISO_8601: YYYY-MM-DD/YYYY-MM-DD (e.g. 2016-09-01/2017-08-31).
+
+2. D1 features text in slovenian (slovenian schools in Friuli Venezia Giulia express their self-evaluation in slovenian rather than italian). Languages should be declared in the dataset.  
+E.g. <miur:MOTIVAZIONEPUNTEGGIOSCUOLA xml:lang="sl">[description in slovanian]</miur:MOTIVAZIONEPUNTEGGIOSCUOLA> 
 
 2. _I codici istituto sono da disambiguare (istituto Forlì usa vecchio codice provincia fo anziché FC)._
 
