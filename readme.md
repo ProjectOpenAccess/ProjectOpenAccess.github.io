@@ -18,15 +18,15 @@ The schools are guided by a list of questions and grade themselves according to 
 - 5 = Positive
 - 7 = Excellent
 
-When browsing the datasets by the italian Ministry of Education, University and Research (MIUR) containing school self-evaluations, the reasons behind school grades  are not clear-cut. The grades are accompanied by free-format entries, meant to be a space for schools to explain the grades. 
+The italian Ministry of Education, University and Research (MIUR) makes available yearly datasets of school self-evaluations. The datasets feature grades and free-text explanations for each grade. 
 
-However, schools tend to use such free-format entries to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. Similarly, schoold provide statistics about students performance without discussing the underlying reasons. 
+Notwithstanding the presence of explanations, the reasons behind school grades are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. Similarly, schoold provide statistics about students performance without discussing the underlying reasons. 
 
-This project aligns 1) the results of school evaluations for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
+The aim of this project is to gain insight into the reasons behind the result of school self-evaluations through data, in order to find out whether building certifications and nearby cultural institutions affect the results in school evaluations. 
 
-The aim is to gain insights into the reasons behind school self-evaluations through data, in order to find out whether building certifications and nearby cultural institutions affect the results in school evaluations. 
+In order to achieve this, the project aligns 1) the results of school evaluation for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
 
-The data used for this experiment come from MIUR (Ministry of Education, University and Research) and MiBACT (Ministry of Cultural Heritage and Activities). 
+The datasets used for this experiment come from MIUR (Ministry of Education, University and Research) and MiBACT (Ministry of Cultural Heritage and Activities). 
 
 ## 3. Original datasets and mashup
 
