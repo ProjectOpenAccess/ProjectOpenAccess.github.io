@@ -1,4 +1,8 @@
-# Documentation
+# School self-evaluation and learning environment: what relationship?
+
+Francesca Giovannetti  
+Bruno Sartini  
+Gianmarco Spinaci
 
 ## 1. Introduction
 
@@ -8,11 +12,11 @@ This project will look at school self-evaluations from a particular perspective 
 
 ## 2. Application scenario
 
-Every year, italian schools are required to evaluate themselves on the basis of 11 criteria, among which are: 
+School self-evaluation is a reflective process of internal school review. Every year, italian schools are required to assess themselves on the basis of 11 criteria, among which are: 
 - Risultati scolastici (Overall student performance);
 - Risultati nelle prove nazionali standardizzate INVALSI (Student performance in the national INVALSI standardized tests).
 
-The schools are guided by a list of questions and grade themselves according to a 1-7 scale:
+The schools are guided by a list of questions and assign themselves grades according to a 1-7 scale:
 - 1 = Extremely critical
 - 3 = Moderately critical
 - 5 = Positive
@@ -57,7 +61,7 @@ MIUR, 22 June 2018, Informazioni anagrafiche scuole statali, electronic dataset,
 
 ### 4.4 Technical analysis (formats, metadata, URIs, provenance)
 
-1. All the MIUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017. Durations in CSV could be specified as a time interval according to the standard ISO_8601: YYYY-MM-DD/YYYY-MM-DD (e.g. 2016-09-01/2017-08-31).
+1. All the MIUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017.   Durations in CSV could be specified as a time interval according to the standard ISO_8601: YYYY-MM-DD/YYYY-MM-DD (e.g. 2016-09-01/2017-08-31).
 
 2. 
 
