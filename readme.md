@@ -47,7 +47,7 @@ Content description:
 ### D2
 MIUR, 27 September 2018, Certificazioni e documenti relativi alla sicurezza, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0280EDICONSICUREZZASTA
 
-License:https://www.dati.gov.it/content/italian-open-data-license-v20
+License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
 Content description:
 
@@ -61,14 +61,14 @@ Content description:
 ### D4.1 (auxiliary dataset)
 MIUR, 13 February 2018, Rubrica di valutazione utilizzata dalla scuola per l'autovalutazione, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0540RUBRICA_VAL
 
-License:https://www.dati.gov.it/content/italian-open-data-license-v20
+License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
 Content description:
 
 ### D4.2 (auxiliary dataset)
 MIUR, 22 June 2018, Informazioni anagrafiche scuole statali, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0400SCUANAGRAFESTAT
 
-License:https://www.dati.gov.it/content/italian-open-data-license-v20
+License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
 Content description:
 
@@ -126,6 +126,8 @@ The metadata of D3 (MiBACT) do not specify a license e.g. by using the property 
 
 _e qui? Se affrontiamo il problema della privacy sopra, cosa scriviamo? Ripetere oppure unire i due punti in una sezione "Analisi etico-giuridica?"_
 
+_frequenza di aggiornamento dei dati, dati edilizia da poco aggiornati_
+
 ### 4.4 Technical analysis (formats, metadata, URIs, provenance)
 
 1. All the MIUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017.  
@@ -138,10 +140,8 @@ Durations in CSV could be specified as a time interval according to the standard
 	[description in slovenian]
 </miur:MOTIVAZIONEPUNTEGGIOSCUOLA>
 ```
- 
 
 3. _nella versione XML/RDF dei dataset MIUR sono specificati vari namespace fra i quali dicat, ma nessuno di essi è effettivamente impiegato_
-
 
 ### 4.5 Updating the dataset over time
 
