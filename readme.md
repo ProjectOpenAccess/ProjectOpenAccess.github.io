@@ -39,7 +39,7 @@ The datasets used for this experiment come from MIUR (italian Ministry of Educat
 ### D1
 MIUR, 13 February 2018, Autovalutazione della scuola sezione Esiti. Scuola statale, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0500VALUTAZIONE_ESITI_STA  
 
-License:https://www.dati.gov.it/content/italian-open-data-license-v20
+License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
 Content description:
 
@@ -114,7 +114,7 @@ Although it does not contain any direct reference to natural persons (e.g. name,
 We propose three possibile solutions:
 1. Remove all free-text explanations for school self-evaluation;
 2. Provide schools with pre-compiled questionnaire in place of free-text;
-4. Check text semi-automatically before publication (most ideal in order not to loose interesting information, but also most expensive).
+3. Check text semi-automatically before publication (most ideal in order not to loose interesting information, but also most expensive).
 
 #### Licenses
 
