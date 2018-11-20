@@ -78,6 +78,13 @@ Metadata: [metadata XML/RDF link]
 
 Content description:
 
+Metodology: The mashup of the datasets D1, D2, D4.2 was done semi-automatically through some python scripts, in particular using the Pandas library, that required the csv-version of the datasets. The script developed using pandas joined D4.2 and D2 through the keyword "CODICESCUOLA" and then again it joined the newly-created dataset with D1 through the keyword "CODICEISTITUTO". This version of D5 was called D5-alpha.
+
+After the semi-automatic mashup D5-alpha was edited because it still contained some unnecessary data. 
+Because D4.2 contained some items related to Scuola dell'infanzia that were not coherent with the theme of the projects, in D5-alpha these items have been removed. Then, more fields have been removed:
+
+- ANNOSCOLASTICO, INDICAZIONESEDEOMNICOMPRENSIVO, INDIRIZZOEMAILSCUOLA, INDIRIZZOPECSCUOLA, SITOWEBSCUOLA, SEDESCOLASTICA from D4.2 and DA FINIRE.
+
 ## 4. Datasets analysis
 
 ### 4.1 Information quality
