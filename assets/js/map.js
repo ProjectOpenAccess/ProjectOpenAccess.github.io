@@ -37,6 +37,7 @@ var Thunderforest_SpinalMap = L.tileLayer('https://{s}.tile.thunderforest.com/sp
 
 //#endregion
 
+
 // Add tile
 mymap.addLayer(Wikimedia)
 
@@ -131,6 +132,8 @@ region_layer.on('click', function (e) {
   // Remove regions layer
   //mymap.removeLayer(region_layer)
 
+  $('#txt_selected').text(region_name)
+
   // Add province layer
   switch (region_name) {
 
@@ -221,6 +224,28 @@ region_layer.on('click', function (e) {
 
 }).addTo(mymap)
 
+// Set click events over provinces
+piemonte_layer.on('click', handleProvinceClick)
+valle_d_aosta_layer.on('click', handleProvinceClick)
+lombardia_layer.on('click', handleProvinceClick)
+trentino_alto_adige_layer.on('click', handleProvinceClick)
+veneto_layer.on('click', handleProvinceClick)
+friuli_venezia_giulia_layer.on('click', handleProvinceClick)
+liguria_layer.on('click', handleProvinceClick)
+emilia_romagna_layer.on('click', handleProvinceClick)
+toscana_layer.on('click', handleProvinceClick)
+umbria_layer.on('click', handleProvinceClick)
+marche_layer.on('click', handleProvinceClick)
+lazio_layer.on('click', handleProvinceClick)
+abruzzo_layer.on('click', handleProvinceClick)
+molise_layer.on('click', handleProvinceClick)
+campania_layer.on('click', handleProvinceClick)
+puglia_layer.on('click', handleProvinceClick)
+basilicata_layer.on('click', handleProvinceClick)
+calabria_layer.on('click', handleProvinceClick)
+sicilia_layer.on('click', handleProvinceClick)
+sardegna_layer.on('click', handleProvinceClick)
+
 // Handle zoom
 mymap.on('zoomend', function () {
 
@@ -270,10 +295,28 @@ function removeProvinceLayer() {
   mymap.removeLayer(sardegna_layer)
 }
 
+/**
+ * 
+ * @param {*} e 
+ */
+function handleProvinceClick(e) {
+
+  // Get province name
+  let province_name = e.layer.feature.properties.NOME_PRO
+
+  $('#txt_selected').text(province_name)
+
+  console.log(province_name)
+
+  // Move bounds to province
+  mymap.fitBounds(e.layer.getBounds())
+}
+
 /** */
 function reset() {
+  $('#txt_selected').text('')
   removeProvinceLayer()
-  mymap.setZoom(6)
+  mymap.setView([41.459, 12.700], 6)
 }
 
 //#endregion
