@@ -1,0 +1,96 @@
+@prefix dcatapit <http://dati.gov.it/onto/dcatapit> . #profilo applicativo DCAT-AP it
+@prefix dct <http://purl.org/dc/terms/> .
+@prefix dcat <http://www.w3.org/ns/dcat#> .
+@prefix foaf <http://xmlns.com/foaf/0.1/> .
+@prefix owl <http://www.w3.org/2002/07/owl#> .
+@prefix prov <http://www.w3.org/ns/prov#> .
+@prefix xsd <http://www.w3.org/2001/XMLSchema#> .
+
+#Catalogue
+
+<https://sebucci.github.io/resource/Catalogo/SEBuCCI>
+	a dcatapit:Catalog , dcat:Catalog ;
+	dct:title "Catalogo del progetto SEBuCCI"@it ;
+	dct:description "Catalogo dati del progetto SEBuCCI (School self-Evaluation, Building Certifications and Cultural Institutes: what relationship?)"@it ;
+	dct:modified "2018-11-20"^^xsd:date ;
+	dct:issued "2018-11-20"^^xsd:date ;
+	dct:publisher <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
+	dct:language <http://publications.europa.eu/resource/authority/language/ITA> ;
+	dcat:dataset <http://sebucci.github.io/resource/Dataset/SEBuCCI-last> ;
+	foaf:homepage <http://sebucci.github.io/index.html> ;
+	dcat:themeTaxonomy <http://publications.europa.eu/resource/authority/data-theme> .
+
+
+#Dataset 
+
+<http://sebucci.github.io/resource/Dataset/SEBuCCI>
+	a dcatapit:Dataset , dcat:Dataset ;
+	dct:identifier "SEBuCCI:D.1" ;
+	dct:title "SEBuCCI"@en ;
+	dct:description "Il dataset del progetto SEBuCCI (School self-Evaluation, Building Certifications and Cultural Institutes: what relationship?)" ;
+	dcat:theme <http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
+	dct:subject <http://eurovoc.europa.eu/668> , <http://eurovoc.europa.eu/c_9a9e5627> , <http://eurovoc.europa.eu/5309> , <http://www.eionet.europa.eu/gemet/concept/1911> ; #education , monitoring report , building safety , cultural facility
+	dct:issued "2018-11-20"^^xsd:date ;
+	dct:modified "2018-11-20"^^xsd:date ;
+	dcat:keyword "education" , "monitoring report" , "building safety" , "cultural facility" , "istruzione" , "relazione di monitoraggio" , "sicurezza degli edifici" , "strutture culturali" ;
+	owl:versionInfo "0.1.0" ; 
+	dct:rightsHolder <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
+	dct:publisher <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
+	dct:creator <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
+	prov:wasDerivedFrom <http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0500VALUTAZIONE_ESITI_STA> ;
+	prov:wasDerivedFrom <http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0280EDICONSICUREZZASTA> ;
+	prov:wasDerivedFrom <http://dati.beniculturali.it/dataset/dataset-luoghi.ttl> ;
+	prov:wasDerivedFrom <http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0540RUBRICA_VAL> ;
+	prov:wasDerivedFrom <http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0400SCUANAGRAFESTAT> ;
+	dcat:distribution <http://sebucci.github.io/resource/Distribuzione/SEBuCCI-RDFXML> ;
+	dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/IRREG> ;
+	.
+
+	dcat:contactPoint
+	dct:language
+	dct:temporal
+	dct:spatial
+	
+	
+
+#Distribution
+
+<http://projectopenaccess.github.io/resource/Distribuzione/AutovalutazioneScuole_e_LearningEnvironment-CSV> 
+	a dcatapit:Distribution , dcat:Distribution ;
+	dct:title "RDF XML distribution of the SEBuCCI dataset."@en ;
+	dct:description "RDF XML distribution of the SEBuCCI (School self-Evaluation, Building Certifications and Cultural Institutes: what relationship?) dataset."@it ;
+	dct:format <http://publications.europa.eu/resource/authority/file-type/> ;
+	dct:license <http://creativecommons.org/licenses/by/4.0> ;
+	dcat:downloadURL <http://> ;
+	dcat:accessURL <> .
+
+#Admin
+
+<http://sebucci.github.io/resource/Amministrazione/sebucciGroup>
+	a dcatapit:Agent , foaf:Agent ;
+	dct:identifier "sebucciGroup" ;
+	foaf:name "SEBuCCI Project Group" .
+
+#Original datasets
+
+<http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0500VALUTAZIONE_ESITI_STA>
+	a dcatapit:Dataset , dcat:Dataset ;
+	dct:rightsHolder 
+
+<http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0280EDICONSICUREZZASTA>
+	a dcatapit:Dataset , dcat:Dataset ;
+	dct:rightsHolder
+
+<http://dati.beniculturali.it/dataset/dataset-luoghi.ttl>
+	a dcatapit:Dataset , dcat:Dataset ;
+	dct:rightsHolder
+
+<http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0540RUBRICA_VAL>
+	a dcatapit:Dataset , dcat:Dataset ;
+	dct:rightsHolder
+
+<http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0400SCUANAGRAFESTAT>
+	a dcatapit:Dataset , dcat:Dataset ;
+	dct:rightsHolder
+
+
