@@ -50,6 +50,10 @@
 	dct:language
 	dct:temporal
 	dct:spatial
+	licenza
+
+
+	
 	
 	
 
