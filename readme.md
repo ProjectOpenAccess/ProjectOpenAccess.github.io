@@ -18,7 +18,7 @@ However, 1328 schools chose not to give any explanations ('Motivazioni non dichi
 
 Notwithstanding the presence of explanations, the reasons behind school grades are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. Similarly, schools provide statistics about students performance without discussing the underlying reasons. 
 
-<!-- Dovremmo scrivere più informazioni sul why --!>
+<!-- Dovremmo scrivere più informazioni sul why -->
 
 ### 1.2 What
 
@@ -26,7 +26,7 @@ The aim of this project is to gain insight into the reasons behind the result of
 
 In order to achieve this, the project aligns 1) the results of school evaluation for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
 
-The result would be a an Explorable map that is able to represent all of the aspects reported above for each singular school in our territory. <!-- Più cose da scrivere anche nella mappa finale, magari non nel dettaglio come nella visualization però comunque un qualcosa di più corposo --!>
+The result would be a an Explorable map that is able to represent all of the aspects reported above for each singular school in our territory. <!-- Più cose da scrivere anche nella mappa finale, magari non nel dettaglio come nella visualization però comunque un qualcosa di più corposo -->
 
 The datasets used for this experiment come from MIUR (italian Ministry of Education, University and Research) and MiBACT (italian Ministry of Cultural Heritage and Activities). 
  
@@ -100,7 +100,7 @@ License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
 Content description:
 
-### D5 (mashup)  <!-- Siamo sicuri di volerlo inserire qui? --!>
+### D5 (mashup)  <!-- Siamo sicuri di volerlo inserire qui? -->
 
 Dataset: [dataset link]  
 Metadata: [metadata XML/RDF link]
@@ -110,7 +110,7 @@ Content description:
 Metodology: The mashup of the datasets D1, D2, D4.2 was done semi-automatically through some python scripts, in particular using the Pandas library, that required the csv-version of the datasets. The script developed using pandas joined D4.2 and D2 through the keyword "CODICESCUOLA" and then again it joined the newly-created dataset with D1 through the keyword "CODICEISTITUTO". This version of D5 was called D5-alpha.
 
 After the semi-automatic mashup D5-alpha was edited because it still contained some unnecessary data. 
-Because D4.2 contained some items related to "Scuola dell'infanzia" that are not covered by the project, in D5-alpha these items have been removed. Then, other unnecessary fields have been removed and the headings of the csv have been modified in order to make it easier for the computation process (Explained in section X) <!-- Da cambiare una volta che la scriviamo --!>
+Because D4.2 contained some items related to "Scuola dell'infanzia" that are not covered by the project, in D5-alpha these items have been removed. Then, other unnecessary fields have been removed and the headings of the csv have been modified in order to make it easier for the computation process (Explained in section X) <!-- Da cambiare una volta che la scriviamo -->
 
 The final CSV dataset obtained was then transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), (GeoNames)[https://www.geonames.org/], [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
 
@@ -198,7 +198,7 @@ Durations in CSV could be specified as a time interval according to the standard
 
 Although the final dataset has been released on RDF format, the csv has been kept because of the further computation that have been done in order to gather the data that would be visualized.
 
-Python has been used in order to process the csv. <!-- Potrei Parlare in particolare dei processi --!>
+Python has been used in order to process the csv. <!-- Potrei Parlare in particolare dei processi -->
 
 Once the final sub-datasets that were used for the computation were acquired, we used the "json" Python library to convert them into a json format.
 
