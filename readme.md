@@ -8,13 +8,39 @@ Gianmarco Spinaci
 
 Does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact the way schools evaluate their teaching performance? Do building certifications also play a role in school self-evaluation?
 
-This project will look at school self-evaluations from a particular perspective to find out whether the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance. 
+This project will look at school self-evaluations from a particular perspective to find out whether the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance. Because of these topics, we decided to call it SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
+
+### 1.1 Why
+
+The italian Ministry of Education, University and Research (MIUR) makes available yearly datasets of school self-evaluations. The datasets feature grades and free-text explanations for each grade. 
+
+However, 1328 schools chose not to give any explanations ('Motivazioni non dichiarate'), 6 schools filled the form with a single full-stop ('.'). 
+
+Notwithstanding the presence of explanations, the reasons behind school grades are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. Similarly, schools provide statistics about students performance without discussing the underlying reasons. 
+
+<!-- Dovremmo scrivere più informazioni sul why --!>
+
+### 1.2 What
+
+The aim of this project is to gain insight into the reasons behind the result of school self-evaluations through data, in order to find out whether building certifications and nearby cultural institutions affect the results in school evaluations. 
+
+In order to achieve this, the project aligns 1) the results of school evaluation for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
+
+The result would be a an Explorable map that is able to represent all of the aspects reported above for each singular school in our territory. <!-- Più cose da scrivere anche nella mappa finale, magari non nel dettaglio come nella visualization però comunque un qualcosa di più corposo --!>
+
+The datasets used for this experiment come from MIUR (italian Ministry of Education, University and Research) and MiBACT (italian Ministry of Cultural Heritage and Activities). 
+ 
 
 ## 2. Application scenario
 
-School self-evaluation is a reflective process of internal school review. Every year, italian schools are required to assess themselves on the basis of 11 criteria, among which are: 
-- Risultati scolastici (Overall student performance);
-- Risultati nelle prove nazionali standardizzate INVALSI (Student performance in the national INVALSI standardized tests).
+### 2.1 Self-evaluation
+
+School self-evaluation is a reflective process of internal school review. Every year, italian schools are required to assess themselves on the basis of 11 criteria: these criteria are then grouped into two sections:
+
+- "Esiti" (Evaluations): The topics of these criteria (21-24) all revolve around the students results.
+- "Processi" (Processes): The topics of these criteria (31-37) all revolve around the activities that take place into the schools.
+
+Among them, we decided to focus on the criterium 21, which is "Risultati Scolastici" (Overall student performance) because it seemed to be the most concrete of them all and the most relevant to our initial thesis.
 
 The schools are guided by a list of questions and assign themselves grades according to a 1-7 scale:
 - 1 = Extremely critical
@@ -22,29 +48,28 @@ The schools are guided by a list of questions and assign themselves grades accor
 - 5 = Positive
 - 7 = Excellent
 
-The italian Ministry of Education, University and Research (MIUR) makes available yearly datasets of school self-evaluations. The datasets feature grades and free-text explanations for each grade. 
 
-However, 1328 schools chose not to give any explanations ('Motivazioni non dichiarate'), 6 schools filled the form with a single full-stop ('.'). 
+### 2.2 E-Governance Connotation
 
-Notwithstanding the presence of explanations, the reasons behind school grades are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. Similarly, schoold provide statistics about students performance without discussing the underlying reasons. 
+In the context of E-Governance, SEBuCCI might have impact on two different sides:
 
-The aim of this project is to gain insight into the reasons behind the result of school self-evaluations through data, in order to find out whether building certifications and nearby cultural institutions affect the results in school evaluations. 
+- It could create a debate where the citizens, realizing the connotation between the presence of cultural institutes and the evaluation of the school (in particular the students results), could solicit the municipal institution to increase the presence of these institutes nearby schools by investing more on these fields.
 
-In order to achieve this, the project aligns 1) the results of school evaluation for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
-
-The datasets used for this experiment come from MIUR (italian Ministry of Education, University and Research) and MiBACT (italian Ministry of Cultural Heritage and Activities). 
+- It would help the school themselves to acknowledge the presence of cultural institutions near them to organize more projects, visits, and collaborate with them in some activities by involving the students in order to create a bond between the young population and these cultural entities. 
 
 ## 3. Original datasets and mashup
 
 ### D1
+
 MIUR, 13 February 2018, Autovalutazione della scuola sezione Esiti. Scuola statale, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0500VALUTAZIONE_ESITI_STA  
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description:
+Content description: This dataset lists the schools by their school codes and it stores for each school the self-evaluation for every criterium in the Esiti section (21-24)
 
 
 ### D2
+
 MIUR, 27 September 2018, Certificazioni e documenti relativi alla sicurezza, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0280EDICONSICUREZZASTA
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
@@ -52,6 +77,7 @@ License: https://www.dati.gov.it/content/italian-open-data-license-v20
 Content description:
 
 ### D3
+
 MiBACT, 10 November 2018 (modified), Luoghi della cultura, electronic dataset, Gli Open Data, viewed 11 November 2018, http://dati.beniculturali.it/dataset/dataset-luoghi.ttl  
 
 License: https://creativecommons.org/licenses/by/3.0/
@@ -59,6 +85,7 @@ License: https://creativecommons.org/licenses/by/3.0/
 Content description:
 
 ### D4.1 (auxiliary dataset)
+
 MIUR, 13 February 2018, Rubrica di valutazione utilizzata dalla scuola per l'autovalutazione, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0540RUBRICA_VAL
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
@@ -66,13 +93,15 @@ License: https://www.dati.gov.it/content/italian-open-data-license-v20
 Content description:
 
 ### D4.2 (auxiliary dataset)
+
 MIUR, 22 June 2018, Informazioni anagrafiche scuole statali, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0400SCUANAGRAFESTAT
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
 Content description:
 
-### D5 (mashup)
+### D5 (mashup)  <!-- Siamo sicuri di volerlo inserire qui? --!>
+
 Dataset: [dataset link]  
 Metadata: [metadata XML/RDF link]
 
@@ -81,9 +110,7 @@ Content description:
 Metodology: The mashup of the datasets D1, D2, D4.2 was done semi-automatically through some python scripts, in particular using the Pandas library, that required the csv-version of the datasets. The script developed using pandas joined D4.2 and D2 through the keyword "CODICESCUOLA" and then again it joined the newly-created dataset with D1 through the keyword "CODICEISTITUTO". This version of D5 was called D5-alpha.
 
 After the semi-automatic mashup D5-alpha was edited because it still contained some unnecessary data. 
-Because D4.2 contained some items related to "Scuola dell'infanzia" that are not covered by the project, in D5-alpha these items have been removed. Then, other unnecessary fields have been removed:
-
-- ANNOSCOLASTICO, INDICAZIONESEDEOMNICOMPRENSIVO, INDIRIZZOEMAILSCUOLA, INDIRIZZOPECSCUOLA, SITOWEBSCUOLA, SEDESCOLASTICA from D4.2 and DA FINIRE.
+Because D4.2 contained some items related to "Scuola dell'infanzia" that are not covered by the project, in D5-alpha these items have been removed. Then, other unnecessary fields have been removed and the headings of the csv have been modified in order to make it easier for the computation process (Explained in section X) <!-- Da cambiare una volta che la scriviamo --!>
 
 The final CSV dataset obtained was then transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), (GeoNames)[https://www.geonames.org/], [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
 
@@ -166,5 +193,13 @@ Durations in CSV could be specified as a time interval according to the standard
    
 
 ## 5. Visualization
+
+### 5.1 Processing data through computation
+
+Although the final dataset has been released on RDF format, the csv has been kept because of the further computation that have been done in order to gather the data that would be visualized.
+
+Python has been used in order to process the csv. <!-- Potrei Parlare in particolare dei processi --!>
+
+Once the final sub-datasets that were used for the computation were acquired, we used the "json" Python library to convert them into a json format.
 
 _Descrizione tecnica_
