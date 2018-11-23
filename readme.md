@@ -81,9 +81,11 @@ Content description:
 Metodology: The mashup of the datasets D1, D2, D4.2 was done semi-automatically through some python scripts, in particular using the Pandas library, that required the csv-version of the datasets. The script developed using pandas joined D4.2 and D2 through the keyword "CODICESCUOLA" and then again it joined the newly-created dataset with D1 through the keyword "CODICEISTITUTO". This version of D5 was called D5-alpha.
 
 After the semi-automatic mashup D5-alpha was edited because it still contained some unnecessary data. 
-Because D4.2 contained some items related to "Scuola dell'infanzia"that were not coherent with the theme of the projects, in D5-alpha these items have been removed. Then, more fields have been removed:
+Because D4.2 contained some items related to "Scuola dell'infanzia" that are not covered by the project, in D5-alpha these items have been removed. Then, other unnecessary fields have been removed:
 
 - ANNOSCOLASTICO, INDICAZIONESEDEOMNICOMPRENSIVO, INDIRIZZOEMAILSCUOLA, INDIRIZZOPECSCUOLA, SITOWEBSCUOLA, SEDESCOLASTICA from D4.2 and DA FINIRE.
+
+The final CSV dataset obtained was then transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), (GeoNames)[https://www.geonames.org/], [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
 
 ## 4. Datasets analysis
 
@@ -120,7 +122,7 @@ Although it does not contain any direct reference to natural persons (e.g. name,
 
 We propose three possibile solutions:
 1. Remove all free-text explanations for school self-evaluation;
-2. Provide schools with pre-compiled questionnaire in place of free-text;
+2. Provide schools with pre-compiled questionnaire in place of guidelines;
 3. Check text semi-automatically before publication (most ideal in order not to loose interesting information, but also most expensive).
 
 #### Licenses
@@ -149,6 +151,8 @@ Durations in CSV could be specified as a time interval according to the standard
 ```
 
 3. _nella versione XML/RDF dei dataset MIUR sono specificati vari namespace fra i quali dicat, ma nessuno di essi è effettivamente impiegato_
+
+4. 
 
 ### 4.5 Updating the dataset over time
 
