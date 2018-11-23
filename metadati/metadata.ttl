@@ -1,4 +1,4 @@
-@prefix dcatapit <http://dati.gov.it/onto/dcatapit> . #profilo applicativo DCAT-AP it
+@prefix dcatapit <http://dati.gov.it/onto/dcatapit> . 
 @prefix dct <http://purl.org/dc/terms/> .
 @prefix dcat <http://www.w3.org/ns/dcat#> .
 @prefix foaf <http://xmlns.com/foaf/0.1/> .
@@ -16,7 +16,7 @@
 	dct:issued "2018-11-20"^^xsd:date ;
 	dct:publisher <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
 	dct:language <http://publications.europa.eu/resource/authority/language/ITA> ;
-	dcat:dataset <http://sebucci.github.io/resource/Dataset/SEBuCCI-last> ;
+	dcat:dataset <http://sebucci.github.io/resource/Dataset/SEBuCCI> ;
 	foaf:homepage <http://sebucci.github.io/index.html> ;
 	dcat:themeTaxonomy <http://publications.europa.eu/resource/authority/data-theme> .
 
@@ -37,6 +37,7 @@
 	dct:rightsHolder <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
 	dct:publisher <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
 	dct:creator <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
+	dct:license <http://creativecommons.org/licenses/by/4.0> ;
 	prov:wasDerivedFrom <http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0500VALUTAZIONE_ESITI_STA> ;
 	prov:wasDerivedFrom <http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0280EDICONSICUREZZASTA> ;
 	prov:wasDerivedFrom <http://dati.beniculturali.it/dataset/dataset-luoghi.ttl> ;
@@ -44,29 +45,29 @@
 	prov:wasDerivedFrom <http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0400SCUANAGRAFESTAT> ;
 	dcat:distribution <http://sebucci.github.io/resource/Distribuzione/SEBuCCI-RDFXML> ;
 	dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/IRREG> ;
-	.
-
-	dcat:contactPoint
-	dct:language
-	dct:temporal
-	dct:spatial
-	licenza
-
-
-	
-	
+	dcat:contactPoint <http://sebucci.github.io/resource/PuntoContatto/contactPointSEBuCCI> ;
+	dct:language <http://publications.europa.eu/resource/authority/language/ITA> ;
+	dct:temporal <http://sebucci.github.io/resource/PeriodoTemporale/periodTimeSEBuCCI> ;
+	dct:spatial <http://www.geonames.org/3170831/> , <http://www.geonames.org/3174618/> , <http://www.geonames.org/3164604/> ,  <http://www.geonames.org/3176525/> , <http://www.geonames.org/3174725/> , <http://www.geonames.org/3177401/> , <http://www.geonames.org/3165361/> , <http://www.geonames.org/3174004/> , <http://www.geonames.org/3165048/> , <http://www.geonames.org/3174976/> , <http://www.geonames.org/3183560/> , <http://www.geonames.org/3173222/> , <http://www.geonames.org/3181042/> , <http://www.geonames.org/3169778/> , <http://www.geonames.org/3182306/>, <http://www.geonames.org/2525468/> , <http://www.geonames.org/2523119/> , <http://www.geonames.org/2523228/s> .
 	
 
+#Period of time
+
+<http://dati.gov.it/resource/PeriodoTemporale/periodTimeSEBuCCI>
+	a dct:PeriodOfTime ; 
+	dcatapit:startDate "2016-09-1"^^xsd:date ; 
+	dcatapit:endDate "2017-08-31"^^xsd:date .
+	
 #Distribution
 
-<http://projectopenaccess.github.io/resource/Distribuzione/AutovalutazioneScuole_e_LearningEnvironment-CSV> 
+<http://sebucci.github.io/resource/Distribuzione/SEBuCCI-RDFXML> 
 	a dcatapit:Distribution , dcat:Distribution ;
 	dct:title "RDF XML distribution of the SEBuCCI dataset."@en ;
 	dct:description "RDF XML distribution of the SEBuCCI (School self-Evaluation, Building Certifications and Cultural Institutes: what relationship?) dataset."@it ;
-	dct:format <http://publications.europa.eu/resource/authority/file-type/> ;
+	dct:format <http://publications.europa.eu/resource/authority/file-type/RDF> ;
 	dct:license <http://creativecommons.org/licenses/by/4.0> ;
-	dcat:downloadURL <http://> ;
-	dcat:accessURL <> .
+	dcat:downloadURL <http://sebucci.github.io/resource/Distribuzione/SEBuCCI-RDFXML-download> ;
+	dcat:accessURL <http://sebucci.github.io/resource/Distribuzione/SEBuCCI-RDFXML> .
 
 #Admin
 
@@ -75,26 +76,31 @@
 	dct:identifier "sebucciGroup" ;
 	foaf:name "SEBuCCI Project Group" .
 
+#ContactPoint
+
+<http://sebucci.github.io/resource/PuntoContatto/contactPointSEBUCCI>
+	a dcatapit:Agent
+	vcard:hasEmail <mailto:sebucci@gmail.com> ;
+	vcard:hasURL <http://sebucci.github.io/contattaci.html> .
+
 #Original datasets
 
 <http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0500VALUTAZIONE_ESITI_STA>
 	a dcatapit:Dataset , dcat:Dataset ;
-	dct:rightsHolder 
+	dct:rightsHolder <http://it.dbpedia.org/resource/Ministero_dell'Istruzione,_dell'Universit%C3%A0_e_della_Ricerca> . 
 
 <http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0280EDICONSICUREZZASTA>
 	a dcatapit:Dataset , dcat:Dataset ;
-	dct:rightsHolder
+	dct:rightsHolder <http://it.dbpedia.org/resource/Ministero_dell'Istruzione,_dell'Universit%C3%A0_e_della_Ricerca> . 
 
 <http://dati.beniculturali.it/dataset/dataset-luoghi.ttl>
 	a dcatapit:Dataset , dcat:Dataset ;
-	dct:rightsHolder
+	dct:rightsHolder <http://it.dbpedia.org/resource/Ministero_per_i_Beni_e_le_Attivit%C3%A0_Culturali>
 
 <http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0540RUBRICA_VAL>
 	a dcatapit:Dataset , dcat:Dataset ;
-	dct:rightsHolder
+	dct:rightsHolder <http://it.dbpedia.org/resource/Ministero_dell'Istruzione,_dell'Universit%C3%A0_e_della_Ricerca> . 
 
 <http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0400SCUANAGRAFESTAT>
 	a dcatapit:Dataset , dcat:Dataset ;
-	dct:rightsHolder
-
-
+	dct:rightsHolder <http://it.dbpedia.org/resource/Ministero_dell'Istruzione,_dell'Universit%C3%A0_e_della_Ricerca> . 
