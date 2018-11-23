@@ -1,1 +1,29 @@
-[{"Valutazione": "1", " Percentuale": "0.05843277155861729", " Numero": "19"}, {"Valutazione": "2", " Percentuale": "0.3721244925575101", " Numero": "121"}, {"Valutazione": "3", " Percentuale": "5.378890392422192", " Numero": "1749"}, {"Valutazione": "4", " Percentuale": "24.987698363882398", " Numero": "8125"}, {"Valutazione": "5", " Percentuale": "35.311846475581255", " Numero": "11482"}, {"Valutazione": "6", " Percentuale": "27.690982900725796", " Numero": "9004"}, {"Valutazione": "7", " Percentuale": "6.200024603272235", " Numero": "2016"}]
+[{
+  "Valutazione": "1",
+  " Percentuale": "0.05843277155861729",
+  " Numero": "19"
+}, {
+  "Valutazione": "2",
+  " Percentuale": "0.3721244925575101",
+  " Numero": "121"
+}, {
+  "Valutazione": "3",
+  " Percentuale": "5.378890392422192",
+  " Numero": "1749"
+}, {
+  "Valutazione": "4",
+  " Percentuale": "24.987698363882398",
+  " Numero": "8125"
+}, {
+  "Valutazione": "5",
+  " Percentuale": "35.311846475581255",
+  " Numero": "11482"
+}, {
+  "Valutazione": "6",
+  " Percentuale": "27.690982900725796",
+  " Numero": "9004"
+}, {
+  "Valutazione": "7",
+  " Percentuale": "6.200024603272235",
+  " Numero": "2016"
+}]
