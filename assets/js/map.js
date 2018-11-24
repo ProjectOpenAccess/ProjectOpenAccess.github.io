@@ -134,11 +134,14 @@ region_layer.on('click', function (e) {
 
   $('#txt_selected').text(region_name)
 
+  // Update chart
+  updateChartRegion(region_name)
+
   // Add province layer
   switch (region_name) {
 
     case 'valle d\'aosta':
-      mymap.addLayer(valle_d_aosta_layer)
+      // TODO remove
       break
 
     case 'piemonte':
@@ -149,12 +152,8 @@ region_layer.on('click', function (e) {
       mymap.addLayer(lombardia_layer)
       break
 
-    case 'piemonte':
-      mymap.addLayer(piemonte_layer)
-      break
-
     case 'trentino-alto adige/sudtirol':
-      mymap.addLayer(trentino_alto_adige_layer)
+      // TODO remove
       break
 
     case 'veneto':
@@ -305,8 +304,7 @@ function handleProvinceClick(e) {
   let province_name = e.layer.feature.properties.NOME_PRO
 
   $('#txt_selected').text(province_name)
-
-  console.log(province_name)
+  updateChartProvince(province_name)
 
   // Move bounds to province
   mymap.fitBounds(e.layer.getBounds())
@@ -322,6 +320,7 @@ function reset() {
 //#endregion
 
 // Anchor map
+/*
 mymap.dragging.disable();
 mymap.touchZoom.disable();
 mymap.doubleClickZoom.disable();
@@ -330,6 +329,7 @@ mymap.boxZoom.disable();
 mymap.keyboard.disable();
 if (mymap.tap) mymap.tap.disable();
 document.getElementById('mapid').style.cursor = 'default';
+*/
 
 $(document).ready(function () {
   $('#btn_reset_view').on('click', function () {
