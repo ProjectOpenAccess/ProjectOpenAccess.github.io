@@ -1,5 +1,6 @@
 import csv
 import json
+import os
 from geopy.geocoders import Nominatim
 
 index_list = {
@@ -17,51 +18,48 @@ geolocator = Nominatim(user_agent="sebucci")
 buildings = []
 
 # Italy
-path_edifici_italia = '../dataset/allnodups.csv'
-path_json_address = '../dataset/geo/italy.json'
+path_edifici_bologna = "script/bologna.csv"
+path_json_address = 'bologna.json'
 
-with open(path_edifici_italia, newline='') as csvfile:
+with open(path_edifici_bologna, 'r+') as csvfile:
 
-    with open(path_json_address, 'w') as fp:
+    rows = csv.reader(csvfile, delimiter=',', quotechar='|')
 
-        rows = csv.reader(csvfile, delimiter=',', quotechar='|')
+    index = 1
 
-        index = 1
+    for row in rows:
 
-        for row in rows:
+        regione = row[1]
+        provincia = row[2]
+        codice_scuola = row[5]
+        nome_scuola = row[6]
 
-            if 'SICILIA' == row[1]:
+        indirizzo = row[7] + ' ' + row[8] + ' ' + row[2]
 
-                regione = row[1]
-                provincia = row[2]
-                codice_scuola = row[5]
-                nome_scuola = row[6]
+        location = geolocator.geocode(indirizzo)
 
-                indirizzo = row[7] + ' ' + row[8] + ' ' + row[2]
+        try:
 
-                location = geolocator.geocode(indirizzo)
+            building = {
+                "codice_scuola": codice_scuola,
+                "nome_scuola": nome_scuola,
+                "regione": regione,
+                "provincia": provincia,
+                "indirizzo": indirizzo,
+                "posizione": {
+                    "lat": location.latitude,
+                    "lon": location.longitude
+                }
+            }
+            buildings.append(building)
+            index = index + 1
+        except:
+            pass
 
-                try:
+    csvfile.close()
 
-                    building = {
-                        "codice_scuola": codice_scuola,
-                        "nome_scuola": nome_scuola,
-                        "regione": regione,
-                        "provincia": provincia,
-                        "indirizzo": indirizzo,
-                        "posizione": {
-                            "lat": location.latitude,
-                            "lon": location.longitude
-                        }
-                    }
-                    print('done ' + index)
-                    buildings.append(building)
-                    index = index + 1
-                except:
-                    pass
 
-        csvfile.close()
+with open(path_json_address, 'w') as fp:
 
-        json.dump(buildings, fp)
-
-        fp.close()
+    json.dump(buildings, fp)
+    fp.close()

@@ -5,8 +5,12 @@
 
 // Init map
 var mymap = L.map('mapid', {
-  zoomControl: false,
-  maxZoom: 9,
+  maxBounds: [
+    [47.7097615426664, 24.675292968750004],
+    [34.542762387234845, 0.7250976562500001]
+  ],
+  // zoomControl: false,
+  maxZoom: 15,
   minZoom: 6
 }).setView([41.459, 12.700], 6);
 
@@ -37,9 +41,13 @@ var Thunderforest_SpinalMap = L.tileLayer('https://{s}.tile.thunderforest.com/sp
 
 //#endregion
 
+$('#txt_selected').text('Italy')
 
 // Add tile
 mymap.addLayer(Wikimedia)
+
+// Init school array
+var bologna_school_group = L.featureGroup()
 
 // Add GeoJson layer online from the url
 var url_regions = "https://raw.githubusercontent.com/stefanocudini/leaflet-geojson-selector/master/examples/italy-regions.json"
@@ -70,20 +78,20 @@ var url_provinces = {
 
 var region_style = {
   style: {
-    fillColor: 'rgb(255, 159, 64)',
+    fillColor: '#656D78',
     weight: 2,
     opacity: .5,
-    color: 'rgb(255, 159, 64)', //Outline color
-    fillOpacity: 0.7
+    color: '#434A54',
+    fillOpacity: 0.5
   }
 }
 
 var province_style = {
   style: {
-    fillColor: 'rgb(255, 99, 132)',
+    fillColor: '#DA4453',
     opacity: 1,
-    color: 'rgb(255, 99, 132)',
-    fillOpacity: 0.7
+    color: '#434A54',
+    fillOpacity: 0.5
   }
 }
 
@@ -128,9 +136,6 @@ region_layer.on('click', function (e) {
 
   // Take name
   let region_name = e.layer.feature.properties.name
-
-  // Remove regions layer
-  //mymap.removeLayer(region_layer)
 
   $('#txt_selected').text(region_name)
 
@@ -251,14 +256,10 @@ mymap.on('zoomend', function () {
   // Zoom level
   let zoom_level = mymap.getZoom()
 
-  if (zoom_level < 7) {
-
-    // Remove all layer
+  // Italy level, Remove all layer
+  if (zoom_level <= 7) {
     removeProvinceLayer()
-
-    // Add map and layer
-    mymap.addLayer(Wikimedia)
-    mymap.addLayer(region_layer)
+    hideBolognaSchools()
   }
 })
 
@@ -306,32 +307,76 @@ function handleProvinceClick(e) {
   $('#txt_selected').text(province_name)
   updateChartProvince(province_name)
 
+  if (province_name == 'BOLOGNA')
+    showBolognaSchools()
+
+
   // Move bounds to province
   mymap.fitBounds(e.layer.getBounds())
 }
 
-/** */
+/** 
+ * 
+ */
 function reset() {
-  $('#txt_selected').text('')
+  // Select Italy
+  $('#txt_selected').text('Italy')
   removeProvinceLayer()
   mymap.setView([41.459, 12.700], 6)
+
+  updateChartItaly()
+}
+
+/**
+ * 
+ */
+function getBolognaSchools() {
+
+  let bologna_school_url = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/e15190021fa2d25791087a6e5e1c6cd794dc3167/dataset/geo/bologna.json'
+
+  $.ajax({
+      url: bologna_school_url,
+      type: 'GET'
+    })
+
+    .done(function (schools) {
+
+      schools = JSON.parse(schools)
+
+      for (let school of schools) {
+
+        let circle = L.circle([school.posizione.lat, school.posizione.lon], {
+          color: '#37BC9B',
+          fillColor: '#48CFAD',
+          fillOpacity: 0.5,
+          radius: 50
+        }).addTo(bologna_school_group)
+
+        circle.bindPopup(school.nome_scuola)
+      }
+    })
+}
+
+/**
+ * 
+ */
+function showBolognaSchools() {
+  mymap.addLayer(bologna_school_group)
+}
+
+/**
+ * 
+ */
+function hideBolognaSchools() {
+  mymap.removeLayer(bologna_school_group)
 }
 
 //#endregion
 
-// Anchor map
-/*
-mymap.dragging.disable();
-mymap.touchZoom.disable();
-mymap.doubleClickZoom.disable();
-mymap.scrollWheelZoom.disable();
-mymap.boxZoom.disable();
-mymap.keyboard.disable();
-if (mymap.tap) mymap.tap.disable();
-document.getElementById('mapid').style.cursor = 'default';
-*/
-
 $(document).ready(function () {
+
+  getBolognaSchools()
+
   $('#btn_reset_view').on('click', function () {
     reset()
   })

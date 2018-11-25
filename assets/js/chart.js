@@ -1,23 +1,16 @@
-/*
-var colors = {
-  blue: "rgb(54, 162, 235)",
-  green: "rgb(75, 192, 192)",
-  grey: "rgb(201, 203, 207)",
-  orange: "rgb(255, 159, 64)",
-  purple: "rgb(153, 102, 255)",
-  red: "rgb(255, 99, 132)",
-  yellow: "rgb(255, 205, 86)"
-}*/
+/**
+ * 
+ */
 
 var colors = {
   red: "#FE0000",
-  red_orange: "#FD610E",
-  orange: "#FF8001",
-  orange_yellow: "#FDA609",
-  yellow: "#FFFF02",
-  yellow_green: "#A1D01E",
-  green: "#4C954C",
-  super_green: "#497C42"
+  red_orange: "#E9573F",
+  orange: "#FC6E51",
+  orange_yellow: "#F6BB42",
+  yellow: "#FFCE54",
+  yellow_green: "#A0D468",
+  green: "#8CC152",
+  super_green: "#37BC9B"
 }
 
 var chart
@@ -110,6 +103,23 @@ function updateChartProvince(province_name) {
     })
 }
 
+function updateChartItaly() {
+
+  url_italy_data = "https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/Json/percitalia.json"
+
+  // Get data
+  $.ajax({
+      url: url_italy_data,
+      type: 'GET'
+    })
+
+    // On success
+    .done(function (data) {
+
+      updateChart(JSON.parse(data))
+    })
+}
+
 function setupChart() {
 
   url_italy_data = "https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/Json/percitalia.json"
@@ -137,7 +147,6 @@ function setupChart() {
 
         // The data for our dataset
         data: {
-          label: 'TMP',
           datasets: [{
             backgroundColor: background_color,
             data: real_data
@@ -149,16 +158,24 @@ function setupChart() {
         options: {
           responsive: true,
           legend: {
-            position: 'top',
+            display: false
           },
           title: {
-            display: true,
-            text: 'Autovalutazione scuole'
+            display: false,
           },
           animation: {
             animateScale: true,
             animateRotate: true
-          }
+          },
+          tooltips: {
+            enabled: true,
+            mode: 'single',
+            callbacks: {
+              label: function (tooltipItems, data) {
+                return tooltipItems.yLabel + '%';
+              }
+            }
+          },
         }
       })
     })
@@ -180,14 +197,10 @@ function updateChart(data) {
     dataset.data = []
   })
 
-  console.log(chart.data.datasets)
-
   // Re-add dataset
   chart.data.datasets.forEach((dataset) => {
     dataset.data = real_data
   })
-
-  console.log(chart.data.datasets)
 
   // Update dataset
   chart.update()
