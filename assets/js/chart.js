@@ -134,9 +134,17 @@ function setupChart() {
     .done(function (data) {
 
       let real_data = []
+      let school_num = 0
+      let cultural_num = 0
 
-      for (elem of JSON.parse(data))
+      for (elem of JSON.parse(data)) {
+
         real_data.push(Number(elem["percentuale"]).toFixed(2))
+        school_num += parseInt(elem['numero'])
+      }
+
+      updateSchoolN(school_num)
+      updateCulturalN(cultural_num)
 
       // Labels
       var labels = ["1", "2", "3", "4", "5", "6", "7"]
@@ -188,9 +196,16 @@ function setupChart() {
 function updateChart(data) {
 
   let real_data = []
+  let school_num = 0
+  let cultural_num = 0
 
-  for (elem of data)
+  for (elem of data) {
     real_data.push(Number(elem["percentuale"]).toFixed(2))
+    school_num += parseInt(elem['numero'])
+  }
+
+  updateSchoolN(school_num)
+  updateCulturalN(cultural_num)
 
   // Remove dataset 
   chart.data.datasets.forEach((dataset) => {
@@ -245,3 +260,11 @@ function fixData(element) {
 }
 
 setupChart()
+
+function updateSchoolN(num) {
+  $('#txtSchoolNum').text(num)
+}
+
+function updateCulturalN(num = 'TBD') {
+  $('#txtCulturalNum').text(num)
+}

@@ -40,8 +40,8 @@
     </div>
   </nav>
 
-  <div class="alert alert-primary" role="alert">
-    <b>Attention:</b> SEBuCCI is only a demo! The only one navigable province is <b>BOLOGNA</b>!
+  <div class="alert alert-primary text-center" role="alert">
+    <b>ATTENTION:</b> SEBuCCI is only a demo! The only populated province is <b>BOLOGNA</b>!
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -97,8 +97,12 @@
               <div class="card">
                 <div class="card-body">
 
-                  <h3>Selected: <span id="txt_selected"></span></h3>
-                  <p>TODO</p>
+                  <h4 class="card-title">Currently selected: <small class="card-subtitle mb-2 text-success text-uppercase"
+                      id="txt_selected"></small> </h4>
+                  <p>
+                    <b>N° Schools: </b><span id="txtSchoolNum"></span><br>
+                    <b>N° Cultural places: </b><span id="txtCulturalNum"></span>
+                  </p>
                   <button type="button" class="btn btn-primary" id="btn_reset_view">Reset map view</button>
                 </div>
               </div>
