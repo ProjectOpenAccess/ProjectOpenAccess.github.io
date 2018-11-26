@@ -6,7 +6,12 @@ Gianmarco Spinaci
 
 ## 1. Introduction
 
-Does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact the way schools evaluate their teaching performance? Do building certifications also play a role in school self-evaluation?
+Italian scholastic system and its comparison with the European standard is a hot topic of discussion in the last few years in Italy. <!-- Se vogliamo mettere qualche referenza di articoli di giornale sarebbe utile, però vediamo --> 
+Alongside the discussion about this topic, another important aspects that has been talked about it the quality of the structures that hosts the schools. 
+Moreover, Italy is known for its rich cultural heritage that is now stored and available in cultural institutions such as libraries and museums.
+The dialogue and collaboration between schools and these entities its fundamental to connect the young generation to this cultural richess.
+
+But does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact the way schools evaluate their teaching performance? Do building certifications also play a role in school self-evaluation?
 
 This project will look at school self-evaluations from a particular perspective to find out whether the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance. Because of these topics, we decided to call it SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
 
@@ -51,11 +56,13 @@ The schools are guided by a list of questions and assign themselves grades accor
 
 ### 2.2 E-Governance Connotation
 
-In the context of E-Governance, SEBuCCI might have impact on two different sides:
+In the context of E-Governance, SEBuCCI might have impact on different sides:
 
 - It could create a debate where the citizens, realizing the connotation between the presence of cultural institutes and the evaluation of the school (in particular the students results), could solicit the municipal institution to increase the presence of these institutes nearby schools by investing more on these fields.
 
 - It would help the school themselves to acknowledge the presence of cultural institutions near them to organize more projects, visits, and collaborate with them in some activities by involving the students in order to create a bond between the young population and these cultural entities. 
+
+- The dataset released alongside our visualization can be reused to highlight other particular topics of interest that may have impact on other E-governance discussions.
 
 ## 3. Original datasets and mashup
 
@@ -110,7 +117,7 @@ Content description:
 Metodology: The mashup of the datasets D1, D2, D4.2 was done semi-automatically through some python scripts, in particular using the Pandas library, that required the csv-version of the datasets. The script developed using pandas joined D4.2 and D2 through the keyword "CODICESCUOLA" and then again it joined the newly-created dataset with D1 through the keyword "CODICEISTITUTO". This version of D5 was called D5-alpha.
 
 After the semi-automatic mashup D5-alpha was edited because it still contained some unnecessary data. 
-Because D4.2 contained some items related to "Scuola dell'infanzia" that are not covered by the project, in D5-alpha these items have been removed. Then, other unnecessary fields have been removed and the headings of the csv have been modified in order to make it easier for the computation process (Explained in section X) <!-- Da cambiare una volta che la scriviamo -->
+Because D4.2 contained some items related to "Scuola dell'infanzia" that are not covered by the project, in D5-alpha these items have been removed. Then, other unnecessary fields have been removed and the headings of the csv have been modified in order to make it easier for the computation process (Explained in section 5)
 
 The final CSV dataset obtained was then transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), (GeoNames)[https://www.geonames.org/], [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
 
@@ -198,8 +205,8 @@ Durations in CSV could be specified as a time interval according to the standard
 
 Although the final dataset has been released on RDF format, the csv has been kept because of the further computation that have been done in order to gather the data that would be visualized.
 
-Python has been used in order to process the csv. <!-- Potrei Parlare in particolare dei processi -->
+Python has been used in order to process the csv. Every row of the csv has been converted into a list of dictionaries and then we developed some algorithms in order to calculate percentages and extract particular data useful for the visualization. <!-- Potrei Parlare in particolare dei processi -->
 
-Once the final sub-datasets that were used for the computation were acquired, we used the "json" Python library to convert them into a json format.
+Once the final sub-datasets that were used for the computation were acquired, we used the "json" Python library to convert them into a json format as it was one of the inputs requested by the visualization library.
 
 _Descrizione tecnica_
