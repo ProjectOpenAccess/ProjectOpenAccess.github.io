@@ -205,7 +205,7 @@ Durations in CSV could be specified as a time interval according to the standard
 
 Although the final dataset has been released on RDF format, the csv has been kept because of the further computation that have been done in order to gather the data that would be visualized.
 
-Python has been used in order to process the csv. Every row of the csv has been converted into a list of dictionaries and then we developed some algorithms in order to extract  <!-- Potrei Parlare in particolare dei processi -->
+Python has been used in order to process the csv. Every row of the csv has been converted into a list of dictionaries and then we developed some algorithms in order to calculate percentages and extract particular data useful for the visualization. <!-- Potrei Parlare in particolare dei processi -->
 
 Once the final sub-datasets that were used for the computation were acquired, we used the "json" Python library to convert them into a json format as it was one of the inputs requested by the visualization library.
 
