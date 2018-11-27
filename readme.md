@@ -72,7 +72,7 @@ MIUR, 13 February 2018, Autovalutazione della scuola sezione Esiti. Scuola stata
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: This dataset lists the schools by their school codes and it stores for each school the self-evaluation for every criterium in the Esiti section (21-24)
+Content description: This dataset lists the institutes by their institute codes and it stores for each institute the self-evaluation for every criterium in the Esiti section (21-24)
 
 
 ### D2
@@ -81,7 +81,7 @@ MIUR, 27 September 2018, Certificazioni e documenti relativi alla sicurezza, ele
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description:
+Content description: This datasets lists for every school's building information about its certifications (described in detail in section XXX above <!-- Ricordarsi di cambiare questo -->
 
 ### D3
 
@@ -89,7 +89,7 @@ MiBACT, 10 November 2018 (modified), Luoghi della cultura, electronic dataset, G
 
 License: https://creativecommons.org/licenses/by/3.0/
 
-Content description:
+Content description: This dataset contains every cultural place of Italy giving out information about its location, identification and some of its services.
 
 ### D4.1 (auxiliary dataset)
 
@@ -97,7 +97,7 @@ MIUR, 13 February 2018, Rubrica di valutazione utilizzata dalla scuola per l'aut
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description:
+Content description: This dataset is an explicatory guide that refers to the criteria used in D1. It is pre-compiled by MIUR and it gives our contextual information about every criterium. 
 
 ### D4.2 (auxiliary dataset)
 
@@ -105,7 +105,7 @@ MIUR, 22 June 2018, Informazioni anagrafiche scuole statali, electronic dataset,
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: 
+Content description: This dataset lists for each school building its location information according to Geographical Area (North, Sud, Isles), Region, Province and Municipality.
 
 ### D4.3 (auxiliary dataset)
 
