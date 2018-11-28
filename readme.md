@@ -221,17 +221,30 @@ Python has been used in order to process the csv. Every row of the csv has been 
 
 Once the final sub-datasets that were used for the computation were acquired, we used the "json" Python library to convert them into a json format as it was one of the inputs requested by the visualization library.
 
+**Get Latitude and Longitude of schools from address:**
+
+To do this we used the script: [address2latlon.py]()
+
 ### 5.2 Handling visualization (technical description)
 
 In order to visualize data we used some libraries:
 
-* **leaflet.js**: An open-source JavaScript library for mobile-friendly interactive maps
-* **chart.js**: Simple yet flexible JavaScript charting for designers & developers
-* **bootstrap**: 
+* **leaflet.js**: An open-source JavaScript library for mobile-friendly interactive maps.
+* **chart.js**: Simple yet flexible JavaScript charting for designers & developers.
+* **bootstrap**: Build responsive, mobile-first projects on the web with the world's most popular front-end component library.
 
 **Leaflet.js**
 
-We used the WikiMedia TileLayerhttps://foundation.wikimedia.org/wiki/Maps_Terms_of_Use which is based on OpenStreetMap (ODbL)
+Code &copy; [BSD](https://github.com/Leaflet/Leaflet/blob/master/LICENSE)
+Data &copy; [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) 
+
+Using [Wikimedia Tile](https://foundation.wikimedia.org/wiki/Maps_Terms_of_Use) uses we are complying with **[OpenStreetMap copyright policy](https://www.openstreetmap.org/copyright)**
+
+**OpenStreetMap** 
+
+Both **Wikimedia Tile** and **Leaflet** use Data from **OpenStreetMap** 
+
+Data &copy; [ODbL](https://www.openstreetmap.org/copyright)
 
 **GEOJSON**: With Leaflet is possible to draw polygons directly from geojson files. we use them for drawing:
 
@@ -239,7 +252,7 @@ We used the WikiMedia TileLayerhttps://foundation.wikimedia.org/wiki/Maps_Terms_
 
 * Provinces: https://github.com/Dataninja/geo-shapes/tree/master/italy/regions. The provinces of Sardegna are not updated.
 
-* Sardegna from ISTAT. TODO
+* Sardegna from ISTAT. TODO https://www.istat.it/it/archivio/222527
 
 #### Chart.js
 
@@ -247,4 +260,11 @@ Bar line
 
 #### Bootstrap
 
-Currently v4.1.3. Code licensed MIT, docs CC BY 3.0.
+v4.1.3. 
+Code &copy; MIT
+Docs CC BY 3.0.
+
+#### Passages
+
+1. Created the webpage using Github pages.
+2. Added the map using **leaflet.js**, and we added GeoJSON data (regions and provinces) to draw layers on it
