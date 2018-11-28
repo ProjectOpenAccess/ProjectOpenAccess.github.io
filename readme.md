@@ -229,15 +229,15 @@ In order to visualize data we used some libraries:
 * **chart.js**: Simple yet flexible JavaScript charting for designers & developers
 * **bootstrap**: 
 
-#### Leaflet.js
+**Leaflet.js**
 
-We used the [WikiMedia TileLayer][https://foundation.wikimedia.org/wiki/Maps_Terms_of_Use] which is based on OpenStreetMap (ODbL)
+We used the WikiMedia TileLayerhttps://foundation.wikimedia.org/wiki/Maps_Terms_of_Use which is based on OpenStreetMap (ODbL)
 
-**GEOJSON**: With Leaflet is possible to drow polygons directly from geojson files. we use them for drawing:
+**GEOJSON**: With Leaflet is possible to draw polygons directly from geojson files. we use them for drawing:
 
-* Regions: The entire repository is licensed MIT, but the maps are not licensed explicitly [dataset here][https://github.com/stefanocudini/leaflet-geojson-selector/blob/master/examples/italy-regions.json].
+* Regions: The entire repository is licensed MIT, but the maps are not licensed explicitly https://github.com/stefanocudini/leaflet-geojson-selector/blob/master/examples/italy-regions.json.
 
-* Provinces: [datasets here][https://github.com/Dataninja/geo-shapes/tree/master/italy/regions]. The provinces of Sardegna are not updated.
+* Provinces: https://github.com/Dataninja/geo-shapes/tree/master/italy/regions. The provinces of Sardegna are not updated.
 
 * Sardegna from ISTAT. TODO
 
