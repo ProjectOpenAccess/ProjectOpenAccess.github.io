@@ -223,7 +223,7 @@ Once the final sub-datasets that were used for the computation were acquired, we
 
 **Get Latitude and Longitude of schools from address:**
 
-To do this we used the script: [address2latlon.py]()
+To do this we used the script: [address2latlon.py](https://github.com/sebucci/sebucci.github.io/blob/master/script/address2latlon.py)
 
 ### 5.2 Handling visualization (technical description)
 
@@ -235,36 +235,36 @@ In order to visualize data we used some libraries:
 
 **Leaflet.js**
 
-Code &copy; [BSD](https://github.com/Leaflet/Leaflet/blob/master/LICENSE)
-Data &copy; [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) 
+* Code &copy; [BSD](https://github.com/Leaflet/Leaflet/blob/master/LICENSE)
+* Data &copy; [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) 
 
-Using [Wikimedia Tile](https://foundation.wikimedia.org/wiki/Maps_Terms_of_Use) uses we are complying with **[OpenStreetMap copyright policy](https://www.openstreetmap.org/copyright)**
+* Using [Wikimedia Tile](https://foundation.wikimedia.org/wiki/Maps_Terms_of_Use) uses we are complying with [OpenStreetMap copyright policy](https://www.openstreetmap.org/copyright)
 
 **OpenStreetMap** 
 
 Both **Wikimedia Tile** and **Leaflet** use Data from **OpenStreetMap** 
 
-Data &copy; [ODbL](https://www.openstreetmap.org/copyright)
+* Data &copy; [ODbL](https://www.openstreetmap.org/copyright)
 
-**GEOJSON**: With Leaflet is possible to draw polygons directly from geojson files. we use them for drawing:
+**GEOJSON**: With Leaflet is possible to draw polygons directly from geojson files:
 
-* Regions: The entire repository is licensed MIT, but the maps are not licensed explicitly https://github.com/stefanocudini/leaflet-geojson-selector/blob/master/examples/italy-regions.json.
+* Regions: For drawing regions we have used data that we found in this [repository](https://github.com/stefanocudini/leaflet-geojson-selector/blob/master/examples/italy-regions.json).
 
-* Provinces: https://github.com/Dataninja/geo-shapes/tree/master/italy/regions. The provinces of Sardegna are not updated.
+* Provinces: For drawing provinces we used data that we found in this [repository](https://github.com/Dataninja/geo-shapes/tree/master/italy/regions).
+**NOTE** For each region, we have a single json file containing the region. The provinces of Sardegna are not updated to 2017.
 
-* Sardegna from ISTAT. TODO https://www.istat.it/it/archivio/222527
+* Sardegna: For handling the problem listed above, we retrieved data from [CONFINI DELLE UNITÀ AMMINISTRATIVE A FINI STATISTICI AL 1 GENNAIO 2018](https://www.istat.it/it/archivio/222527). [CC BY 3.0](https://www.istat.it/it/note-legali)
 
 #### Chart.js
 
-Bar line
+To visualize the percentages of self-evaluations we used a bar chart [MIT license](https://www.chartjs.org/docs/latest/notes/license.html).
 
 #### Bootstrap
 
-v4.1.3. 
-Code &copy; MIT
-Docs CC BY 3.0.
+v4.1.3., Code &copy; MIT, Docs CC BY 3.0.
 
 #### Passages
 
 1. Created the webpage using Github pages.
 2. Added the map using **leaflet.js**, and we added GeoJSON data (regions and provinces) to draw layers on it
+3. todo
