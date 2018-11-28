@@ -72,7 +72,7 @@ MIUR, 13 February 2018, Autovalutazione della scuola sezione Esiti. Scuola stata
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: This dataset lists the schools by their school codes and it stores for each school the self-evaluation for every criterium in the Esiti section (21-24)
+Content description: This dataset lists the institutes by their institute codes and it stores for each institute the self-evaluation for every criterium in the Esiti section (21-24)
 
 
 ### D2
@@ -81,7 +81,7 @@ MIUR, 27 September 2018, Certificazioni e documenti relativi alla sicurezza, ele
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description:
+Content description: This datasets lists for every school's building information about its certifications (described in detail in section XXX above <!-- Ricordarsi di cambiare questo -->
 
 ### D3
 
@@ -89,7 +89,7 @@ MiBACT, 10 November 2018 (modified), Luoghi della cultura, electronic dataset, G
 
 License: https://creativecommons.org/licenses/by/3.0/
 
-Content description:
+Content description: This dataset contains every cultural place of Italy giving out information about its location, identification and some of its services.
 
 ### D4.1 (auxiliary dataset)
 
@@ -97,7 +97,7 @@ MIUR, 13 February 2018, Rubrica di valutazione utilizzata dalla scuola per l'aut
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description:
+Content description: This dataset is an explicatory guide that refers to the criteria used in D1. It is pre-compiled by MIUR and it gives our contextual information about every criterium. 
 
 ### D4.2 (auxiliary dataset)
 
@@ -105,7 +105,15 @@ MIUR, 22 June 2018, Informazioni anagrafiche scuole statali, electronic dataset,
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description:
+Content description: This dataset lists for each school building its location information according to Geographical Area (North, Sud, Isles), Region, Province and Municipality.
+
+### D4.3 (auxiliary dataset)
+
+ISTAT, 01 February 2018, Principali statistiche geografiche sui comuni - Superfici delle unità amministrative, Istat Archive (Also accessible through sparql end point in istat open data website), https://www.istat.it/it/archivio/156224
+
+License: https://www.istat.it/it/note-legali
+
+Content description: Istat, with the purpose to describe geographical characteristics of the territory, shares elaborations based on data collected in census surveys or other sources, that refers to the principal units of territory that interests official statistics. In this dataset it is reported the surface (in km^2 and ha) of Italy, its regions, provinces and municipalities.
 
 ### D5 (mashup)  <!-- Siamo sicuri di volerlo inserire qui? -->
 
@@ -136,7 +144,11 @@ _Nel dataset D2 non ci sono dati relativi alle certificazioni in corso_
 
 _Nel dataset 2 ci sono dei trattini con un significato ambiguo_
 
-_I codici istituto sono da disambiguare (istituto Forlì usa vecchio codice provincia fo anziché FC)._
+_I codici istituto sono da disambiguare (istituto Forlì usa vecchio codice provincia fo anziché FC)._ // <-- direi di no
+
+_Nel dataset D3 e D4.3 le province della sardegna non sono state aggiornate secondo la legge regionale 4 febbraio 2016 n.2 sul riordino del sistema delle autonomie locali. In questa legge le province della sardegna sono passate da 8 a 4 (cagliari è diventata da provincia a città metropolitana mentre alcune province sono state inglobate da altre ed è stata formata la provincia  "sud sardegna" http://www.regione.sardegna.it/j/v/1270?s=300929&v=2&c=13906&t=1&anno )_
+
+
 
 ### 4.2 Juridical analysis (privacy, licenses, purposes, etc.)
 
@@ -196,7 +208,7 @@ Durations in CSV could be specified as a time interval according to the standard
 |-------------------------------|----------------------------|----------------|-------------------------|----------------------------|
 | D1, D2, D4.1, D4.2 / Column A | Ambiguous date format used | 1.5 | Syntax | Adopt ISO 8601 date format |
 | D1 | Indirect information about individuals | 3 | Semantics, Privacy | Remove information |
-|  |  |  |  |  |
+| D3, D4.3 | Incorrect information about Sardinia's provinces | 2.5 | Outdated content | Combination of manual and automatic methods to redistribute data in the correct provinces |
    
 
 ## 5. Visualization
