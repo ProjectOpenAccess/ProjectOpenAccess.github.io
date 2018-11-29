@@ -6,7 +6,7 @@ Gianmarco Spinaci
 
 ## 1. Introduction
 
-In recent years, Italy's school system has become a hot topic. The Italian education system is often put in comparison with other European education systems, for example in terms of fundings and student performance (see articles on the topic by (Il Sole 24 ORE)[https://www.ilsole24ore.com/art/notizie/2017-08-29/italia-terzultima-europa-spesa-istruzione-germania-spende-doppio-190050.shtml?uuid=AE8jEVJC] and (Repubblica)[https://www.repubblica.it/scuola/2016/12/06/news/ocse_scuola_studenti_nord_e_sud-153559264/].   
+In recent years, Italy's school system has become a hot topic. The Italian education system is often put in comparison with other European education systems, for example in terms of fundings and student performance (see articles by (Il Sole 24 ORE)[https://www.ilsole24ore.com/art/notizie/2017-08-29/italia-terzultima-europa-spesa-istruzione-germania-spende-doppio-190050.shtml?uuid=AE8jEVJC] and (Repubblica)[https://www.repubblica.it/scuola/2016/12/06/news/ocse_scuola_studenti_nord_e_sud-153559264/].   
 
 Another much debated topic is school safety. In 2016, about 44 structural failures and collapses in Italian schools were registered (see (Corriere della Sera)[https://www.corriere.it/scuola/medie/17_novembre_22/edilizia-scolastica-44-crolli-all-anno-miur-piu-due-miliardi-arrivo-ce09130a-cf75-11e7-a1da-9278adb4d756.shtml]).
 
