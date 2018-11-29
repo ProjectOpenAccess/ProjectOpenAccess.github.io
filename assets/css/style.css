@@ -27,3 +27,7 @@ footer.footer {
 img.traffic-light {
   width: 40px
 }
+
+i.fas.muted {
+  opacity: .2
+}

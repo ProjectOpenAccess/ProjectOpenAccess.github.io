@@ -75,7 +75,8 @@ var url_provinces = {
   basilicata: "https://raw.githubusercontent.com/Dataninja/geo-shapes/master/italy/regions/17/provinces.geojson",
   calabria: "https://raw.githubusercontent.com/Dataninja/geo-shapes/master/italy/regions/18/provinces.geojson",
   sicilia: "https://raw.githubusercontent.com/Dataninja/geo-shapes/master/italy/regions/19/provinces.geojson",
-  sardegna: "https://raw.githubusercontent.com/Dataninja/geo-shapes/master/italy/regions/20/provinces.geojson"
+  sardegna: "https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/dataset/geo/sardegna_prov01012018.geojson"
+  //sardegna: "https://raw.githubusercontent.com/Dataninja/geo-shapes/master/italy/regions/20/provinces.geojson"
 }
 
 var region_style = {
@@ -139,11 +140,13 @@ region_layer.on('click', function (e) {
   // Take name
   let region_name = e.layer.feature.properties.name
 
+  showCardInfo()
   $('#txt_selected').text(region_name)
 
   // Update chart
   updateChartRegion(region_name)
   updateMeanRegion(region_name)
+
 
   // Add province layer
   switch (region_name) {
@@ -313,7 +316,9 @@ function handleProvinceClick(e) {
   if (province_name == "REGGIO DI CALABRIA")
     province_name = "REGGIO CALABRIA"
 
+  showCardInfo()
   $('#txt_selected').text(province_name)
+
   updateChartProvince(province_name)
   updateMeanProvince(province_name)
 
@@ -339,7 +344,7 @@ function reset() {
  */
 function getBolognaSchools() {
 
-  let bologna_school_url = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/e15190021fa2d25791087a6e5e1c6cd794dc3167/dataset/geo/bologna.json'
+  let bologna_school_url = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/dataset/geo/bologna.json'
 
   $.ajax({
       url: bologna_school_url,
@@ -359,7 +364,12 @@ function getBolognaSchools() {
           radius: 50
         }).addTo(bologna_school_group)
 
-        circle.bindPopup(school.nome_scuola)
+        circle.on('click', function () {
+
+          showCardSchool(school)
+        })
+
+        //circle.bindPopup(school.nome_scuola)
       }
     })
 }
@@ -401,9 +411,13 @@ function updateMeanItaly() {
 
       rows = JSON.parse(rows)
 
-      let mean = Number(rows[0].perc).toFixed(2)
+      let mean = Number(rows[0].perc).toFixed(1)
 
-      $('#txtConstructionMean').html(`<img class="traffic-light" src="${getRightTrafficLight(mean)}" />`)
+      let content = getRightTrafficLight(mean)
+
+      $('#txtConstructionMean')[0].outerHTML = getRightTrafficLight(mean)
+
+      $('[data-toggle="tooltip"]').tooltip()
     })
 }
 
@@ -423,10 +437,12 @@ function updateMeanRegion(region_name) {
 
       for (let region of rows) {
         if (region['regione'] == region_name)
-          mean = Number(region['mediaperc']).toFixed(2)
+          mean = Number(region['mediaperc']).toFixed(1)
       }
 
-      $('#txtConstructionMean').html(`<img class="traffic-light" src="${getRightTrafficLight(mean)}" />`)
+      $('#txtConstructionMean')[0].outerHTML = getRightTrafficLight(mean)
+
+      $('[data-toggle="tooltip"]').tooltip()
     })
 }
 
@@ -446,14 +462,19 @@ function updateMeanProvince(province_name) {
 
       for (let province of rows) {
         if (province['provincia'] == province_name.toLowerCase())
-          mean = Number(province['mediaperc']).toFixed(2)
+          mean = Number(province['mediaperc']).toFixed(1)
       }
 
-      $('#txtConstructionMean').html(`<img class="traffic-light" src="${getRightTrafficLight(mean)}" />`)
+      $('#txtConstructionMean')[0].outerHTML = getRightTrafficLight(mean)
+
+      $('[data-toggle="tooltip"]').tooltip()
     })
 }
 
 function selectItaly() {
+
+  showCardInfo()
+
   // Update text
   $('#txt_selected').text('Italy')
 
@@ -472,23 +493,50 @@ function selectItaly() {
 
 function getRightTrafficLight(number) {
 
-  let suffix = "assets/images/traffic-light-solid"
-  let appendix = ".svg"
-
-  let colors = {
-    yellow: 'giallo',
-    red: 'rosso',
-    green: 'verde'
-  }
-
-  number = Number(number).toFixed(1)
+  let muted = 'muted'
+  let red = $(`<i class="fas fa-lightbulb text-danger muted"></i>`)
+  let yellow = $(`<i class="fas fa-lightbulb text-warning muted"></i>`)
+  let green = $(`<i class="fas fa-lightbulb text-success muted"></i>`)
 
   if (number > 0 && number <= 33.3)
-    return suffix + colors.red + appendix
+    red.removeClass(muted)
 
   if (number > 33.3 && number <= 66.6)
-    return suffix + colors.yellow + appendix
+    yellow.removeClass(muted)
 
   if (number > 66.6 && number <= 100)
-    return suffix + colors.green + appendix
+    green.removeClass(muted)
+
+  return `<span id="txtConstructionMean" data-toggle="tooltip" data-placement="top" title="${number}%">
+    ${red[0].outerHTML}
+    ${yellow[0].outerHTML}
+    ${green[0].outerHTML}
+  </span>`
+}
+
+let cardInfo = $('#cardInfo')
+let CardSchool = $('#CardSchool')
+let cardChart = $('#cardChart')
+
+function showCardInfo() {
+
+  cardInfo.show()
+  cardChart.show()
+  CardSchool.hide()
+}
+
+function showCardSchool(school) {
+
+  CardSchool.show()
+  cardChart.hide()
+  cardInfo.hide()
+
+  CardSchool.find('#school_title').text(school.nome_scuola)
+  CardSchool.find('#school_address').text(school.indirizzo)
+
+  CardSchool.find('#school_score').text(school.punteggio)
+  CardSchool.find('#school_num_c').text(school.num_cultural_institute)
+  CardSchool.find('#school_certificates')[0].outerHTML = getRightTrafficLight(school.percentage)
+
+  $('[data-toggle="tooltip"]').tooltip()
 }

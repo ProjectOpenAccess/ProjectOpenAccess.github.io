@@ -14,6 +14,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
     crossorigin="" />
 
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+
   <link rel="stylesheet" href="assets/css/style.css">
 
   <title>Hello, world!</title>
@@ -35,6 +39,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" target="_blank" href="https://github.com/sebucci/sebucci.github.io#school-self-evaluation-building-certifications-and-cultural-institutes-what-relationship">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="#">License</a>
         </li>
       </ul>
     </div>
@@ -63,17 +70,55 @@
 
         <div class="container-fluid">
 
-          <!-- Chart -->
-          <div class="row">
+          <!-- Selected -->
+          <div id="cardInfo" class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-body">
-                  <h3>Chart self-evaluation <small><a target="_blank" href="https://github.com/sebucci/sebucci.github.io#21-self-evaluation">info</a></small>
+
+                  <h2 id="txt_selected" class="card-title text-uppercase"> </h2>
+                  <p>
+                    <a href="#"><i class="fas fa-info-circle"></i></a> <b>N° Schools: </b><span id="txtSchoolNum"></span>
+                    <br>
+                    <a href="#"><i class="fas fa-info-circle"></i></a> <b>N° Cultural places: </b><span id="txtCulturalNum"></span><br>
+                    <a href="#"><i class="fas fa-info-circle"></i></a> <b>Certificates: </b><span id="txtConstructionMean"></span>
+                  </p>
+                  <button type="button" class="btn btn-primary" id="btn_reset_view">Reset map view</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- cardSchool -->
+          <div id="CardSchool" class="row" style="display: none">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+
+                  <h6 id="school_title" class="card-title text-uppercase"> </h6>
+                  <p id="school_address" class="text-muted"></p>
+                  <p>
+                    <b>Self-evaluation score:</b> <span id="school_score"></span><br>
+                    <b>N° of close cultural institutes:</b> <span id="school_num_c"></span><br>
+                    <b>Certificates:</b> <span id="school_certificates"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart -->
+          <div id="cardChart" class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <h3>Self-evaluation <small><a target="_blank" href="https://github.com/sebucci/sebucci.github.io#21-self-evaluation"><i
+                          class="fas fa-info-circle"></i></a></small>
                   </h3>
 
                   <canvas id="chart_autovalutazione"></canvas>
 
-                  <p><b>key: </b></p>
+                  <p><b>keys: </b></p>
                   <ul class="list-inline" style="list-style: none;">
                     <li class="list-inline-item">
                       <span class="badge badge-secondary badge-pill" style="background-color: #ED5565;">1</span>
@@ -96,25 +141,6 @@
 
           </div>
 
-          <!-- Selected -->
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-body">
-
-                  <h4 class="card-title">Currently selected: <small class="card-subtitle mb-2 text-success text-uppercase"
-                      id="txt_selected"></small> </h4>
-                  <p>
-                    <b>N° Schools: </b><span id="txtSchoolNum"></span><br>
-                    <b>N° Cultural places: </b><span id="txtCulturalNum"></span><br>
-                    <b>Construction certificates mean: </b><span id="txtConstructionMean"></span>
-                  </p>
-                  <button type="button" class="btn btn-primary" id="btn_reset_view">Reset map view</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -124,7 +150,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container-fluid">
-      <span class="text-muted">Rights &copy; here.</span>
+      <span class="text-muted">Data &copy; IODL; Documentation CC BY 4.0; Website CC BY 4.0</span>
     </div>
   </footer>
 
