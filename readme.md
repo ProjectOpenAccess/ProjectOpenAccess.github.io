@@ -27,7 +27,7 @@ This project will look at school self-evaluations from a particular perspective 
 
 SEBuCCI aligns data from different sources in order to achieve the objective of gaining insight, thanks to data, into school self-evaluations. In particular SEBuCCI looks at the availability or absence of school safety certifications and cultural institutions, such as libraries and museums, as possible reasons behind school self-evaluation results. 
 
-### 2.1 School self-evaluation
+### 2.1 What is school self-evaluation?
 
 School self-evaluation is a reflective process of internal school review. Every year, italian schools are required to assess themselves on the basis of 11 criteria.
 
@@ -44,6 +44,25 @@ The results are grouped into two main sections:
 
 SEBuCCI focuses on criterion 21 'Risultati Scolastici' (Overall student performance) as it is particularly relevant to the aim of the project. We expected that, among all, student performance would be the most affected by closeness to cultural institutions and safety of school buildings. 
 
+### 2.2 The data
+
+Every year, MiUR (Italian Ministry of Education, University and Research) makes available the open datasets containing the results of school self-evaluations. Specifically, the datasets feature assigned grades and textual explanations for the grades. 
+
+MiUR also publishes irregular updates on school safety certificates as open data. 
+
+SEBuCCI aligns school self-evaluations with school safety certificates to find out if there is a trend (i.e. highest grades when certificates are in accordance with applicable law). 
+
+SEBuCCI makes also use of the open dataset of 'Luoghi culturali' (Cultural institutions) published by MiBACT (Italian Ministry of Cultural Heritage and Activities) to identify and locate cultural institutions and their proximity to schools in Italy. 
+
+ 
+
+
+
+
+
+
+
+
 ### 2.2 E-Governance Connotation
 
 In the context of E-Governance, SEBuCCI might have impact on different sides:
@@ -57,36 +76,34 @@ In the context of E-Governance, SEBuCCI might have impact on different sides:
 
 
 
-### 1.1 Why SEBuCCI?
 
-School self-evaluation is a process of internal school review carried out by the teachers every year. The teachers assign
 
-The italian Ministry of Education, University and Research (MIUR) makes available yearly datasets of school self-evaluations. The datasets feature grades and free-text explanations for each grade. 
 
-However, 1328 schools chose not to give any explanations ('Motivazioni non dichiarate'), 6 schools filled the form with a single full-stop ('.'). 
 
-Notwithstanding the presence of explanations, the reasons behind school grades are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. Similarly, schools provide statistics about students performance without discussing the underlying reasons. 
 
-<!-- Dovremmo scrivere più informazioni sul why -->
+
+
+
+
 
 ### 1.2 The SEBuCCI rationale
 
 
 
-The aim of this project is to gain insight -  through data - into the reasons behind the result of school self-evaluations, in order to find out whether building certifications and nearby cultural institutions affect the results of school evaluations.
+
 
 In order to achieve this, the project aligns 1) the results of school evaluation for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
 
 The result would be a an Explorable map that is able to represent all of the aspects reported above for each singular school in our territory. <!-- Più cose da scrivere anche nella mappa finale, magari non nel dettaglio come nella visualization però comunque un qualcosa di più corposo -->
 
-The datasets used for this experiment come from MIUR (italian Ministry of Education, University and Research) and MiBACT (italian Ministry of Cultural Heritage and Activities). 
+The datasets used for this experiment come from MiUR (italian Ministry of Education, University and Research) and MiBACT (italian Ministry of Cultural Heritage and Activities). 
 
 
 ## 3. Original datasets and mashup
 
 ### D1
 
-MIUR, 13 February 2018, Autovalutazione della scuola sezione Esiti. Scuola statale, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0500VALUTAZIONE_ESITI_STA  
+MiUR, 13 February 2018, Autovalutazione della scuola sezione Esiti. Scuola statale, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0500VALUTAZIONE_ESITI_STA  
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
@@ -95,7 +112,7 @@ Content description: This dataset lists the institutes by their institute codes 
 
 ### D2
 
-MIUR, 27 September 2018, Certificazioni e documenti relativi alla sicurezza, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0280EDICONSICUREZZASTA
+MiUR, 27 September 2018, Certificazioni e documenti relativi alla sicurezza, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0280EDICONSICUREZZASTA
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
@@ -111,15 +128,15 @@ Content description: This dataset contains every cultural place of Italy giving 
 
 ### D4.1 (auxiliary dataset)
 
-MIUR, 13 February 2018, Rubrica di valutazione utilizzata dalla scuola per l'autovalutazione, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0540RUBRICA_VAL
+MiUR, 13 February 2018, Rubrica di valutazione utilizzata dalla scuola per l'autovalutazione, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0540RUBRICA_VAL
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: This dataset is an explicatory guide that refers to the criteria used in D1. It is pre-compiled by MIUR and it gives our contextual information about every criterium. 
+Content description: This dataset is an explicatory guide that refers to the criteria used in D1. It is pre-compiled by MiUR and it gives our contextual information about every criterium. 
 
 ### D4.2 (auxiliary dataset)
 
-MIUR, 22 June 2018, Informazioni anagrafiche scuole statali, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0400SCUANAGRAFESTAT
+MiUR, 22 June 2018, Informazioni anagrafiche scuole statali, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0400SCUANAGRAFESTAT
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
@@ -167,6 +184,8 @@ _I codici istituto sono da disambiguare (istituto Forlì usa vecchio codice prov
 _Nel dataset D3 e D4.3 le province della sardegna non sono state aggiornate secondo la legge regionale 4 febbraio 2016 n.2 sul riordino del sistema delle autonomie locali. In questa legge le province della sardegna sono passate da 8 a 4 (cagliari è diventata da provincia a città metropolitana mentre alcune province sono state inglobate da altre ed è stata formata la provincia  "sud sardegna" http://www.regione.sardegna.it/j/v/1270?s=300929&v=2&c=13906&t=1&anno )_
 
 
+_However, 1328 schools chose not to give any explanations ('Motivazioni non dichiarate'), 6 schools filled the form with a single full-stop ('.')._
+
 
 ### 4.2 Juridical analysis (privacy, licenses, purposes, etc.)
 
@@ -191,7 +210,7 @@ We propose three possibile solutions:
 
 #### Licenses
 
-D1, D2, D4.1 and D4.2 (MIUR) are licensed under the Italian Open Data License (IODL) v2.0, very similar to a CC-BY 4.0. Each dataset is accompanyed by a clear license declaration. However, the whole website is covered by a "All rights reserved" copyright statement, which does not explicitly mentions the exclusion of the contents accompanied by a IODL 2.0 license. 
+D1, D2, D4.1 and D4.2 (MiUR) are licensed under the Italian Open Data License (IODL) v2.0, very similar to a CC-BY 4.0. Each dataset is accompanyed by a clear license declaration. However, the whole website is covered by a "All rights reserved" copyright statement, which does not explicitly mentions the exclusion of the contents accompanied by a IODL 2.0 license. 
 
 The metadata of D3 (MiBACT) do not specify a license e.g. by using the property `dcterms:license` (see http://dati.beniculturali.it/lodview/resource/datasetLuoghiDellaCultura.html). Information about licenses is featured in the website footer only. The dataset about "Luoghi culturali" is licensed under CC BY-SA 3.0, which requires attribution and share-alike.
 
@@ -203,7 +222,7 @@ _frequenza di aggiornamento dei dati, dati edilizia da poco aggiornati_
 
 ### 4.4 Technical analysis (formats, metadata, URIs, provenance)
 
-1. All the MIUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017.  
+1. All the MiUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017.  
 Durations in CSV could be specified as a time interval according to the standard ISO_8601: YYYY-MM-DD/YYYY-MM-DD (e.g. 2016-09-01/2017-08-31).
 
 2. D1 features text in slovenian (slovenian schools in Friuli Venezia Giulia express their self-evaluation in slovenian rather than italian). Languages should be declared at least in the XML/RDF dataset as shown below.
@@ -214,7 +233,7 @@ Durations in CSV could be specified as a time interval according to the standard
 </miur:MOTIVAZIONEPUNTEGGIOSCUOLA>
 ```
 
-3. _nella versione XML/RDF dei dataset MIUR sono specificati vari namespace fra i quali dicat, ma nessuno di essi è effettivamente impiegato_
+3. _nella versione XML/RDF dei dataset MiUR sono specificati vari namespace fra i quali dicat, ma nessuno di essi è effettivamente impiegato_
 
 4. 
 
