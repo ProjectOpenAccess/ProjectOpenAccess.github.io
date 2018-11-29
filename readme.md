@@ -12,9 +12,11 @@ Another much debated topic is school safety. In 2016, about 44 structural failur
 
 On the positive side, Italy is known all over the world for its rich cultural heritage. Collaboration between cultural institutions and schools is crucial in order to build a connection between the youngest generations and the cultural richness of their country. 
 
-But does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact the way schools evaluate their teaching performance? Do building certifications also play a role in school self-evaluation?
+In this light, two questions naturally arise:
+1. Does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact the way schools evaluate their teaching performance? 
+2. Do building certifications also play a role in school self-evaluation?
 
-This project will look at school self-evaluations from a particular perspective to find out whether the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance. Because of these topics, we decided to call it SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
+This project will look at school self-evaluations from a particular perspective to find out whether the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance. Because of the topics it deals with, we named the project SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
 
 ### 1.1 Why
 
