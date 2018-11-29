@@ -54,25 +54,13 @@ SEBuCCI aligns school self-evaluations with school safety certificates to find o
 
 SEBuCCI makes also use of the open dataset of 'Luoghi culturali' (Cultural institutions) published by MiBACT (Italian Ministry of Cultural Heritage and Activities) to identify and locate cultural institutions and their proximity to schools in Italy. 
 
- 
+### 2.3 E-Governance
 
+In the context of E-Governance, SEBuCCI might play a role in:
 
+- promoting debate among citizens, who could press municipalities for an increase of the presence of cultural institutions such as libraries in the areas where these are not available.
 
-
-
-
-
-
-### 2.2 E-Governance Connotation
-
-In the context of E-Governance, SEBuCCI might have impact on different sides:
-
-- It could create a debate where the citizens, realizing the connotation between the presence of cultural institutes and the evaluation of the school (in particular the students results), could solicit the municipal institution to increase the presence of these institutes nearby schools by investing more on these fields.
-
-- It would help the school themselves to acknowledge the presence of cultural institutions near them to organize more projects, visits, and collaborate with them in some activities by involving the students in order to create a bond between the young population and these cultural entities. 
-
-- The dataset released alongside our visualization can be reused to highlight other particular topics of interest that may have impact on other E-governance discussions.
-
+- helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.  
 
 
 
