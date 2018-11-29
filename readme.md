@@ -13,9 +13,9 @@ Gianmarco Spinaci
 
 ## 1. Introduction
 
-In recent years, Italy's school system has become a hot topic. The Italian education system is often put in comparison with other European education systems, for example in terms of fundings and student performance (see articles by (Il Sole 24 ORE)[https://www.ilsole24ore.com/art/notizie/2017-08-29/italia-terzultima-europa-spesa-istruzione-germania-spende-doppio-190050.shtml?uuid=AE8jEVJC] and (Repubblica)[https://www.repubblica.it/scuola/2016/12/06/news/ocse_scuola_studenti_nord_e_sud-153559264/].   
+In recent years, Italy's school system has become a hot topic. The Italian education system is often put in comparison with other European education systems, for example in terms of fundings and student performance (see articles by [Il Sole 24 ORE](https://www.ilsole24ore.com/art/notizie/2017-08-29/italia-terzultima-europa-spesa-istruzione-germania-spende-doppio-190050.shtml?uuid=AE8jEVJC) and [Repubblica](https://www.repubblica.it/scuola/2016/12/06/news/ocse_scuola_studenti_nord_e_sud-153559264/).   
 
-Another much debated topic is school safety. In 2016, about 44 structural failures and collapses in Italian schools were registered (see (Corriere della Sera)[https://www.corriere.it/scuola/medie/17_novembre_22/edilizia-scolastica-44-crolli-all-anno-miur-piu-due-miliardi-arrivo-ce09130a-cf75-11e7-a1da-9278adb4d756.shtml]).
+Another much debated topic is school safety. In 2016, about 44 structural failures and collapses in Italian schools were registered (see [Corriere della Sera](https://www.corriere.it/scuola/medie/17_novembre_22/edilizia-scolastica-44-crolli-all-anno-miur-piu-due-miliardi-arrivo-ce09130a-cf75-11e7-a1da-9278adb4d756.shtml)).
 
 On the positive side, Italy is known all over the world for its rich cultural heritage. Collaboration between cultural institutions and schools is crucial in order to build a connection between the youngest generations and the cultural richness of their country. 
 
@@ -106,7 +106,7 @@ MIUR, 13 February 2018, Autovalutazione della scuola sezione Esiti. Scuola stata
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: This dataset lists the institutes by their institute codes and it stores for each institute the self-evaluation for every criterium in the Esiti section (21-24)
+Content description: This dataset lists the institutes by their institute codes and it stores for each institute the self-evaluation for every criterium in the Esiti section (more details in [Section 2.1] ()
 
 
 ### D2
@@ -171,7 +171,7 @@ def Aligner(source1,source2,nomeoutput,campo):
 After the semi-automatic mashup D5-alpha was edited because it still contained some unnecessary data. 
 Because D4.2 contained some items related to "Scuola dell'infanzia" that are not covered by the project, in D5-alpha these items have been removed. Then, other unnecessary fields have been removed and the headings of the csv have been modified in order to make it easier for the computation process (Explained in section 5)
 
-The final CSV dataset obtained was then transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), (GeoNames)[https://www.geonames.org/], [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
+The final CSV dataset obtained was then transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), [GeoNames](https://www.geonames.org/), [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
 
 ## 4. Datasets analysis
 
@@ -242,7 +242,7 @@ Durations in CSV could be specified as a time interval according to the standard
 
 3. _nella versione XML/RDF dei dataset MIUR sono specificati vari namespace fra i quali dicat, ma nessuno di essi è effettivamente impiegato_
 
-4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" (https://docs.python.org/2/library/codecs.html#encodings-and-unicode). An example of a script using that encoding can be seen in section 5.1
+4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in section 5.1
 
 ### 4.5 Updating the dataset over time
 
