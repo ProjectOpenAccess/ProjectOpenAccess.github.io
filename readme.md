@@ -18,32 +18,19 @@ In this light, two questions naturally arise:
 
 This project will look at school self-evaluations from a particular perspective to find out whether the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance. Because of the topics it deals with, we named the project SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
 
-### 1.1 Why
-
-The italian Ministry of Education, University and Research (MIUR) makes available yearly datasets of school self-evaluations. The datasets feature grades and free-text explanations for each grade. 
-
-However, 1328 schools chose not to give any explanations ('Motivazioni non dichiarate'), 6 schools filled the form with a single full-stop ('.'). 
-
-Notwithstanding the presence of explanations, the reasons behind school grades are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. Similarly, schools provide statistics about students performance without discussing the underlying reasons. 
-
-<!-- Dovremmo scrivere più informazioni sul why -->
-
-### 1.2 What
-
-The aim of this project is to gain insight into the reasons behind the result of school self-evaluations through data, in order to find out whether building certifications and nearby cultural institutions affect the results in school evaluations. 
-
-In order to achieve this, the project aligns 1) the results of school evaluation for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
-
-The result would be a an Explorable map that is able to represent all of the aspects reported above for each singular school in our territory. <!-- Più cose da scrivere anche nella mappa finale, magari non nel dettaglio come nella visualization però comunque un qualcosa di più corposo -->
-
-The datasets used for this experiment come from MIUR (italian Ministry of Education, University and Research) and MiBACT (italian Ministry of Cultural Heritage and Activities). 
- 
-
 ## 2. Application scenario
+
+SEBuCCI aligns data from different sources in order to achieve the objective of gaining insight, thanks to data, into school self-evaluations. In particular SEBuCCI looks at the availability or absence of school safety certifications and cultural institutions such as libraries and museums as possible reasons behind school self-evaluation results. 
+
+
+
+
+
+
 
 ### 2.1 Self-evaluation
 
-School self-evaluation is a reflective process of internal school review. Every year, italian schools are required to assess themselves on the basis of 11 criteria: these criteria are then grouped into two sections:
+School self-evaluation is a reflective process of internal school review. Every year, italian schools are required to assess themselves on the basis of 11 criteria, which are then grouped into two sections:
 
 - "Esiti" (Evaluations): The topics of these criteria (21-24) all revolve around the students results.
 - "Processi" (Processes): The topics of these criteria (31-37) all revolve around the activities that take place into the schools.
@@ -66,6 +53,34 @@ In the context of E-Governance, SEBuCCI might have impact on different sides:
 - It would help the school themselves to acknowledge the presence of cultural institutions near them to organize more projects, visits, and collaborate with them in some activities by involving the students in order to create a bond between the young population and these cultural entities. 
 
 - The dataset released alongside our visualization can be reused to highlight other particular topics of interest that may have impact on other E-governance discussions.
+
+
+
+
+### 1.1 Why SEBuCCI?
+
+School self-evaluation is a process of internal school review carried out by the teachers every year. The teachers assign
+
+The italian Ministry of Education, University and Research (MIUR) makes available yearly datasets of school self-evaluations. The datasets feature grades and free-text explanations for each grade. 
+
+However, 1328 schools chose not to give any explanations ('Motivazioni non dichiarate'), 6 schools filled the form with a single full-stop ('.'). 
+
+Notwithstanding the presence of explanations, the reasons behind school grades are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. Similarly, schools provide statistics about students performance without discussing the underlying reasons. 
+
+<!-- Dovremmo scrivere più informazioni sul why -->
+
+### 1.2 The SEBuCCI rationale
+
+
+
+The aim of this project is to gain insight -  through data - into the reasons behind the result of school self-evaluations, in order to find out whether building certifications and nearby cultural institutions affect the results of school evaluations.
+
+In order to achieve this, the project aligns 1) the results of school evaluation for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
+
+The result would be a an Explorable map that is able to represent all of the aspects reported above for each singular school in our territory. <!-- Più cose da scrivere anche nella mappa finale, magari non nel dettaglio come nella visualization però comunque un qualcosa di più corposo -->
+
+The datasets used for this experiment come from MIUR (italian Ministry of Education, University and Research) and MiBACT (italian Ministry of Cultural Heritage and Activities). 
+
 
 ## 3. Original datasets and mashup
 
