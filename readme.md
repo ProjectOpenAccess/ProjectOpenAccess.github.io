@@ -44,7 +44,6 @@ The results are grouped into two main sections:
 
 SEBuCCI focuses on criterion 21 'Risultati Scolastici' (Overall student performance) as it is particularly relevant to the aim of the project. We expected that, among all, student performance would be the most affected by closeness to cultural institutions and safety of school buildings. 
 
-<<<<<<< HEAD
 ### 2.2 The data
 
 Every year, MiUR (Italian Ministry of Education, University and Research) makes available the open datasets containing the results of school self-evaluations. Specifically, the datasets feature assigned grades and textual explanations for the grades. 
@@ -62,19 +61,14 @@ In the context of E-Governance, SEBuCCI might play a role in:
 - promoting debate among citizens, who could press municipalities for an increase of the presence of cultural institutions such as libraries in the areas where these are not available.
 
 - helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.  
-=======
+
 ### 2.2 E-Governance Connotation
 
-In the context of E-Governance, SEBuCCI might have impact on different sides:
+In the context of E-Governance, SEBuCCI might play a role in:
 
-- It could create a debate where the citizens, realizing the connotation between the presence of cultural institutes and the evaluation of the school (in particular the students results), could solicit the municipal institution to increase the presence of these institutes nearby schools by investing more on these fields.
+- promoting debate among citizens, who could press municipalities for an increase of the presence of cultural institutions such as libraries in the areas where these are not available.
 
-- It would help the school themselves to acknowledge the presence of cultural institutions near them to organize more projects, visits, and collaborate with them in some activities by involving the students in order to create a bond between the young population and these cultural entities. 
-
-- The dataset released alongside our visualization can be reused to highlight other particular topics of interest that may have impact on other E-governance discussions.
-
->>>>>>> 5e9fd57d0fcf4bc1270a5acf2dcabf1b6db48da2
-
+- helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.  
 
 
 ### 1.1 Why SEBuCCI?
