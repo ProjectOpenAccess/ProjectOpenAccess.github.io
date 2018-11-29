@@ -1,11 +1,13 @@
 TO DO
 Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo.
 Scrivere criteri che abbiamo usato per rappresentare le percentuali edilizie/numero di cultural institutes
- 
+Creare bibliografia
+An etica: rispetto a dataset originale usate percentuali per le certificazioni dell'edilizia per non fare vedere esattamente che certificato manca
+Compilazioni ambigue in dataset edilizia es. non richiesto e vuoto
+Riferimento a legge open data
+Inserire link dataset 
 
-
-
-# School self-evaluation, building certifications and cultural institutes: what relationship?
+ # School self-evaluation, building certifications and cultural institutes: what relationship?
 
 Francesca Giovannetti  
 Bruno Sartini  
@@ -56,7 +58,7 @@ SEBuCCI aligns school self-evaluations with school safety certificates to find o
 
 SEBuCCI makes also use of the open dataset of 'Luoghi culturali' (Cultural institutions) published by MiBACT (Italian Ministry of Cultural Heritage and Activities) to identify and locate cultural institutions and their proximity to schools in Italy. 
 
-### 2.3 E-Governance
+### 2.3 How SEBuCCI may contribute to E-Governance
 
 In the context of E-Governance, SEBuCCI might play a role in:
 
@@ -64,39 +66,11 @@ In the context of E-Governance, SEBuCCI might play a role in:
 
 - helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.  
 
-### 2.2 E-Governance Connotation
-
-In the context of E-Governance, SEBuCCI might play a role in:
-
-- promoting debate among citizens, who could press municipalities for an increase of the presence of cultural institutions such as libraries in the areas where these are not available.
-
-- helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.  
-
-
-### 1.1 Why SEBuCCI?
-
-School self-evaluation is a process of internal school review carried out by the teachers every year. The teachers assign
-
-The italian Ministry of Education, University and Research (MIUR) makes available yearly datasets of school self-evaluations. The datasets feature grades and free-text explanations for each grade. 
-
-However, 1328 schools chose not to give any explanations ('Motivazioni non dichiarate'), 6 schools filled the form with a single full-stop ('.'). 
-
-Notwithstanding the presence of explanations, the reasons behind school grades are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. Similarly, schools provide statistics about students performance without discussing the underlying reasons. 
-
-<!-- Dovremmo scrivere più informazioni sul why -->
-
-### 1.2 The SEBuCCI rationale
-
-
+### 2.4 Rationale of SEBuCCI 
 
 The aim of this project is to gain insight -  through data - into the reasons behind the result of school self-evaluations, in order to find out whether building certifications and nearby cultural institutions affect the results of school evaluations.
 
-In order to achieve this, the project aligns 1) the results of school evaluation for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
-
-The result would be a an Explorable map that is able to represent all of the aspects reported above for each singular school in our territory. <!-- Più cose da scrivere anche nella mappa finale, magari non nel dettaglio come nella visualization però comunque un qualcosa di più corposo -->
-
-The datasets used for this experiment come from MIUR (italian Ministry of Education, University and Research) and MiBACT (italian Ministry of Cultural Heritage and Activities). 
-
+In order to achieve this, the project aligns 1) the results of school self-evaluation for school year 2016-2017; 2) the data related to school building certificates (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. The result will be a an explorable map visualizing these data for each school in Italy.
 
 ## 3. Original datasets and mashup
 
@@ -106,8 +80,7 @@ MIUR, 13 February 2018, Autovalutazione della scuola sezione Esiti. Scuola stata
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: This dataset lists the institutes by their institute codes and it stores for each institute the self-evaluation for every criterium in the Esiti section (more details in [Section 2.1](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#21-school-self-evaluation))
-
+Content description: This dataset lists all Italian institutes by institute code and stores for each institute self-evaluations for every criterion of the Esiti section ((see 2.1)[https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#21-school-self-evaluation])
 
 ### D2
 
@@ -115,7 +88,7 @@ MIUR, 27 September 2018, Certificazioni e documenti relativi alla sicurezza, ele
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: This datasets lists for every school's building information about its certifications (described in detail in section XXX above <!-- Ricordarsi di cambiare questo -->
+Content description: This dataset provides the list of building safety certifications for each school in Italy. 
 
 ### D3
 
@@ -123,7 +96,7 @@ MiBACT, 10 November 2018 (modified), Luoghi della cultura, electronic dataset, G
 
 License: https://creativecommons.org/licenses/by/3.0/
 
-Content description: This dataset contains every cultural place of Italy giving out information about its location, identification and some of its services.
+Content description: This dataset lists all cultural institutions in Italy and provides information about their location, identification and services.
 
 ### D4.1 (auxiliary dataset)
 
@@ -139,24 +112,27 @@ MIUR, 22 June 2018, Informazioni anagrafiche scuole statali, electronic dataset,
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: This dataset lists for each school building its location information according to Geographical Area (North, Sud, Isles), Region, Province and Municipality.
+Content description: This dataset lists the location of each school building according to the geographical area (north, south, isles), region, province and municipality.
 
 ### D4.3 (auxiliary dataset)
 
-ISTAT, 01 February 2018, Principali statistiche geografiche sui comuni - Superfici delle unità amministrative, Istat Archive (Also accessible through sparql end point in istat open data website), https://www.istat.it/it/archivio/156224
+ISTAT, 01 February 2018, Principali statistiche geografiche sui comuni - Superfici delle unità amministrative, Istat Archive (also accessible through SPARQL endpoint on ISTAT open data portal), https://www.istat.it/it/archivio/156224
 
 License: https://www.istat.it/it/note-legali
 
-Content description: Istat, with the purpose to describe geographical characteristics of the territory, shares elaborations based on data collected in census surveys or other sources, that refers to the principal units of territory that interests official statistics. In this dataset it is reported the surface (in km^2 and ha) of Italy, its regions, provinces and municipalities.
+Content description: With the purpose of describing the geographical characteristics of the Italian territory, ISTAT shares elaborations based on data collected from surveys and other sources. This dataset reports the surface of Italy (in km^2 and ha), alongside with its regions, provinces and municipalities.
 
-### D5 (mashup)  <!-- Siamo sicuri di volerlo inserire qui? -->
+### D5 (mashup)
 
 Dataset: [dataset link]  
 Metadata: [metadata XML/RDF link]
 
-Content description:
+Content description: The dataset lists all Italian schools. For each school the following attributes are given: region, province, institute, name, address, buildings, evaluation.
+For each school building the dataset lists the available safety certificates.
 
-Metodology: The mashup of the datasets D1, D2, D4.2 was done semi-automatically through some python scripts, in particular using the Pandas library, that required the csv-version of the datasets. The script developed using pandas joined D4.2 and D2 through the keyword "CODICESCUOLA" and then again it joined the newly-created dataset with D1 through the keyword "CODICEISTITUTO". This version of D5 was called D5-alpha.
+Methodology: The mashup of datasets D1, D2, D4.2 was done semi-automatically using Python scripts and the library Pandas, which required a CSV version of the datasets as an input. The script developed using Pandas was able to align D2 and D4.2 through the property "CODICESCUOLA". The newly created dataset was then aligned with D1 through the property "CODICEISTITUTO". This version of D5 (in CSV format) was named D5-alpha.
+
+Here is the Python script developed:
 ```python
 import pandas as pd
 
@@ -168,15 +144,17 @@ def Aligner(source1,source2,nomeoutput,campo):
     aligned.to_csv(nomeoutput,index=False)
 ```
 
-After the semi-automatic mashup D5-alpha was edited because it still contained some unnecessary data. 
-Because D4.2 contained some items related to "Scuola dell'infanzia" that are not covered by the project, in D5-alpha these items have been removed. Then, other unnecessary fields have been removed and the headings of the csv have been modified in order to make it easier for the computation process (Explained [below](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#51-processing-data-through-computation))
+After the semi-automatic mashup, D5-alpha was edited to remove unnecessary data such as data related to "Scuola dell'infanzia", not covered by this project. Subsequently, the headings of the CSV dataset were modified in order to facilitate further computation processes (see [below](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#51-processing-data-through-computation))
 
-The final CSV dataset obtained was then transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), [GeoNames](https://www.geonames.org/), [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
+Finally, the CSV dataset obtained was transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to RDF properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), [GeoNames](https://www.geonames.org/), [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
 
 ## 4. Datasets analysis
 
 ### 4.1 Information quality
-_D1, D2 contengono solo il codice scuola ed è necessario ricorrere a D4.2 per disambiguare, il che ha poco senso. Se avessero voluto mantenere una forma di privacy non avrebbero dovuto pubblicare il dataset utile alla disambiguazione. A questo punto tanto valeva inserire direttamente il nome della scuola e la suddivisione in province nel dataset dell'autovalutazione_
+
+Dataset D1 and D2 features only school codes. It was necessary to use the auxiliary datset D4.2 in order to obtain school names. This choice does not appear as motivated by privacy issues as it was relatively easy to align school codes with school names. As such, MiUR could have easily and directly provided school names alongside with school codes without the need for users to spend tim disambiguate the codes.
+
+D3 
 
 _D3 è in formato open XML/RDF e contiene informazioni utili al fine della geolocalizzazione dei luoghi culturali, ben fatto a mio avviso_
 
@@ -194,7 +172,7 @@ _Nel dataset D3 e D4.3 le province della sardegna non sono state aggiornate seco
 
 
 
-### 4.2 Juridical analysis (privacy, licenses, purposes, etc.)
+### 4.2 Juridical and ethical analysis (privacy, licenses, purposes, etc.)
 
 #### Privacy
 
@@ -215,21 +193,18 @@ We propose three possibile solutions:
 2. Provide schools with pre-compiled questionnaire in place of guidelines;
 3. Check text semi-automatically before publication (most ideal in order not to loose interesting information, but also most expensive).
 
+
+_frequenza di aggiornamento dei dati, dati edilizia da poco aggiornati_
+
 #### Licenses
 
 D1, D2, D4.1 and D4.2 (MIUR) are licensed under the Italian Open Data License (IODL) v2.0, very similar to a CC-BY 4.0. Each dataset is accompanyed by a clear license declaration. However, the whole website is covered by a "All rights reserved" copyright statement, which does not explicitly mentions the exclusion of the contents accompanied by a IODL 2.0 license. 
 
 The metadata of D3 (MiBACT) do not specify a license e.g. by using the property `dcterms:license` (see http://dati.beniculturali.it/lodview/resource/datasetLuoghiDellaCultura.html). Information about licenses is featured in the website footer only. The dataset about "Luoghi culturali" is licensed under CC BY-SA 3.0, which requires attribution and share-alike.
 
-### 4.3 Ethical analysis
+### 4.3 Technical analysis (formats, metadata, URIs, provenance)
 
-_e qui? Se affrontiamo il problema della privacy sopra, cosa scriviamo? Ripetere oppure unire i due punti in una sezione "Analisi etico-giuridica?"_
-
-_frequenza di aggiornamento dei dati, dati edilizia da poco aggiornati_
-
-### 4.4 Technical analysis (formats, metadata, URIs, provenance)
-
-1. All the MIUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017.  
+1. All MiUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017.  
 Durations in CSV could be specified as a time interval according to the standard ISO_8601: YYYY-MM-DD/YYYY-MM-DD (e.g. 2016-09-01/2017-08-31).
 
 2. D1 features text in slovenian (slovenian schools in Friuli Venezia Giulia express their self-evaluation in slovenian rather than italian). Languages should be declared at least in the XML/RDF dataset as shown below.
@@ -242,7 +217,7 @@ Durations in CSV could be specified as a time interval according to the standard
 
 3. _nella versione XML/RDF dei dataset MIUR sono specificati vari namespace fra i quali dicat, ma nessuno di essi è effettivamente impiegato_
 
-4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in section 5.1
+4. In the MiUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in section 5.1
 
 ### 4.5 Updating the dataset over time
 
@@ -258,11 +233,12 @@ Durations in CSV could be specified as a time interval according to the standard
 
 ## 5. Visualization
 
-### 5.1 Processing data through computation
+### 5.1 Data processing
 
-Although the final dataset has been released on RDF format, the csv has been kept because of the further computation that have been done in order to gather the data that would be visualized.
+Although the final dataset has been released in RDF format, the CSV has also been made available on the project GitHub repository as it was used to extract the data needed in order to produce a visualization. 
 
-Python has been used in order to process the csv. Every row of the csv has been converted into a list of dictionaries with the help of the "csv" library that handles this kind of format:
+Python was used to process the CSV dataset. Each row of the CSV was converted into a list of dictionaries with the help of the "CSV" library:
+
 ```python
 def process_data(source_csv_file_path):
     import csv
@@ -274,14 +250,16 @@ def process_data(source_csv_file_path):
             data.append(x)
     return data
  ```
-and then we developed some algorithms in order to calculate percentages and extract particular data useful for the visualization. <!-- Potrei Parlare in particolare dei processi -->
+We then developed algorithms to calculate percentages and extract data specifically useful for the final visualization:
+
 ```python
 import json
 def ansia(data):
 	return None
 ```
 
-Once the final sub-datasets that were used for the computation were acquired, we used the "json" Python library to convert them into a json format as it was one of the inputs requested by the visualization library.
+Once the final sub-datasets that were used for computation were acquired, we used the JSON Python library to convert them into a json format as it was one of the inputs requested by the visualization library.
+
 ```python
 import json
 def jsonize(data,nome):
@@ -290,51 +268,48 @@ def jsonize(data,nome):
     risultatojson.write(json_data) #writes on the new file the converted data
 ```
 
+**Get latitude and longitude of schools from address:**
 
-**Get Latitude and Longitude of schools from address:**
+In order to get the latitude and longitude of schools knowing their addresses, we employed the following script: [address2latlon.py](https://github.com/sebucci/sebucci.github.io/blob/master/script/address2latlon.py)
 
-To do this we used the script: [address2latlon.py](https://github.com/sebucci/sebucci.github.io/blob/master/script/address2latlon.py)
+### 5.2 Handling the visualization (technical description)
 
-### 5.2 Handling visualization (technical description)
+In order to visualize the data the following libraries were used:
 
-In order to visualize data we used some libraries:
+* **Leaflet.js**: An open-source JavaScript library for mobile-friendly interactive maps.
+* **Chart.js**: Simple yet flexible JavaScript charting for designers and developers.
+* **Bootstrap**: Build responsive, mobile-first projects on the web with the world's most popular front-end component library.
 
-* **leaflet.js**: An open-source JavaScript library for mobile-friendly interactive maps.
-* **chart.js**: Simple yet flexible JavaScript charting for designers & developers.
-* **bootstrap**: Build responsive, mobile-first projects on the web with the world's most popular front-end component library.
+#### Steps
+
+1. Created the webpage using Github pages.
+2. Added the map using **leaflet.js**, and we added GeoJSON data (regions and provinces) to draw layers on it
+3. todo
+
+####Further information and licenses
 
 **Leaflet.js**
 
 * Code &copy; [BSD](https://github.com/Leaflet/Leaflet/blob/master/LICENSE)
 * Data &copy; [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) 
 
-* Using [Wikimedia Tile](https://foundation.wikimedia.org/wiki/Maps_Terms_of_Use) uses we are complying with [OpenStreetMap copyright policy](https://www.openstreetmap.org/copyright)
+* In making use of [Wikimedia Tile](https://foundation.wikimedia.org/wiki/Maps_Terms_of_Use) we comply with [OpenStreetMap copyright policy](https://www.openstreetmap.org/copyright).
 
 **OpenStreetMap** 
 
-Both **Wikimedia Tile** and **Leaflet** use Data from **OpenStreetMap** 
+Both **Wikimedia Tile** and **Leaflet** use data from **OpenStreetMap**.
 
 * Data &copy; [ODbL](https://www.openstreetmap.org/copyright)
 
-**GEOJSON**: With Leaflet is possible to draw polygons directly from geojson files:
+**GEOJSON**: Leaflet makes it possible to draw polygons directly from geojson files:
 
-* Regions: For drawing regions we have used data that we found in this [repository](https://github.com/stefanocudini/leaflet-geojson-selector/blob/master/examples/italy-regions.json).
+* Regions: To help us draw regions, data from [Stefano Cudini's repository](https://github.com/stefanocudini/leaflet-geojson-selector/blob/master/examples/italy-regions.json) were used.
 
-* Provinces: For drawing provinces we used data that we found in this [repository](https://github.com/Dataninja/geo-shapes/tree/master/italy/regions).
-**NOTE** For each region, we have a single json file containing the region. The provinces of Sardegna are not updated to 2017.
+* Provinces: To help us draw provinces, data from [Dataninja repository](https://github.com/Dataninja/geo-shapes/tree/master/italy/regions) were used.
+**N.B.** Each region is contained in a single json file, except for Sardegna provinces which were not updated to 2017. In order to handle this problem, we retrieved additional data from the ISTAT archive [CONFINI DELLE UNITÀ AMMINISTRATIVE A FINI STATISTICI AL 1 GENNAIO 2018](https://www.istat.it/it/archivio/222527), [CC BY 3.0](https://www.istat.it/it/note-legali).
 
-* Sardegna: For handling the problem listed above, we retrieved data from [CONFINI DELLE UNITÀ AMMINISTRATIVE A FINI STATISTICI AL 1 GENNAIO 2018](https://www.istat.it/it/archivio/222527). [CC BY 3.0](https://www.istat.it/it/note-legali)
+**Chart.js**
+For the visualization of school self-evaluation a specific bar chart was chosen ([MIT license](https://www.chartjs.org/docs/latest/notes/license.html)).
 
-#### Chart.js
-
-To visualize the percentages of self-evaluations we used a bar chart [MIT license](https://www.chartjs.org/docs/latest/notes/license.html).
-
-#### Bootstrap
-
+**Bootstrap**
 v4.1.3., Code &copy; MIT, Docs CC BY 3.0.
-
-#### Passages
-
-1. Created the webpage using Github pages.
-2. Added the map using **leaflet.js**, and we added GeoJSON data (regions and provinces) to draw layers on it
-3. todo
