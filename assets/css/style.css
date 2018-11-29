@@ -24,6 +24,6 @@ footer.footer {
   background-color: #f5f5f5;
 }
 
-#txtConstructionMean::after {
-  content: " %";
+img.traffic-light {
+  width: 40px
 }

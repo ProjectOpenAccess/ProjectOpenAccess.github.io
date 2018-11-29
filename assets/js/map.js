@@ -43,6 +43,8 @@ var Thunderforest_SpinalMap = L.tileLayer('https://{s}.tile.thunderforest.com/sp
 
 $('#txt_selected').text('Italy')
 
+updateMeanItaly()
+
 // Add tile
 mymap.addLayer(Wikimedia)
 
@@ -141,6 +143,7 @@ region_layer.on('click', function (e) {
 
   // Update chart
   updateChartRegion(region_name)
+  updateMeanRegion(region_name)
 
   // Add province layer
   switch (region_name) {
@@ -304,11 +307,20 @@ function handleProvinceClick(e) {
   // Get province name
   let province_name = e.layer.feature.properties.NOME_PRO
 
+  if (province_name == "REGGIO NELL'EMILIA")
+    province_name = "REGGIO EMILIA"
+
+  if (province_name == "REGGIO DI CALABRIA")
+    province_name = "REGGIO CALABRIA"
+
   $('#txt_selected').text(province_name)
   updateChartProvince(province_name)
+  updateMeanProvince(province_name)
 
   if (province_name == 'BOLOGNA')
     showBolognaSchools()
+
+
 
 
   // Move bounds to province
@@ -319,12 +331,7 @@ function handleProvinceClick(e) {
  * 
  */
 function reset() {
-  // Select Italy
-  $('#txt_selected').text('Italy')
-  removeProvinceLayer()
-  mymap.setView([41.459, 12.700], 6)
-
-  updateChartItaly()
+  selectItaly()
 }
 
 /**
@@ -381,3 +388,107 @@ $(document).ready(function () {
     reset()
   })
 })
+
+function updateMeanItaly() {
+
+  let url_mean_italy = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/Json/mediaediliziaitalia.json'
+
+  $.ajax({
+      url: url_mean_italy,
+    })
+
+    .done(function (rows) {
+
+      rows = JSON.parse(rows)
+
+      let mean = Number(rows[0].perc).toFixed(2)
+
+      $('#txtConstructionMean').html(`<img class="traffic-light" src="${getRightTrafficLight(mean)}" />`)
+    })
+}
+
+function updateMeanRegion(region_name) {
+
+  let url_mean_region = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/Json/mediaediliziaregione.json'
+
+  $.ajax({
+      url: url_mean_region,
+    })
+
+    .done(function (rows) {
+
+      rows = JSON.parse(rows)
+
+      let mean
+
+      for (let region of rows) {
+        if (region['regione'] == region_name)
+          mean = Number(region['mediaperc']).toFixed(2)
+      }
+
+      $('#txtConstructionMean').html(`<img class="traffic-light" src="${getRightTrafficLight(mean)}" />`)
+    })
+}
+
+function updateMeanProvince(province_name) {
+
+  let url_mean_province = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/Json/mediaediliziaprovincia.json'
+
+  $.ajax({
+      url: url_mean_province,
+    })
+
+    .done(function (rows) {
+
+      rows = JSON.parse(rows)
+
+      let mean
+
+      for (let province of rows) {
+        if (province['provincia'] == province_name.toLowerCase())
+          mean = Number(province['mediaperc']).toFixed(2)
+      }
+
+      $('#txtConstructionMean').html(`<img class="traffic-light" src="${getRightTrafficLight(mean)}" />`)
+    })
+}
+
+function selectItaly() {
+  // Update text
+  $('#txt_selected').text('Italy')
+
+  // Set view
+  mymap.setView([41.459, 12.700], 6)
+
+  // Remove province
+  removeProvinceLayer()
+
+  // UpdateChartItaly
+  updateChartItaly()
+
+  // UpdateMeanItaly
+  updateMeanItaly()
+}
+
+function getRightTrafficLight(number) {
+
+  let suffix = "assets/images/traffic-light-solid"
+  let appendix = ".svg"
+
+  let colors = {
+    yellow: 'giallo',
+    red: 'rosso',
+    green: 'verde'
+  }
+
+  number = Number(number).toFixed(1)
+
+  if (number > 0 && number <= 33.3)
+    return suffix + colors.red + appendix
+
+  if (number > 33.3 && number <= 66.6)
+    return suffix + colors.yellow + appendix
+
+  if (number > 66.6 && number <= 100)
+    return suffix + colors.green + appendix
+}
