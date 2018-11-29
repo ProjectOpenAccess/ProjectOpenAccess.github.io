@@ -1,11 +1,14 @@
 TO DO
 Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo.
 Scrivere criteri che abbiamo usato per rappresentare le percentuali edilizie/numero di cultural institutes
- 
+Ripristinare punto bruno in e governance
+Togliere doppio testo e governance
+Creare bibliografia
+An etica: rispetto a dataset originale usate percentuali per le certificazioni dell'edilizia per non fare vedere esattamente che certificato manca
+Compilazioni ambigue in dataset edilizia es. non richiesto e vuoto
+Riferimento a legge open data
 
-
-
-# School self-evaluation, building certifications and cultural institutes: what relationship?
+ # School self-evaluation, building certifications and cultural institutes: what relationship?
 
 Francesca Giovannetti  
 Bruno Sartini  
@@ -64,26 +67,6 @@ In the context of E-Governance, SEBuCCI might play a role in:
 
 - helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.  
 
-### 2.2 E-Governance Connotation
-
-In the context of E-Governance, SEBuCCI might play a role in:
-
-- promoting debate among citizens, who could press municipalities for an increase of the presence of cultural institutions such as libraries in the areas where these are not available.
-
-- helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.  
-
-
-### 1.1 Why SEBuCCI?
-
-School self-evaluation is a process of internal school review carried out by the teachers every year. The teachers assign
-
-The italian Ministry of Education, University and Research (MIUR) makes available yearly datasets of school self-evaluations. The datasets feature grades and free-text explanations for each grade. 
-
-However, 1328 schools chose not to give any explanations ('Motivazioni non dichiarate'), 6 schools filled the form with a single full-stop ('.'). 
-
-Notwithstanding the presence of explanations, the reasons behind school grades are not clear-cut. Schools tend to describe the activities carried out during the academic year, with little explanation on how such activities may have had an impact on their performance. Similarly, schools provide statistics about students performance without discussing the underlying reasons. 
-
-<!-- Dovremmo scrivere più informazioni sul why -->
 
 ### 1.2 The SEBuCCI rationale
 
