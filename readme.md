@@ -106,7 +106,7 @@ MIUR, 13 February 2018, Autovalutazione della scuola sezione Esiti. Scuola stata
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: This dataset lists the institutes by their institute codes and it stores for each institute the self-evaluation for every criterium in the Esiti section (more details in [Section 2.1] (https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#21-school-self-evaluation)
+Content description: This dataset lists the institutes by their institute codes and it stores for each institute the self-evaluation for every criterium in the Esiti section (more details in [Section 2.1](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#21-school-self-evaluation))
 
 
 ### D2
