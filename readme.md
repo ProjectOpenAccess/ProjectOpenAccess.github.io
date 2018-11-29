@@ -2,7 +2,6 @@ TO DO
 Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo.
 Scrivere criteri che abbiamo usato per rappresentare le percentuali edilizie/numero di cultural institutes
 Ripristinare punto bruno in e governance
-Togliere doppio testo e governance
 Creare bibliografia
 An etica: rispetto a dataset originale usate percentuali per le certificazioni dell'edilizia per non fare vedere esattamente che certificato manca
 Compilazioni ambigue in dataset edilizia es. non richiesto e vuoto
@@ -59,7 +58,7 @@ SEBuCCI aligns school self-evaluations with school safety certificates to find o
 
 SEBuCCI makes also use of the open dataset of 'Luoghi culturali' (Cultural institutions) published by MiBACT (Italian Ministry of Cultural Heritage and Activities) to identify and locate cultural institutions and their proximity to schools in Italy. 
 
-### 2.3 E-Governance
+### 2.3 How SEBuCCI may contribute to E-Governance
 
 In the context of E-Governance, SEBuCCI might play a role in:
 
