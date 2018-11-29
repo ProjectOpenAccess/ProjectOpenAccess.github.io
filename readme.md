@@ -6,10 +6,11 @@ Gianmarco Spinaci
 
 ## 1. Introduction
 
-Italian scholastic system and its comparison with the European standard is a hot topic of discussion in the last few years in Italy. <!-- Se vogliamo mettere qualche referenza di articoli di giornale sarebbe utile, però vediamo --> 
-Alongside the discussion about this topic, another important aspects that has been talked about it the quality of the structures that hosts the schools. 
-Moreover, Italy is known for its rich cultural heritage that is now stored and available in cultural institutions such as libraries and museums.
-The dialogue and collaboration between schools and these entities its fundamental to connect the young generation to this cultural richess.
+In recent years, Italy's school system has become a hot topic. The Italian education system is often put in comparison with other European education systems, for example in terms of fundings and student performance (see articles on the topic by (Il Sole 24 ORE)[https://www.ilsole24ore.com/art/notizie/2017-08-29/italia-terzultima-europa-spesa-istruzione-germania-spende-doppio-190050.shtml?uuid=AE8jEVJC] and (Repubblica)[https://www.repubblica.it/scuola/2016/12/06/news/ocse_scuola_studenti_nord_e_sud-153559264/].   
+
+Another much debated topic is school safety. In 2016, about 44 structural failures and collapses in Italian schools were registered (see (Corriere della Sera)[https://www.corriere.it/scuola/medie/17_novembre_22/edilizia-scolastica-44-crolli-all-anno-miur-piu-due-miliardi-arrivo-ce09130a-cf75-11e7-a1da-9278adb4d756.shtml]).
+
+On the positive side, Italy is known all over the world for its rich cultural heritage. Collaboration between cultural institutions and schools is crucial in order to build a connection between the youngest generations and the cultural richness of their country. 
 
 But does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact the way schools evaluate their teaching performance? Do building certifications also play a role in school self-evaluation?
 
