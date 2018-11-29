@@ -1,5 +1,7 @@
 TO DO
-Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo. 
+Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo.
+Scrivere criteri che abbiamo usato per rappresentare le percentuali edilizie/numero di cultural institutes
+ 
 
 
 
