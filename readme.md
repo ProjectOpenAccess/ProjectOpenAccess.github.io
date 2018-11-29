@@ -6,6 +6,7 @@ Creare bibliografia
 An etica: rispetto a dataset originale usate percentuali per le certificazioni dell'edilizia per non fare vedere esattamente che certificato manca
 Compilazioni ambigue in dataset edilizia es. non richiesto e vuoto
 Riferimento a legge open data
+Inserire link dataset 
 
  # School self-evaluation, building certifications and cultural institutes: what relationship?
 
@@ -82,14 +83,13 @@ License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
 Content description: This dataset lists all Italian institutes by institute code and stores for each institute self-evaluations for every criterion of the Esiti section ((see 2.1)[https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#21-school-self-evaluation])
 
-
 ### D2
 
 MIUR, 27 September 2018, Certificazioni e documenti relativi alla sicurezza, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0280EDICONSICUREZZASTA
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: This datasets lists for every school's building information about its certifications (described in detail in section XXX above <!-- Ricordarsi di cambiare questo -->
+Content description: This dataset provides the list of building safety certifications for each school in Italy. 
 
 ### D3
 
@@ -97,7 +97,7 @@ MiBACT, 10 November 2018 (modified), Luoghi della cultura, electronic dataset, G
 
 License: https://creativecommons.org/licenses/by/3.0/
 
-Content description: This dataset contains every cultural place of Italy giving out information about its location, identification and some of its services.
+Content description: This dataset lists all cultural institutions in Italy and provides information about their location, identification and services.
 
 ### D4.1 (auxiliary dataset)
 
@@ -113,24 +113,27 @@ MIUR, 22 June 2018, Informazioni anagrafiche scuole statali, electronic dataset,
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: This dataset lists for each school building its location information according to Geographical Area (North, Sud, Isles), Region, Province and Municipality.
+Content description: This dataset lists the location of each school building according to the geographical area (north, south, isles), region, province and municipality.
 
 ### D4.3 (auxiliary dataset)
 
-ISTAT, 01 February 2018, Principali statistiche geografiche sui comuni - Superfici delle unità amministrative, Istat Archive (Also accessible through sparql end point in istat open data website), https://www.istat.it/it/archivio/156224
+ISTAT, 01 February 2018, Principali statistiche geografiche sui comuni - Superfici delle unità amministrative, Istat Archive (also accessible through SPARQL endpoint on ISTAT open data portal), https://www.istat.it/it/archivio/156224
 
 License: https://www.istat.it/it/note-legali
 
-Content description: Istat, with the purpose to describe geographical characteristics of the territory, shares elaborations based on data collected in census surveys or other sources, that refers to the principal units of territory that interests official statistics. In this dataset it is reported the surface (in km^2 and ha) of Italy, its regions, provinces and municipalities.
+Content description: With the purpose of describing the geographical characteristics of the Italian territory, ISTAT shares elaborations based on data collected from surveys and other sources. This dataset reports the surface of Italy (in km^2 and ha), alongside with its regions, provinces and municipalities.
 
-### D5 (mashup)  <!-- Siamo sicuri di volerlo inserire qui? -->
+### D5 (mashup)
 
 Dataset: [dataset link]  
 Metadata: [metadata XML/RDF link]
 
-Content description:
+Content description: The dataset lists all Italian schools. For each school the following attributes are given: region, province, institute, name, address, buildings, evaluation.
+For each school building the dataset lists the available safety certificates.
 
-Metodology: The mashup of the datasets D1, D2, D4.2 was done semi-automatically through some python scripts, in particular using the Pandas library, that required the csv-version of the datasets. The script developed using pandas joined D4.2 and D2 through the keyword "CODICESCUOLA" and then again it joined the newly-created dataset with D1 through the keyword "CODICEISTITUTO". This version of D5 was called D5-alpha.
+Methodology: The mashup of datasets D1, D2, D4.2 was done semi-automatically using Python scripts and the library Pandas, which required a CSV version of the datasets as an input. The script developed using Pandas was able to align D2 and D4.2 through the property "CODICESCUOLA". The newly created dataset was then aligned with D1 through the property "CODICEISTITUTO". This version of D5 (in CSV format) was named D5-alpha.
+
+Here is the Python script developed:
 ```python
 import pandas as pd
 
@@ -142,10 +145,9 @@ def Aligner(source1,source2,nomeoutput,campo):
     aligned.to_csv(nomeoutput,index=False)
 ```
 
-After the semi-automatic mashup D5-alpha was edited because it still contained some unnecessary data. 
-Because D4.2 contained some items related to "Scuola dell'infanzia" that are not covered by the project, in D5-alpha these items have been removed. Then, other unnecessary fields have been removed and the headings of the csv have been modified in order to make it easier for the computation process (Explained [below](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#51-processing-data-through-computation))
+After the semi-automatic mashup, D5-alpha was edited to remove unnecessary data such as data related to "Scuola dell'infanzia", not covered by this project. Subsequently, the headings of the CSV dataset were modified in order to facilitate further computation processes (see [below](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#51-processing-data-through-computation))
 
-The final CSV dataset obtained was then transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), [GeoNames](https://www.geonames.org/), [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
+Finally, the CSV dataset obtained was transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to RDF properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), [GeoNames](https://www.geonames.org/), [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
 
 ## 4. Datasets analysis
 
