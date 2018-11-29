@@ -1,3 +1,10 @@
+TO DO
+Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo.
+Scrivere criteri che abbiamo usato per rappresentare le percentuali edilizie/numero di cultural institutes
+ 
+
+
+
 # School self-evaluation, building certifications and cultural institutes: what relationship?
 
 Francesca Giovannetti  
@@ -6,16 +13,69 @@ Gianmarco Spinaci
 
 ## 1. Introduction
 
-Italian scholastic system and its comparison with the European standard is a hot topic of discussion in the last few years in Italy. <!-- Se vogliamo mettere qualche referenza di articoli di giornale sarebbe utile, però vediamo --> 
-Alongside the discussion about this topic, another important aspects that has been talked about it the quality of the structures that hosts the schools. 
-Moreover, Italy is known for its rich cultural heritage that is now stored and available in cultural institutions such as libraries and museums.
-The dialogue and collaboration between schools and these entities its fundamental to connect the young generation to this cultural richess.
+In recent years, Italy's school system has become a hot topic. The Italian education system is often put in comparison with other European education systems, for example in terms of fundings and student performance (see articles by (Il Sole 24 ORE)[https://www.ilsole24ore.com/art/notizie/2017-08-29/italia-terzultima-europa-spesa-istruzione-germania-spende-doppio-190050.shtml?uuid=AE8jEVJC] and (Repubblica)[https://www.repubblica.it/scuola/2016/12/06/news/ocse_scuola_studenti_nord_e_sud-153559264/].   
 
-But does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact the way schools evaluate their teaching performance? Do building certifications also play a role in school self-evaluation?
+Another much debated topic is school safety. In 2016, about 44 structural failures and collapses in Italian schools were registered (see (Corriere della Sera)[https://www.corriere.it/scuola/medie/17_novembre_22/edilizia-scolastica-44-crolli-all-anno-miur-piu-due-miliardi-arrivo-ce09130a-cf75-11e7-a1da-9278adb4d756.shtml]).
 
-This project will look at school self-evaluations from a particular perspective to find out whether the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance. Because of these topics, we decided to call it SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
+On the positive side, Italy is known all over the world for its rich cultural heritage. Collaboration between cultural institutions and schools is crucial in order to build a connection between the youngest generations and the cultural richness of their country. 
 
-### 1.1 Why
+In this light, two questions naturally arise:
+1. Does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact the way schools evaluate their teaching performance? 
+2. Do building certifications also play a role in school self-evaluation?
+
+This project will look at school self-evaluations from a particular perspective to find out whether the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance. Because of the topics it deals with, we named the project SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
+
+## 2. Application scenario
+
+SEBuCCI aligns data from different sources in order to achieve the objective of gaining insight, thanks to data, into school self-evaluations. In particular SEBuCCI looks at the availability or absence of school safety certifications and cultural institutions, such as libraries and museums, as possible reasons behind school self-evaluation results. 
+
+### 2.1 School self-evaluation
+
+School self-evaluation is a reflective process of internal school review. Every year, italian schools are required to assess themselves on the basis of 11 criteria.
+
+Schools follow a provided list of questions on the basis of which assign themselves a grade for each criteron according to a 1-7 scale:
+- 1 = Extremely critical
+- 3 = Moderately critical
+- 5 = Positive
+- 7 = Excellent
+
+The results are grouped into two main sections:
+
+- Esiti (Evaluations): revolving around student results (criteria 21-24);
+- Processi (Processes): revolving around school activities (criteria 31-37).
+
+SEBuCCI focuses on criterion 21 'Risultati Scolastici' (Overall student performance) as it is particularly relevant to the aim of the project. We expected that, among all, student performance would be the most affected by closeness to cultural institutions and safety of school buildings. 
+
+### 2.2 The data
+
+Every year, MiUR (Italian Ministry of Education, University and Research) makes available the open datasets containing the results of school self-evaluations. Specifically, the datasets feature assigned grades and textual explanations for the grades. 
+
+MiUR also publishes irregular updates on school safety certificates as open data. 
+
+SEBuCCI aligns school self-evaluations with school safety certificates to find out if there is a trend (i.e. highest grades when certificates are in accordance with applicable law). 
+
+SEBuCCI makes also use of the open dataset of 'Luoghi culturali' (Cultural institutions) published by MiBACT (Italian Ministry of Cultural Heritage and Activities) to identify and locate cultural institutions and their proximity to schools in Italy. 
+
+### 2.3 E-Governance
+
+In the context of E-Governance, SEBuCCI might play a role in:
+
+- promoting debate among citizens, who could press municipalities for an increase of the presence of cultural institutions such as libraries in the areas where these are not available.
+
+- helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.  
+
+### 2.2 E-Governance Connotation
+
+In the context of E-Governance, SEBuCCI might play a role in:
+
+- promoting debate among citizens, who could press municipalities for an increase of the presence of cultural institutions such as libraries in the areas where these are not available.
+
+- helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.  
+
+
+### 1.1 Why SEBuCCI?
+
+School self-evaluation is a process of internal school review carried out by the teachers every year. The teachers assign
 
 The italian Ministry of Education, University and Research (MIUR) makes available yearly datasets of school self-evaluations. The datasets feature grades and free-text explanations for each grade. 
 
@@ -25,44 +85,18 @@ Notwithstanding the presence of explanations, the reasons behind school grades a
 
 <!-- Dovremmo scrivere più informazioni sul why -->
 
-### 1.2 What
+### 1.2 The SEBuCCI rationale
 
-The aim of this project is to gain insight into the reasons behind the result of school self-evaluations through data, in order to find out whether building certifications and nearby cultural institutions affect the results in school evaluations. 
+
+
+The aim of this project is to gain insight -  through data - into the reasons behind the result of school self-evaluations, in order to find out whether building certifications and nearby cultural institutions affect the results of school evaluations.
 
 In order to achieve this, the project aligns 1) the results of school evaluation for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
 
 The result would be a an Explorable map that is able to represent all of the aspects reported above for each singular school in our territory. <!-- Più cose da scrivere anche nella mappa finale, magari non nel dettaglio come nella visualization però comunque un qualcosa di più corposo -->
 
 The datasets used for this experiment come from MIUR (italian Ministry of Education, University and Research) and MiBACT (italian Ministry of Cultural Heritage and Activities). 
- 
 
-## 2. Application scenario
-
-### 2.1 Self-evaluation
-
-School self-evaluation is a reflective process of internal school review. Every year, italian schools are required to assess themselves on the basis of 11 criteria: these criteria are then grouped into two sections:
-
-- "Esiti" (Evaluations): The topics of these criteria (21-24) all revolve around the students results.
-- "Processi" (Processes): The topics of these criteria (31-37) all revolve around the activities that take place into the schools.
-
-Among them, we decided to focus on the criterium 21, which is "Risultati Scolastici" (Overall student performance) because it seemed to be the most concrete of them all and the most relevant to our initial thesis.
-
-The schools are guided by a list of questions and assign themselves grades according to a 1-7 scale:
-- 1 = Extremely critical
-- 3 = Moderately critical
-- 5 = Positive
-- 7 = Excellent
-
-
-### 2.2 E-Governance Connotation
-
-In the context of E-Governance, SEBuCCI might have impact on different sides:
-
-- It could create a debate where the citizens, realizing the connotation between the presence of cultural institutes and the evaluation of the school (in particular the students results), could solicit the municipal institution to increase the presence of these institutes nearby schools by investing more on these fields.
-
-- It would help the school themselves to acknowledge the presence of cultural institutions near them to organize more projects, visits, and collaborate with them in some activities by involving the students in order to create a bond between the young population and these cultural entities. 
-
-- The dataset released alongside our visualization can be reused to highlight other particular topics of interest that may have impact on other E-governance discussions.
 
 ## 3. Original datasets and mashup
 
@@ -123,6 +157,16 @@ Metadata: [metadata XML/RDF link]
 Content description:
 
 Metodology: The mashup of the datasets D1, D2, D4.2 was done semi-automatically through some python scripts, in particular using the Pandas library, that required the csv-version of the datasets. The script developed using pandas joined D4.2 and D2 through the keyword "CODICESCUOLA" and then again it joined the newly-created dataset with D1 through the keyword "CODICEISTITUTO". This version of D5 was called D5-alpha.
+```python
+import pandas as pd
+
+
+def Aligner(source1,source2,nomeoutput,campo):
+    a = pd.read_csv(source1,encoding='utf-8')
+    b = pd.read_csv(source2,encoding='utf-8')
+    aligned = a.merge(b, on=campo)
+    aligned.to_csv(nomeoutput,index=False)
+```
 
 After the semi-automatic mashup D5-alpha was edited because it still contained some unnecessary data. 
 Because D4.2 contained some items related to "Scuola dell'infanzia" that are not covered by the project, in D5-alpha these items have been removed. Then, other unnecessary fields have been removed and the headings of the csv have been modified in order to make it easier for the computation process (Explained in section 5)
@@ -198,7 +242,7 @@ Durations in CSV could be specified as a time interval according to the standard
 
 3. _nella versione XML/RDF dei dataset MIUR sono specificati vari namespace fra i quali dicat, ma nessuno di essi è effettivamente impiegato_
 
-4. 
+4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" (https://docs.python.org/2/library/codecs.html#encodings-and-unicode). An example of a script using that encoding can be seen in section 5.1
 
 ### 4.5 Updating the dataset over time
 
@@ -209,6 +253,7 @@ Durations in CSV could be specified as a time interval according to the standard
 | D1, D2, D4.1, D4.2 / Column A | Ambiguous date format used | 1.5 | Syntax | Adopt ISO 8601 date format |
 | D1 | Indirect information about individuals | 3 | Semantics, Privacy | Remove information |
 | D3, D4.3 | Incorrect information about Sardinia's provinces | 2.5 | Outdated content | Combination of manual and automatic methods to redistribute data in the correct provinces |
+| D1 | Encoding of the dataset not specified | 2 | Technical | Include a note on the download page of the dataset stating its encoding |
    
 
 ## 5. Visualization
@@ -217,9 +262,34 @@ Durations in CSV could be specified as a time interval according to the standard
 
 Although the final dataset has been released on RDF format, the csv has been kept because of the further computation that have been done in order to gather the data that would be visualized.
 
-Python has been used in order to process the csv. Every row of the csv has been converted into a list of dictionaries and then we developed some algorithms in order to calculate percentages and extract particular data useful for the visualization. <!-- Potrei Parlare in particolare dei processi -->
+Python has been used in order to process the csv. Every row of the csv has been converted into a list of dictionaries with the help of the "csv" library that handles this kind of format:
+```python
+def process_data(source_csv_file_path):
+    import csv
+    data = list()
+    with open(source_csv_file_path, 'r', encoding='utf-8-sig') as test:  #Notice the utf-8-sig
+        processed_data = csv.DictReader(test, delimiter=',')
+        for x in processed_data:
+            x = dict(x)
+            data.append(x)
+    return data
+ ```
+and then we developed some algorithms in order to calculate percentages and extract particular data useful for the visualization. <!-- Potrei Parlare in particolare dei processi -->
+```python
+import json
+def ansia(data):
+	return None
+```
 
 Once the final sub-datasets that were used for the computation were acquired, we used the "json" Python library to convert them into a json format as it was one of the inputs requested by the visualization library.
+```python
+import json
+def jsonize(data,nome):
+    risultatojson = open(nome+".json", "w+")  #automatically creates a json file with the name specified in the input
+    json_data = json.dumps(data)  #converts the data into json format
+    risultatojson.write(json_data) #writes on the new file the converted data
+```
+
 
 **Get Latitude and Longitude of schools from address:**
 
