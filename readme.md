@@ -233,7 +233,7 @@ Durations in CSV could be specified as a time interval according to the standard
 
 ## 5. Visualization
 
-### 5.1 Processing data through computation
+### 5.1 Data processing
 
 Although the final dataset has been released in RDF format, the CSV has also been made available on the project GitHub repository as it was used to extract the data needed in order to produce a visualization. 
 
@@ -268,12 +268,11 @@ def jsonize(data,nome):
     risultatojson.write(json_data) #writes on the new file the converted data
 ```
 
-
 **Get latitude and longitude of schools from address:**
 
-In order to get the latitude and longitude of schools knowingg their address we employed the following script: [address2latlon.py](https://github.com/sebucci/sebucci.github.io/blob/master/script/address2latlon.py)
+In order to get the latitude and longitude of schools knowing their addresses, we employed the following script: [address2latlon.py](https://github.com/sebucci/sebucci.github.io/blob/master/script/address2latlon.py)
 
-### 5.2 Handling visualization (technical description)
+### 5.2 Handling the visualization (technical description)
 
 In order to visualize the data the following libraries were used:
 
@@ -281,38 +280,36 @@ In order to visualize the data the following libraries were used:
 * **Chart.js**: Simple yet flexible JavaScript charting for designers and developers.
 * **Bootstrap**: Build responsive, mobile-first projects on the web with the world's most popular front-end component library.
 
+#### Steps
+
+1. Created the webpage using Github pages.
+2. Added the map using **leaflet.js**, and we added GeoJSON data (regions and provinces) to draw layers on it
+3. todo
+
+####Further information and licenses
+
 **Leaflet.js**
 
 * Code &copy; [BSD](https://github.com/Leaflet/Leaflet/blob/master/LICENSE)
 * Data &copy; [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) 
 
-* Using [Wikimedia Tile](https://foundation.wikimedia.org/wiki/Maps_Terms_of_Use) uses we are complying with [OpenStreetMap copyright policy](https://www.openstreetmap.org/copyright)
+* In making use of [Wikimedia Tile](https://foundation.wikimedia.org/wiki/Maps_Terms_of_Use) we comply with [OpenStreetMap copyright policy](https://www.openstreetmap.org/copyright).
 
 **OpenStreetMap** 
 
-Both **Wikimedia Tile** and **Leaflet** use Data from **OpenStreetMap** 
+Both **Wikimedia Tile** and **Leaflet** use data from **OpenStreetMap**.
 
 * Data &copy; [ODbL](https://www.openstreetmap.org/copyright)
 
-**GEOJSON**: With Leaflet is possible to draw polygons directly from geojson files:
+**GEOJSON**: Leaflet makes it possible to draw polygons directly from geojson files:
 
-* Regions: For drawing regions we have used data that we found in this [repository](https://github.com/stefanocudini/leaflet-geojson-selector/blob/master/examples/italy-regions.json).
+* Regions: To help us draw regions, data from [Stefano Cudini's repository](https://github.com/stefanocudini/leaflet-geojson-selector/blob/master/examples/italy-regions.json) were used.
 
-* Provinces: For drawing provinces we used data that we found in this [repository](https://github.com/Dataninja/geo-shapes/tree/master/italy/regions).
-**NOTE** For each region, we have a single json file containing the region. The provinces of Sardegna are not updated to 2017.
+* Provinces: To help us draw provinces, data from [Dataninja repository](https://github.com/Dataninja/geo-shapes/tree/master/italy/regions) were used.
+**N.B.** Each region is contained in a single json file, except for Sardegna provinces which were not updated to 2017. In order to handle this problem, we retrieved additional data from the ISTAT archive [CONFINI DELLE UNITÀ AMMINISTRATIVE A FINI STATISTICI AL 1 GENNAIO 2018](https://www.istat.it/it/archivio/222527), [CC BY 3.0](https://www.istat.it/it/note-legali).
 
-* Sardegna: For handling the problem listed above, we retrieved data from [CONFINI DELLE UNITÀ AMMINISTRATIVE A FINI STATISTICI AL 1 GENNAIO 2018](https://www.istat.it/it/archivio/222527). [CC BY 3.0](https://www.istat.it/it/note-legali)
+**Chart.js**
+For the visualization of school self-evaluation a specific bar chart was chosen ([MIT license](https://www.chartjs.org/docs/latest/notes/license.html)).
 
-#### Chart.js
-
-To visualize the percentages of self-evaluations we used a bar chart [MIT license](https://www.chartjs.org/docs/latest/notes/license.html).
-
-#### Bootstrap
-
+**Bootstrap**
 v4.1.3., Code &copy; MIT, Docs CC BY 3.0.
-
-#### Passages
-
-1. Created the webpage using Github pages.
-2. Added the map using **leaflet.js**, and we added GeoJSON data (regions and provinces) to draw layers on it
-3. todo
