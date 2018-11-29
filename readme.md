@@ -1,3 +1,8 @@
+TO DO
+Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo. 
+
+
+
 # School self-evaluation, building certifications and cultural institutes: what relationship?
 
 Francesca Giovannetti  
@@ -20,29 +25,24 @@ This project will look at school self-evaluations from a particular perspective 
 
 ## 2. Application scenario
 
-SEBuCCI aligns data from different sources in order to achieve the objective of gaining insight, thanks to data, into school self-evaluations. In particular SEBuCCI looks at the availability or absence of school safety certifications and cultural institutions such as libraries and museums as possible reasons behind school self-evaluation results. 
+SEBuCCI aligns data from different sources in order to achieve the objective of gaining insight, thanks to data, into school self-evaluations. In particular SEBuCCI looks at the availability or absence of school safety certifications and cultural institutions, such as libraries and museums, as possible reasons behind school self-evaluation results. 
 
+### 2.1 School self-evaluation
 
+School self-evaluation is a reflective process of internal school review. Every year, italian schools are required to assess themselves on the basis of 11 criteria.
 
-
-
-
-
-### 2.1 Self-evaluation
-
-School self-evaluation is a reflective process of internal school review. Every year, italian schools are required to assess themselves on the basis of 11 criteria, which are then grouped into two sections:
-
-- "Esiti" (Evaluations): The topics of these criteria (21-24) all revolve around the students results.
-- "Processi" (Processes): The topics of these criteria (31-37) all revolve around the activities that take place into the schools.
-
-Among them, we decided to focus on the criterium 21, which is "Risultati Scolastici" (Overall student performance) because it seemed to be the most concrete of them all and the most relevant to our initial thesis.
-
-The schools are guided by a list of questions and assign themselves grades according to a 1-7 scale:
+Schools follow a provided list of questions on the basis of which assign themselves a grade for each criteron according to a 1-7 scale:
 - 1 = Extremely critical
 - 3 = Moderately critical
 - 5 = Positive
 - 7 = Excellent
 
+The results are grouped into two main sections:
+
+- Esiti (Evaluations): revolving around student results (criteria 21-24);
+- Processi (Processes): revolving around school activities (criteria 31-37).
+
+SEBuCCI focuses on criterion 21 'Risultati Scolastici' (Overall student performance) as it is particularly relevant to the aim of the project. We expected that, among all, student performance would be the most affected by closeness to cultural institutions and safety of school buildings. 
 
 ### 2.2 E-Governance Connotation
 
