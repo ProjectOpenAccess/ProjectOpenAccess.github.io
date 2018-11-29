@@ -1,7 +1,6 @@
 TO DO
 Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo.
 Scrivere criteri che abbiamo usato per rappresentare le percentuali edilizie/numero di cultural institutes
-Ripristinare punto bruno in e governance
 Creare bibliografia
 An etica: rispetto a dataset originale usate percentuali per le certificazioni dell'edilizia per non fare vedere esattamente che certificato manca
 Compilazioni ambigue in dataset edilizia es. non richiesto e vuoto
@@ -152,7 +151,10 @@ Finally, the CSV dataset obtained was transformed into a RDF dataset through an 
 ## 4. Datasets analysis
 
 ### 4.1 Information quality
-_D1, D2 contengono solo il codice scuola ed è necessario ricorrere a D4.2 per disambiguare, il che ha poco senso. Se avessero voluto mantenere una forma di privacy non avrebbero dovuto pubblicare il dataset utile alla disambiguazione. A questo punto tanto valeva inserire direttamente il nome della scuola e la suddivisione in province nel dataset dell'autovalutazione_
+
+Dataset D1 and D2 features only school codes. It was necessary to use the auxiliary datset D4.2 in order to obtain school names. This choice does not appear as motivated by privacy issues as it was relatively easy to align school codes with school names. As such, MiUR could have easily and directly provided school names alongside with school codes without the need for users to spend tim disambiguate the codes.
+
+D3 
 
 _D3 è in formato open XML/RDF e contiene informazioni utili al fine della geolocalizzazione dei luoghi culturali, ben fatto a mio avviso_
 
@@ -170,7 +172,7 @@ _Nel dataset D3 e D4.3 le province della sardegna non sono state aggiornate seco
 
 
 
-### 4.2 Juridical analysis (privacy, licenses, purposes, etc.)
+### 4.2 Juridical and ethical analysis (privacy, licenses, purposes, etc.)
 
 #### Privacy
 
@@ -191,21 +193,18 @@ We propose three possibile solutions:
 2. Provide schools with pre-compiled questionnaire in place of guidelines;
 3. Check text semi-automatically before publication (most ideal in order not to loose interesting information, but also most expensive).
 
+
+_frequenza di aggiornamento dei dati, dati edilizia da poco aggiornati_
+
 #### Licenses
 
 D1, D2, D4.1 and D4.2 (MIUR) are licensed under the Italian Open Data License (IODL) v2.0, very similar to a CC-BY 4.0. Each dataset is accompanyed by a clear license declaration. However, the whole website is covered by a "All rights reserved" copyright statement, which does not explicitly mentions the exclusion of the contents accompanied by a IODL 2.0 license. 
 
 The metadata of D3 (MiBACT) do not specify a license e.g. by using the property `dcterms:license` (see http://dati.beniculturali.it/lodview/resource/datasetLuoghiDellaCultura.html). Information about licenses is featured in the website footer only. The dataset about "Luoghi culturali" is licensed under CC BY-SA 3.0, which requires attribution and share-alike.
 
-### 4.3 Ethical analysis
+### 4.3 Technical analysis (formats, metadata, URIs, provenance)
 
-_e qui? Se affrontiamo il problema della privacy sopra, cosa scriviamo? Ripetere oppure unire i due punti in una sezione "Analisi etico-giuridica?"_
-
-_frequenza di aggiornamento dei dati, dati edilizia da poco aggiornati_
-
-### 4.4 Technical analysis (formats, metadata, URIs, provenance)
-
-1. All the MIUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017.  
+1. All MiUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017.  
 Durations in CSV could be specified as a time interval according to the standard ISO_8601: YYYY-MM-DD/YYYY-MM-DD (e.g. 2016-09-01/2017-08-31).
 
 2. D1 features text in slovenian (slovenian schools in Friuli Venezia Giulia express their self-evaluation in slovenian rather than italian). Languages should be declared at least in the XML/RDF dataset as shown below.
@@ -218,7 +217,7 @@ Durations in CSV could be specified as a time interval according to the standard
 
 3. _nella versione XML/RDF dei dataset MIUR sono specificati vari namespace fra i quali dicat, ma nessuno di essi è effettivamente impiegato_
 
-4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in section 5.1
+4. In the MiUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in section 5.1
 
 ### 4.5 Updating the dataset over time
 
@@ -236,9 +235,10 @@ Durations in CSV could be specified as a time interval according to the standard
 
 ### 5.1 Processing data through computation
 
-Although the final dataset has been released on RDF format, the csv has been kept because of the further computation that have been done in order to gather the data that would be visualized.
+Although the final dataset has been released in RDF format, the CSV has also been made available on the project GitHub repository as it was used to extract the data needed in order to produce a visualization. 
 
-Python has been used in order to process the csv. Every row of the csv has been converted into a list of dictionaries with the help of the "csv" library that handles this kind of format:
+Python was used to process the CSV dataset. Each row of the CSV was converted into a list of dictionaries with the help of the "CSV" library:
+
 ```python
 def process_data(source_csv_file_path):
     import csv
@@ -250,14 +250,16 @@ def process_data(source_csv_file_path):
             data.append(x)
     return data
  ```
-and then we developed some algorithms in order to calculate percentages and extract particular data useful for the visualization. <!-- Potrei Parlare in particolare dei processi -->
+We then developed algorithms to calculate percentages and extract data specifically useful for the final visualization:
+
 ```python
 import json
 def ansia(data):
 	return None
 ```
 
-Once the final sub-datasets that were used for the computation were acquired, we used the "json" Python library to convert them into a json format as it was one of the inputs requested by the visualization library.
+Once the final sub-datasets that were used for computation were acquired, we used the JSON Python library to convert them into a json format as it was one of the inputs requested by the visualization library.
+
 ```python
 import json
 def jsonize(data,nome):
@@ -267,17 +269,17 @@ def jsonize(data,nome):
 ```
 
 
-**Get Latitude and Longitude of schools from address:**
+**Get latitude and longitude of schools from address:**
 
-To do this we used the script: [address2latlon.py](https://github.com/sebucci/sebucci.github.io/blob/master/script/address2latlon.py)
+In order to get the latitude and longitude of schools knowingg their address we employed the following script: [address2latlon.py](https://github.com/sebucci/sebucci.github.io/blob/master/script/address2latlon.py)
 
 ### 5.2 Handling visualization (technical description)
 
-In order to visualize data we used some libraries:
+In order to visualize the data the following libraries were used:
 
-* **leaflet.js**: An open-source JavaScript library for mobile-friendly interactive maps.
-* **chart.js**: Simple yet flexible JavaScript charting for designers & developers.
-* **bootstrap**: Build responsive, mobile-first projects on the web with the world's most popular front-end component library.
+* **Leaflet.js**: An open-source JavaScript library for mobile-friendly interactive maps.
+* **Chart.js**: Simple yet flexible JavaScript charting for designers and developers.
+* **Bootstrap**: Build responsive, mobile-first projects on the web with the world's most popular front-end component library.
 
 **Leaflet.js**
 
