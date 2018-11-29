@@ -67,19 +67,11 @@ In the context of E-Governance, SEBuCCI might play a role in:
 
 - helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.  
 
-
-### 1.2 The SEBuCCI rationale
-
-
+### 2.4 Rationale of SEBuCCI 
 
 The aim of this project is to gain insight -  through data - into the reasons behind the result of school self-evaluations, in order to find out whether building certifications and nearby cultural institutions affect the results of school evaluations.
 
-In order to achieve this, the project aligns 1) the results of school evaluation for a.y. 2016-2017; 2) the data related to school building certifications (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. 
-
-The result would be a an Explorable map that is able to represent all of the aspects reported above for each singular school in our territory. <!-- Più cose da scrivere anche nella mappa finale, magari non nel dettaglio come nella visualization però comunque un qualcosa di più corposo -->
-
-The datasets used for this experiment come from MIUR (italian Ministry of Education, University and Research) and MiBACT (italian Ministry of Cultural Heritage and Activities). 
-
+In order to achieve this, the project aligns 1) the results of school self-evaluation for school year 2016-2017; 2) the data related to school building certificates (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. The result will be a an explorable map visualizing these data for each school in Italy.
 
 ## 3. Original datasets and mashup
 
