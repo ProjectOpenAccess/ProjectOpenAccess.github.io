@@ -1,6 +1,4 @@
 TO DO
-Bruno: inserire SPARQL D3
-Bruno: inserire link a legge privacy
 Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo.
 Creare bibliografia
 Completa tabella summary
@@ -97,6 +95,46 @@ License: https://creativecommons.org/licenses/by/3.0/
 
 Content description: This dataset lists all cultural institutions in Italy and provides information about their location, identification and services.
 
+Note: this dataset has been used for visualization purposes only and it's not directly downloadable in easily computable format (like csv). In order to obtain it we used the [SPARQL endpoint](http://dati.beniculturali.it/sparql) of dati.beniculturali.it with this query
+
+```sparql
+select * where {
+
+select distinct ?s as ?subject
+
+?Nome_Istituzionale
+?Descrizione
+?ISILIdentifier
+?Latitudine
+?Longitudine
+?Disciplina
+?Indirizzo
+?Codice_postale
+?Comune
+?Provincia
+
+where {
+
+graph <http://dati.beniculturali.it/mibact/luoghi> {
+
+?s rdf:type cis:CulturalInstituteOrSite ;
+cis:institutionalName ?Nome_Istituzionale .
+optional { ?s cis:description ?Descrizione }
+optional { ?s cis:ISILIdentifier ?ISILIdentifier }
+optional { ?s geo:lat ?Latitudine }
+optional { ?s geo:long ?Longitudine }
+optional { ?s cis:hasDiscipline [cis:name ?Disciplina] }
+optional {
+?s cis:hasSite [cis:hasAddress ?address ] .
+optional { ?address cis:fullAddress ?Indirizzo   }
+optional { ?address cis:postCode ?Codice_postale }
+optional { ?address cis:postName ?Comune         }
+optional { ?address cis:adminUnitL2 ?Provincia   }
+}
+}
+}
+}
+```
 ### D4.1 (auxiliary dataset)
 
 MIUR, 13 February 2018, Rubrica di valutazione utilizzata dalla scuola per l'autovalutazione, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0540RUBRICA_VAL
@@ -157,7 +195,7 @@ In this section we make some observations related to information quality in the 
 |----|-------------------------|------------------|-------------------------|------------------|
 | D1 | No. See point 1. | No. See point 6. | No. See points 2 and 3. | Yes |
 | D2 | No. See points 1 and 4. | Yes. | No. See points 1 and 4. | Yes |
-| D3 | No. See point 7. | Yes. | Unknown. | No. See point 5. |
+| D3 | No. See point 7. | Yes. | No see point 8. | No. See point 5. |
 
 1. D1 and D2 do not feature school names. Schools are indeed identyfied by school codes only. This made it necessary to use an auxiliary datset (D4.2) in order to disambiguate school names.
 
@@ -171,13 +209,28 @@ In this section we make some observations related to information quality in the 
 
 6. According to the metadata, D1 should feature school self-evaluations. However, the self-evaluations are grouped according to 'Codice istituto comprensivo' (Comprehensive school ID), instead of being listed by 'Codice scuola' (School ID). 
 
-7. D3 containst some incorrect postal codes. The issue is that postal codes were coded as integer values. This causes problems with postal codes starting with one or more 0, which are automatically deleted by the machine.  
+7. D3 contains some incorrect postal codes. The issue is that postal codes were coded as integer values in their csv format (obtained through sparql). This causes problems with postal codes starting with one or more 0, which are automatically deleted by the machine.
+
+8. D3 contains a column called "ISILIdentifier" and all the cells below this column are empty.
 
 ### 4.2 Juridical and ethical analysis (privacy, licenses, purposes, etc.)
 
 #### Privacy
 
-Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it could still be possible to trace the individuals referenced. This is against the  Some significant examples are:
+Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it could still be possible to trace the individuals referenced. 
+
+This is against various italian acts and laws:
+
+- [DECRETO DEL PRESIDENTE DELLA REPUBBLICA 24 giugno 1998, n. 249](http://www.gazzettaufficiale.it/eli/id/1998/07/29/098G0305/sg) In particular art.2 comma 2: "La  comunita'  scolastica  promuove  la solidarieta' tra i suoi
+componenti e tutela il diritto dello studente alla riservatezza." and art.2 comma 7: "Gli  studenti  stranieri  hanno  diritto al rispetto della vita culturale  e  religiosa  della  comunita' alla quale appartengono. La scuola  promuove e favorisce iniziative volte alla accoglienza e alla tutela  della loro lingua e cultura e alla realizzazione di attivita' interculturali."
+
+- [DECRETO LEGISLATIVO 30 giugno 2003, n. 196](http://www.gazzettaufficiale.it/eli/id/2003/07/29/003G0218/sg) Art. 50 comma 1: "1. Il divieto di cui all'articolo 13 del decreto del Presidente della Repubblica 22 settembre
+1988, n. 448, di pubblicazione e divulgazione con qualsiasi mezzo di notizie o immagini
+idonee a consentire l'identificazione di un minore si osserva anche in caso di
+coinvolgimento a qualunque titolo del minore in procedimenti giudiziari in **materie diverse
+da quella penale.**"
+
+Some significant examples are:
 
 * "[...] come nella classe dove essendoci un alunno affetto da ipoacusia; tutta la classe ha voluto integrare il proprio curriculum con l'apprendimento del LIS (linguaggio dei segni) supportati dall'assistente alla comunicazione."
 * "Nell'anno scolastico in corso sono stati sospesi due alunni della scuola primaria per lesioni ai compagni."
@@ -229,6 +282,10 @@ We do not plan to update SEBuCCI as it takes a picture of a specific school year
 | D1 | Indirect information about individuals | 3 | Semantics, Privacy | Remove information |
 | D3, D4.3 | Incorrect information about Sardinia's provinces | 2.5 | Outdated content | Combination of manual and automatic methods to redistribute data in the correct provinces |
 | D1 | Encoding of the dataset not specified | 2 | Technical | Include a note on the download page of the dataset stating its encoding |
+| D3 | Incorrect format of postal codes | 1 | Technical | Automatically modify the postal code with Python|
+| D1 | Ambiguity between title and content (school/institutes ID)| 2 | Semantics | Disambiguation through alignment scripts with other datasets |
+| D2 | Ambiguity with the content of the cells (-, "Non richiesto") | 2 | Semantics | Our solution was to consider them both as "NO" |
+| D3 | ISILIdentifier content  missing | 1.5 | Sparceness | Deleted the column because all the information was missing |
    
 
 ## 5. Visualization
@@ -250,14 +307,7 @@ def process_data(source_csv_file_path):
             data.append(x)
     return data
  ```
-We then developed algorithms to calculate percentages and extract data specifically useful for the final visualization:
-
-```python
-import json
-def ansia(data):
-	return None
-```
-
+We then developed algorithms to calculate percentages and extract data specifically useful for the final visualization.
 Once the final sub-datasets that were used for computation were acquired, we used the JSON Python library to convert them into a json format as it was one of the inputs requested by the visualization library.
 
 ```python
@@ -267,6 +317,7 @@ def jsonize(data,nome):
     json_data = json.dumps(data)  #converts the data into json format
     risultatojson.write(json_data) #writes on the new file the converted data
 ```
+*\*_All the other scripts can be seen in the [Script Directory](https://github.com/sebucci/sebucci.github.io/blob/master/script/)_*
 
 **Get latitude and longitude of schools from address:**
 
