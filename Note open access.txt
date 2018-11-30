@@ -1,0 +1,192 @@
+﻿- l’amministrazione titolare del dato è quella che lo ha creato o comunque che lo gestisce
+per fini istituzionali, mentre le altre amministrazioni che eventualmente utilizzano
+tale dato, non ne diventano titolari;
+- l’amministrazione può ritenersi titolare dei diritti di sfruttamento del dato quando lo
+abbia creato direttamente oppure ne abbia commissionato la creazione ad un altro
+soggetto;
+- le banche dati sono tutelate dalla legge sul diritto d’autore sia come opere
+dell’ingegno di carattere creativo frutto del lavoro intellettuale dell’uomo, sia come
+bene (privo del carattere della creatività) prodotto grazie ai rilevanti investimenti in
+termini finanziari, di tempo o di lavoro;
+- non esiste diritto d’autore sugli atti ufficiali della pubblica amministrazione.
+
+
+In particolare, per quanto concerne la citazione della fonte, caratteristica propria delle
+licenze attribuzione, il licenziatario dovrà provvedere alla menzione, rispetto al mezzo
+di comunicazione o supporto utilizzato, indicando: i) l’amministrazione titolare dei diritti;
+ii) eventuali altri soggetti individuati; iii) la descrizione e il titolo del documento/dato
+citato nonché, da ultimo, in caso di opera derivata; iv) l’indicazione dell’autore,
+in modo tale da non ingenerare confusione rispetto all’origine del documento stesso.
+L’applicazione di licenze che limitino il riutilizzo dei dati potrà essere considerata legittima
+solo se necessaria per il rispetto di altre normative e comunque solo se la scelta
+risulti adeguatamente motivata.
+
+"Linee guida per la pubblicazione e la promozione
+del riuso del Catalogo generale dei beni culturali"
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////
+Oltre alla pubblicazione dei dati nativi, attività istituzionali multidisciplinari, che coinvolgono più di una pubblica
+amministrazione, potrebbero rendersi necessarie. Inoltre è cruciale la sensibilità dell’amministrazione rispetto agli
+stimoli e alle proposte provenienti dalla società civile. A tal riguardo, ogni nuovo dato in questa linea nasce da uno
+specifico “concept”. ovvero la proposta necessaria a definire gli elementi fondamentali di un progetto. All’interno di
+un “concept” si identifica l’idea generale e le linee guida del progetto che ne accompagnano la declinazione nel corso
+della fase esecutiva. Al “concept” fa seguito la raccolta delle informazioni dalle diverse fonti interne ed esterne che
+concorrono alla formazione del dato. Questa operazione di “mashup” (da cui il nome della linea) non implica soltanto
+la raccolta del dato da fonti diverse e la relativa definizione degli algoritmi di integrazione. La parte più importante
+è la definizione delle modalità di accesso a partire dalle politiche dei singoli produttori dei dati e le relative modalità
+di rilascio e aggiornamento dei dati. Questo tipo di dati, nati a seguito di particolari esigenze o di determinati disegni
+strategici, sono creati in funzione dell’esposizione al pubblico e del conseguente coinvolgimento. Per questo, essi
+si prestano a forme di coinvolgimento e visualizzazione (“data visualization”) particolarmente innovative che spesso
+sono definite già a livello di “concept”. Il risultato ultimo di questa linea è la produzione di API e/o la pubblicazione
+di altri dataset. In generale, si raccomanda di utilizzare un approccio di pubblicazione dataset/API, pubblicando
+come API sicuramente i dataset che necessitano di un aggiornamento dinamico e variabile, alleviando dall’onere
+dell’aggiornamento manuale.
+
+Linee guida nazionali per la valorizzazione del patrimonio pubblico
+
+
+
+
+
+
+accuratezza (sintattica e semantica) - il dato, e i suoi attributi, rappresenta correttamente il valore reale del
+concetto o evento cui si riferisce;
+• coerenza - il dato, e i suoi attributi, non presenta contraddittorietà rispetto ad altri dati del contesto d’uso
+dell’amministrazione titolare;
+• completezza – il dato risulta esaustivo per tutti i suoi valori attesi e rispetto alle entità relative (fonti) che
+concorrono alla definizione del procedimento;
+• attualità (o tempestività di aggiornamento) - il dato, e i suoi attributi, è del “giusto tempo” (è aggiornato)
+rispetto al procedimento cui si riferisce.
+
+
+Si raccomanda
+inoltre, nel rilasciare i dati secondo i formati sotto riportati, di specificare la codifica dei caratteri privilegiando,
+ove possibile, UTF 8. Infine, nel caso di rilascio programmato di dati, è da evitare l’uso di formati per dati non
+strutturati, privilegiando formati “machine-readable” pag.40
+
+Linee guida nazionali per la valorizzazione del patrimonio pubblico
+
+
+
+Prima di pubblicare i dati, assicurati di aver completato queste azioni precedenti e quindi:
+• AZIONE 1 e AZIONE 2 : di aver chiari i principi delle normative in materia di dati pubblici e loro riutilizzo;
+
+• AZIONE 3 e AZIONE 4: di aver compreso e selezionato il livello più appropriato del modello per i dati e i
+metadati , tenendo conto che il requisito minimo per i dati è il livello 3;
+• AZIONE 6 – censimento: di aver identificato nel censimento dei dati la domanda e l’impatto sociale ed
+economico che possono e riescono a generare;
+• AZIONE 6 – analisi giuridica delle fonti: di aver verificato eventuali limitazioni giuridiche (proprietà dei dati,
+privacy, ecc.);
+• AZIONE 5: di aver predisposto i metadati secondo il profilo DCAT-AP_IT;
+• AZIONE 9: di aver pianificato le attività in modo da mantenere i dati costantemente aggiornati e da garantire
+altri aspetti di qualità (i.e.., completezza, accuratezza, coerenza);
+• AZIONE 10: di aver descritto i dati di riferimento e «core» secondo i modelli indicati nell’architettura di
+riferimento per l’informazione del settore pubblico;
+• AZIONE 11: di aver predisposto i dati con almeno un formato aperto machine-readable;
+• AZIONE 12: di aver assegnato una licenza aperta, possibilmente quella raccomandata dalle presenti linee guida
+(CC-BY 4.0).
+
+
+
+
+
+
+
+I principali livelli architetturali che compongono una soluzione per la pubblicazione e interrogazione di dati aperti
+possono essere istanziati in diverso modo a seconda delle capacità economiche e tecniche delle amministrazioni,
+nonché della qualità del servizio che si vuole offrire agli utenti. Si distinguono due livelli: livello di front-end e livello
+infrastrutturale. Il livello di front-end consiste di una parte di presentazione che può essere sia un sito Web, sia una
+sezione in un sito esistente. In questa parte rientrano tutti quegli strumenti che consentono di (i) dare massima visibilità
+ai dataset disponibili e (ii) di interagire in maniera “user-friendly” con gli utenti stessi, per esempio per capire quali
+dati sono di loro interesse, quali nuovi dati sono richiesti, quali suggerimenti vogliono dare per migliorare anche la
+qualità dei dati. Il livello di presentazione si completa con l’interfaccia di accesso via Web per interrogazioni puntuali
+sui dati e metadati. Questa ha come obiettivo quello di aumentare l’interazione machine-to-machine attraverso il
+dispiegamento di una piattaforma di esposizione dati basata su API di servizio (o Open Data Service). Nel caso di dati
+dei livelli 4 e 5 del modello per i dati, l’interfaccia di accesso via Web è rappresentata dallo SPARQL endpoint.
+
+• fornire notifiche di cambiamenti nel sito web, di aggiornamenti ai dataset (e.g., RSS feed);
+• fornire strumenti per rendere le interrogazioni più agevoli, anche per utenti non del tutto esperti. Nel caso
+dei dati dei livelli 4 e 5 non si può pubblicare solo dataset RDF ma è bene mettere in evidenza la presenza
+dello SPARQL endpoint (i.e., servizio Web che accetta interrogazioni SPARQL, le risolve e restituisce i risultati
+in output), pubblicando il link di accesso, fornendo altresì un ampio insieme di “query” di esempio che con
+pochi click possono essere eseguite producendo risultati disponibili in diversi formati di più comune utilizzo
+soprattutto nell’ambito delle comunità open data (e.g., CSV, JSON, XML)
+
+
+
+-assegnare ai dataset nomi autoesplicativi per comprenderne il principale contenuto;
+• fornire, ove possibile, descrizioni testuali dei dataset;
+• mettere in evidenza la licenza in uso in forma “human e machine-readable”;
+• fornire, ove possibile, strumenti di visualizzazione e navigazione, anche georiferita, dei dati, che possano
+facilitare la lettura degli stessi;
+• fornire, ove possibile, statistiche di uso, accesso e produzione;
+
+
+
+
+
+
+
+4.1 Recommended URI format
+The recommended pattern for a URI designed for persistence is:
+http://{domain}/{type}/{concept}/{reference}
+This comes originally from Designing URI Sets for the UK Public Sector and has been repeated
+successfully with little variation in many different scenarios. A full explanation is provided in
+section 3.2.1.1 and can be summarised as:
+ {domain} is a combination of the host and the relevant sector. It is a matter of choice
+whether the sector is defined as a sub-domain of the host or as the first component of
+the path.
+ {type} should be one of a small number of possible values that declare the type of
+resource that is being identified. Typical examples include:
+o 'id' or 'item' for real world objects;
+o 'doc' for documents that describe those objects;
+o 'def' for concepts;
+o 'set' for datasets;
+o a string specific to the context, such as 'authority' (Publications Office, 3.1) or
+'dcterms' (DCMI, 3.3.1).
+ {concept} might be a collection (Europeana 3.4.3), the type of real world object
+identified (e.g. road, 3.2.1.1), the name of the concept scheme (e.g. 'language' 3.1);
+ {reference} is a specific item, term or concept.
+
+
+10 Regole per URI PERSISTENTI
+
+4.2 Recommended URI design principles
+4.2.1 Avoid stating ownership
+The URI template above does not include the name of the organisation or project that minted
+the URI. This makes it much less susceptible to change should the project end or the
+organisation be merged or renamed.
+4.2.2 Avoid version numbers
+Although concept schemes, ontologies, taxonomies and vocabularies are likely to go through
+iterative cycles of change, version numbers and status information should not be included in the
+URIs. Rather, the URIs should remain stable between versions and new ones minted for new
+terms. URIs may be deprecated and their use discouraged but they should nevertheless be
+maintained both in terms of the actual URI and the resource they identify.
+4.2.3 Re-use existing identifiers
+Where resources are already uniquely identified, those identifiers should be incorporated into
+the URI. For example, if schools are assigned integer identifiers, the URI for the school with
+identifier 123456, could be:
+http://education.data.example/id/school/123456
+Caution: when re-using an identifier, it is essential to re-use them without changing the original
+semantics. For example, a URI for a vehicle licence is not an identifier for the vehicle itself.
+Furthermore, it is important to only re-use identifiers that themselves are likely to be persistent.
+4.2.4 Avoid using auto-increment
+Minting new URIs for large datasets will need to be automated and the process must be
+guaranteed to produce unique identifiers. One way to do this might be to simply increment a
+counter as each new URI is minted. Imagine that in the example of the previous section the
+integer URIs given to schools were given based on such a counter. In that case, the following
+could be possible URIs for two different schools.
+http://education.data.gov.uk/id/school/123456
+http://education.data.gov.uk/id/school/123457
+Although this approach is perfectly feasible, we would recommend it only if one of the following
+is true:
+1. the process will never be repeated;
+2. the process can be repeated to create exactly y the same URIs for the same input data
+with new URIs minted only for new items. 
