@@ -17,6 +17,7 @@
 	dct:publisher <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
 	dct:language <http://publications.europa.eu/resource/authority/language/ITA> ;
 	dcat:dataset <http://sebucci.github.io/resource/Dataset/SEBuCCI> ;
+	dcat:dataset <http://sebucci.github.io/resource/Dataset/CulturalInstitutesRevised> ;
 	foaf:homepage <http://sebucci.github.io/index.html> ;
 	dcat:themeTaxonomy <http://publications.europa.eu/resource/authority/data-theme> .
 
