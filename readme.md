@@ -6,6 +6,7 @@ An etica: rispetto a dataset originale usate percentuali per le certificazioni d
 Compilazioni ambigue in dataset edilizia es. non richiesto e vuoto
 Riferimento a legge open data
 Inserire link dataset 
+4.1 check con Bruno
 
  # School self-evaluation, building certifications and cultural institutes: what relationship?
 
@@ -17,7 +18,7 @@ Gianmarco Spinaci
 
 In recent years, Italy's school system has become a hot topic. The Italian education system is often put in comparison with other European education systems, for example in terms of fundings and student performance (see articles by [Il Sole 24 ORE](https://www.ilsole24ore.com/art/notizie/2017-08-29/italia-terzultima-europa-spesa-istruzione-germania-spende-doppio-190050.shtml?uuid=AE8jEVJC) and [Repubblica](https://www.repubblica.it/scuola/2016/12/06/news/ocse_scuola_studenti_nord_e_sud-153559264/).   
 
-Another much debated topic is school safety. In 2016, about 44 structural failures and collapses in Italian schools were registered (see [Corriere della Sera](https://www.corriere.it/scuola/medie/17_novembre_22/edilizia-scolastica-44-crolli-all-anno-miur-piu-due-miliardi-arrivo-ce09130a-cf75-11e7-a1da-9278adb4d756.shtml)).
+Another much debated topic is school safety. In 2016, about 44 structural failures and collapses in Italian schools were registered (see [Corriere della Sera](https://www.corriere.it/scuola/medie/17_novembre_22/edilizia-scolastica-44-crolli-all-anno-MIUR-piu-due-miliardi-arrivo-ce09130a-cf75-11e7-a1da-9278adb4d756.shtml)).
 
 On the positive side, Italy is known all over the world for its rich cultural heritage. Collaboration between cultural institutions and schools is crucial in order to build a connection between the youngest generations and the cultural richness of their country. 
 
@@ -50,9 +51,9 @@ SEBuCCI focuses on criterion 21 'Risultati Scolastici' (Overall student performa
 
 ### 2.2 The data
 
-Every year, MiUR (Italian Ministry of Education, University and Research) makes available the open datasets containing the results of school self-evaluations. Specifically, the datasets feature assigned grades and textual explanations for the grades. 
+Every year, MIUR (Italian Ministry of Education, University and Research) makes available the open datasets containing the results of school self-evaluations. Specifically, the datasets feature assigned grades and textual explanations for the grades. 
 
-MiUR also publishes irregular updates on school safety certificates as open data. 
+MIUR also publishes irregular updates on school safety certificates as open data. 
 
 SEBuCCI aligns school self-evaluations with school safety certificates to find out if there is a trend (i.e. highest grades when certificates are in accordance with applicable law). 
 
@@ -152,25 +153,17 @@ Finally, the CSV dataset obtained was transformed into a RDF dataset through an 
 
 ### 4.1 Information quality
 
-Dataset D1 and D2 features only school codes. It was necessary to use the auxiliary datset D4.2 in order to obtain school names. This choice does not appear as motivated by privacy issues as it was relatively easy to align school codes with school names. As such, MiUR could have easily and directly provided school names alongside with school codes without the need for users to spend tim disambiguate the codes.
+In this section we make some observations related to information quality in the main datasets used (D1, D2, D3).
 
-D3 
+1. Dataset D1 and D2 do not feature school names. Schools are indeed identyfied by school codes only. This made it necessary to use an auxiliary datset (D4.2) in order to disambiguate school names.
 
-_D3 è in formato open XML/RDF e contiene informazioni utili al fine della geolocalizzazione dei luoghi culturali, ben fatto a mio avviso_
+2. Dataset D1 lists school self-evaluation criteria, but does not provide any information about the meaning of such criteria. In order to fill this gap, we used an auxiliary dataset (D4.1). 
+In addition, there are fields filled with sporadic full stops, whose meaning remains unclear. 
 
-_metadati_
+3. Dataset D2 features ambiguous information about the situation of safety certificates. Normal values are YES or NO. However, 'Non richiesto' (Not requested) and '-' can also be found in the dataset without any accompanying explanation on their meaning.
 
-_Nel tracciato record del Dataset 1 manca una spiegazione chiara del codice criterio e siamo quindi dovuti ricorrere a un dataset ausiliario, comunque anch'esso poco chiaro_
-
-_Nel dataset D2 non ci sono dati relativi alle certificazioni in corso_
-
-_Nel dataset 2 ci sono dei trattini con un significato ambiguo_
-
-_I codici istituto sono da disambiguare (istituto Forlì usa vecchio codice provincia fo anziché FC)._ // <-- direi di no
-
-_Nel dataset D3 e D4.3 le province della sardegna non sono state aggiornate secondo la legge regionale 4 febbraio 2016 n.2 sul riordino del sistema delle autonomie locali. In questa legge le province della sardegna sono passate da 8 a 4 (cagliari è diventata da provincia a città metropolitana mentre alcune province sono state inglobate da altre ed è stata formata la provincia  "sud sardegna" http://www.regione.sardegna.it/j/v/1270?s=300929&v=2&c=13906&t=1&anno )_
-
-
+4. Dataset D3, in Turtle RDF, is well-structured and makes good use of ontologies and namespaces. However, information does not appear up-to-date for what concerns Sardinia provinces, which changed in 2016 going from a total of 8 to a total of 4 ((see Legge Regionale 4 Febbraio 2016 n.2)[http://www.regione.sardegna.it/j/v/1270?s=300929&v=2&c=13906&t=1&anno]) . 
+<!-- check con Bruno Nel dataset D3 e D4.3 le province della sardegna non sono state aggiornate secondo la legge regionale 4 febbraio 2016 n.2 sul riordino del sistema delle autonomie locali. In questa legge le province della sardegna sono passate da 8 a 4 (cagliari è diventata da provincia a città metropolitana mentre alcune province sono state inglobate da altre ed è stata formata la provincia  "sud sardegna" http://www.regione.sardegna.it/j/v/1270?s=300929&v=2&c=13906&t=1&anno )_ -->
 
 ### 4.2 Juridical and ethical analysis (privacy, licenses, purposes, etc.)
 
@@ -193,9 +186,6 @@ We propose three possibile solutions:
 2. Provide schools with pre-compiled questionnaire in place of guidelines;
 3. Check text semi-automatically before publication (most ideal in order not to loose interesting information, but also most expensive).
 
-
-_frequenza di aggiornamento dei dati, dati edilizia da poco aggiornati_
-
 #### Licenses
 
 D1, D2, D4.1 and D4.2 (MIUR) are licensed under the Italian Open Data License (IODL) v2.0, very similar to a CC-BY 4.0. Each dataset is accompanyed by a clear license declaration. However, the whole website is covered by a "All rights reserved" copyright statement, which does not explicitly mentions the exclusion of the contents accompanied by a IODL 2.0 license. 
@@ -204,20 +194,20 @@ The metadata of D3 (MiBACT) do not specify a license e.g. by using the property 
 
 ### 4.3 Technical analysis (formats, metadata, URIs, provenance)
 
-1. All MiUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017.  
+1. All MIUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017.  
 Durations in CSV could be specified as a time interval according to the standard ISO_8601: YYYY-MM-DD/YYYY-MM-DD (e.g. 2016-09-01/2017-08-31).
 
 2. D1 features text in slovenian (slovenian schools in Friuli Venezia Giulia express their self-evaluation in slovenian rather than italian). Languages should be declared at least in the XML/RDF dataset as shown below.
 
 ```xml
-<miur:MOTIVAZIONEPUNTEGGIOSCUOLA xml:lang="sl">
+<MIUR:MOTIVAZIONEPUNTEGGIOSCUOLA xml:lang="sl">
 	[description in slovenian]
-</miur:MOTIVAZIONEPUNTEGGIOSCUOLA>
+</MIUR:MOTIVAZIONEPUNTEGGIOSCUOLA>
 ```
 
 3. _nella versione XML/RDF dei dataset MIUR sono specificati vari namespace fra i quali dicat, ma nessuno di essi è effettivamente impiegato_
 
-4. In the MiUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in section 5.1
+4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in section 5.1
 
 ### 4.5 Updating the dataset over time
 
