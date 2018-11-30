@@ -195,7 +195,7 @@ In this section we make some observations related to information quality in the 
 |----|-------------------------|------------------|-------------------------|------------------|
 | D1 | No. See point 1. | No. See point 6. | No. See points 2 and 3. | Yes |
 | D2 | No. See points 1 and 4. | Yes. | No. See points 1 and 4. | Yes |
-| D3 | No. See point 7. | Yes. | No see point 8. | No. See point 5. |
+| D3 | Yes. | Yes. | No see point 7. | No. See point 5. |
 
 1. D1 and D2 do not feature school names. Schools are indeed identyfied by school codes only. This made it necessary to use an auxiliary datset (D4.2) in order to disambiguate school names.
 
@@ -209,9 +209,7 @@ In this section we make some observations related to information quality in the 
 
 6. According to the metadata, D1 should feature school self-evaluations. However, the self-evaluations are grouped according to 'Codice istituto comprensivo' (Comprehensive school ID), instead of being listed by 'Codice scuola' (School ID). 
 
-7. D3 contains some incorrect postal codes. The issue is that postal codes were coded as integer values in their csv format (obtained through sparql). This causes problems with postal codes starting with one or more 0, which are automatically deleted by the machine.
-
-8. D3 contains a column called "ISILIdentifier" and all the cells below this column are empty.
+7. D3 contains a column called "ISILIdentifier" and all the cells below this column are empty.
 
 ### 4.2 Juridical and ethical analysis (privacy, licenses, purposes, etc.)
 
@@ -282,7 +280,6 @@ We do not plan to update SEBuCCI as it takes a picture of a specific school year
 | D1 | Indirect information about individuals | 3 | Semantics, Privacy | Remove information |
 | D3, D4.3 | Incorrect information about Sardinia's provinces | 2.5 | Outdated content | Combination of manual and automatic methods to redistribute data in the correct provinces |
 | D1 | Encoding of the dataset not specified | 2 | Technical | Include a note on the download page of the dataset stating its encoding |
-| D3 | Incorrect format of postal codes | 1 | Technical | Automatically modify the postal code with Python|
 | D1 | Ambiguity between title and content (school/institutes ID)| 2 | Semantics | Disambiguation through alignment scripts with other datasets |
 | D2 | Ambiguity with the content of the cells (-, "Non richiesto") | 2 | Semantics | Our solution was to consider them both as "NO" |
 | D3 | ISILIdentifier content  missing | 1.5 | Sparceness | Deleted the column because all the information was missing |
