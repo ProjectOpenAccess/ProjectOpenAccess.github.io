@@ -29,10 +29,10 @@
 	dct:title "SEBuCCI"@en ;
 	dct:description "Il dataset del progetto SEBuCCI (School self-Evaluation, Building Certifications and Cultural Institutes: what relationship?)" ;
 	dcat:theme <http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
-	dct:subject <http://eurovoc.europa.eu/668> , <http://eurovoc.europa.eu/c_9a9e5627> , <http://eurovoc.europa.eu/5309> , <http://www.eionet.europa.eu/gemet/concept/1911> ; #education , monitoring report , building safety , cultural facility
+	dct:subject <http://eurovoc.europa.eu/668> , <http://eurovoc.europa.eu/c_9a9e5627> , <http://eurovoc.europa.eu/5309>; #education , monitoring report , building safety
 	dct:issued "2018-11-20"^^xsd:date ;
 	dct:modified "2018-11-20"^^xsd:date ;
-	dcat:keyword "education" , "monitoring report" , "building safety" , "cultural facility" , "istruzione" , "relazione di monitoraggio" , "sicurezza degli edifici" , "strutture culturali" ;
+	dcat:keyword "education" , "monitoring report" , "building safety", "istruzione" , "relazione di monitoraggio" , "sicurezza degli edifici";
 	owl:versionInfo "0.1.0" ; 
 	dct:rightsHolder <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
 	dct:publisher <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
@@ -49,7 +49,34 @@
 	dct:temporal <http://sebucci.github.io/resource/PeriodoTemporale/periodTimeSEBuCCI> ;
 	dct:spatial <http://www.geonames.org/3170831/> , <http://www.geonames.org/3174618/> , <http://www.geonames.org/3164604/> ,  <http://www.geonames.org/3176525/> , <http://www.geonames.org/3174725/> , <http://www.geonames.org/3177401/> , <http://www.geonames.org/3165361/> , <http://www.geonames.org/3174004/> , <http://www.geonames.org/3165048/> , <http://www.geonames.org/3174976/> , <http://www.geonames.org/3183560/> , <http://www.geonames.org/3173222/> , <http://www.geonames.org/3181042/> , <http://www.geonames.org/3169778/> , <http://www.geonames.org/3182306/>, <http://www.geonames.org/2525468/> , <http://www.geonames.org/2523119/> , <http://www.geonames.org/2523228/s> .
 	
+<http://sebucci.github.io/resource/Dataset/CulturalInstitutesRevised>
+	a dcatapit:Dataset , dcat:Dataset ;
+	dct:identifier "SEBuCCI:D.2" ;
+	dct:title "Cultural Institutes Revised"@en ;
+	dct:description "Dataset of SEBuCCI project (School self-Evaluation, Building Certifications and Cultural Institutes: what relationship?). This dataset contains informationa about the location of cultural institutes in Italy (with the correct provinces of Sardinia)"@en ;
+	dcat:theme <http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/1911> , <http://eurovoc.europa.eu/2278> ; #cultural facility
+	dct:issued "2018-11-24"^^xsd:date ;
+	dct:modified "2018-11-25"^^xsd:date ;
+	dcat:keyword "cultural facility"@en , "strutture culturali"@it, "beni culturali"@it, "cultural heritage"@en ;
+	owl:versionInfo "0.1.0" ; 
+	dct:rightsHolder <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
+	dct:publisher <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
+	dct:creator <http://sebucci.github.io/resource/Amministrazione/sebucciGroup> ;
+	dct:license <http://creativecommons.org/licenses/by/4.0> ;
+	prov:wasRevisionOf <http://dati.beniculturali.it/resource/datasetLuoghiDellaCultura>
+	dcat:distribution <http://sebucci.github.io/resource/Distribuzione/CulturalInstitutesRevised-CSV> ;
+	dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/IRREG> ;
+	dcat:contactPoint <http://sebucci.github.io/resource/PuntoContatto/contactPointSEBuCCI> ;
+	dct:language <http://publications.europa.eu/resource/authority/language/ITA> ;
+	dct:temporal <http://sebucci.github.io/resource/PeriodoTemporale/periodTimeCulturalInstitutesRevised> ;
+	dct:spatial <https://www.geonames.org/countries/IT/italy.html> .
 #Period of time
+
+<http://sebucci.github.io/resource/PeriodoTemporale/periodTimeCulturalInstitutesRevised>
+	a dct:PeriodOfTime ;
+	dcatapit:startDate "2018-11-24"^^xsd:date ;
+	dcatapit:endDate "2018-11-25"^^xsd:date .
 
 <http://dati.gov.it/resource/PeriodoTemporale/periodTimeSEBuCCI>
 	a dct:PeriodOfTime ; 
@@ -76,7 +103,14 @@
 	dcat:downloadURL <http://sebucci.github.io/resource/Distribuzione/SEBuCCI-CSV-download> ;
 	dcat:accessURL <http://sebucci.github.io/resource/Distribuzione/SEBuCCI-CSV> .
 
-
+<http://sebucci.github.io/resource/Distribuzione/CulturalInstitutesRevised-CSV>
+	a dcatapit:Distribution , dcat:Distribution ;
+	dct:title "CSV distribution of the SEBuCCI dataset."@en ;
+	dct:description "CSV distribution of the SEBuCCI (School self-Evaluation, Building Certifications and Cultural Institutes: what relationship?) dataset."@it ;
+	dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
+	dct:license <http://creativecommons.org/licenses/by/4.0> ;
+	dcat:downloadURL <http://sebucci.github.io/resource/Distribuzione/CulturalInstituesRevised-CSV-download> ;
+	dcat:accessURL <http://sebucci.github.io/resource/Distribuzione/CulturalInstituesRevised-CSV> .
 #Admin
 
 <http://sebucci.github.io/resource/Amministrazione/sebucciGroup>
@@ -108,3 +142,7 @@
 <http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0400SCUANAGRAFESTAT>
 	a dcatapit:Dataset , dcat:Dataset ;
 	dct:rightsHolder <http://it.dbpedia.org/resource/Ministero_dell'Istruzione,_dell'Universit%C3%A0_e_della_Ricerca> . 
+
+<http://dati.beniculturali.it/resource/datasetLuoghiDellaCultura>
+	a dcatapit:Dataset, dcat:Dataset ;
+	dct:rightsHolder <http://dati.beniculturali.it/resource/Agent/mibact-dgo> .
