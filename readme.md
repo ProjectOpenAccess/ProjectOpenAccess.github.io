@@ -1,15 +1,9 @@
 TO DO
+Bruno: inserire SPARQL D3
+Bruno: inserire link a legge privacy
 Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo.
-Scrivere criteri che abbiamo usato per rappresentare le percentuali edilizie/numero di cultural institutes
 Creare bibliografia
-An etica: rispetto a dataset originale usate percentuali per le certificazioni dell'edilizia per non fare vedere esattamente che certificato manca
-Riferimento a legge open data
-Inserire link dataset 
-4.1 check con Bruno
 Completa tabella summary
-
-
-Aggiungere in sito How to read the viz with links to our dataset and originals
 
 
  # School self-evaluation, building certifications and cultural institutes: what relationship?
@@ -129,8 +123,8 @@ Content description: With the purpose of describing the geographical characteris
 
 ### D5 (mashup)
 
-Dataset: [dataset link]  
-Metadata: [metadata XML/RDF link]
+Dataset: https://github.com/sebucci/sebucci.github.io/blob/master/dataset/dataset.rdf  
+Metadata: https://github.com/sebucci/sebucci.github.io/blob/master/metadati/metadata.ttl
 
 Content description: The dataset lists all Italian schools. For each school the following attributes are given: region, province, institute, name, address, buildings, evaluation.
 For each school building the dataset lists the available safety certificates.
@@ -183,7 +177,7 @@ In this section we make some observations related to information quality in the 
 
 #### Privacy
 
-Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it could still be possible to trace the individuals referenced. Some significant examples are:
+Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it could still be possible to trace the individuals referenced. This is against the  Some significant examples are:
 
 * "[...] come nella classe dove essendoci un alunno affetto da ipoacusia; tutta la classe ha voluto integrare il proprio curriculum con l'apprendimento del LIS (linguaggio dei segni) supportati dall'assistente alla comunicazione."
 * "Nell'anno scolastico in corso sono stati sospesi due alunni della scuola primaria per lesioni ai compagni."
@@ -221,9 +215,11 @@ Durations in CSV could be specified as a time interval according to the standard
 
 3. The XML/RDF version of D1 and D2 makes an incorrect use of namespaces and ontologies, which are declared but not used.
 
-4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in section 5.1
+4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1), despite this is encouraged by the ["Linee guida per la valorizzazione del patrimonio informativo pubblico" by AGID](https://www.agid.gov.it/it/agenzia/stampa-e-comunicazione/notizie/2017/08/03/open-data-online-linee-guida-valorizzazione-del-patrimonio-informativo-pubblico). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in section 5.1
 
 ### 4.5 Updating the dataset over time
+
+We do not plan to update SEBuCCI as it takes a picture of a specific school year, namely 2016-2017. However, it would be interesting to create new datasets for the following school years to be able to make comparisons between datasets.
 
 ### 4.6 Summary
 
@@ -290,7 +286,7 @@ In order to visualize the data the following libraries were used:
 2. Added the map using **leaflet.js**, and we added GeoJSON data (regions and provinces) to draw layers on it
 3. todo
 
-####Further information and licenses
+#### Further information and licenses
 
 **Leaflet.js**
 
@@ -317,3 +313,28 @@ For the visualization of school self-evaluation a specific bar chart was chosen 
 
 **Bootstrap**
 v4.1.3., Code &copy; MIT, Docs CC BY 3.0.
+
+### 5.3 Behind the icons (light bulbs and museum buildings)
+The visualization makes use of visual metaphors to synthetically represent the data. 
+
+#### 5.3.1 Cultural intitutions
+N. of cultural institutes divided by Km^2.
+
+For Italy, each region, each province we established the following threshold:
+
+-one museum icon if < 0.0224 (Italian average presence of cultural institutions/Km^2);
+-two museum icons if >= 0.0224 and < 0.0448;
+-three museum icons if >= 0.0448.
+
+#### 5.3.2 School building safety certificates
+For each school building we calculated the percentage of available certificates (for example if 4 of 8 certificates are available, then the percentage is 50%). 
+For each school we calculated the average of percentages of available certificates (for example if a school has two buildings, with 25% and 50% of available certificates respectively, then the final percentage is 37.5%).
+
+For Italy, each region, each province, each school we established the following threshold:
+
+-red light bulb <= 33%;
+-yellow light bulb > 33% and <=66%;
+-green light bulb > 66%.
+
+## 6. Final considerations
+
