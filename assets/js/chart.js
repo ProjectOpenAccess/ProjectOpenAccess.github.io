@@ -135,7 +135,6 @@ function setupChart() {
 
       let real_data = []
       let school_num = 0
-      let cultural_num = 0
 
       for (elem of JSON.parse(data)) {
 
@@ -144,7 +143,6 @@ function setupChart() {
       }
 
       updateSchoolN(school_num)
-      updateCulturalN(cultural_num)
 
       // Labels
       var labels = ["1", "2", "3", "4", "5", "6", "7"]
@@ -205,7 +203,6 @@ function updateChart(data) {
   }
 
   updateSchoolN(school_num)
-  updateCulturalN(cultural_num)
 
   // Remove dataset 
   chart.data.datasets.forEach((dataset) => {
@@ -263,8 +260,4 @@ setupChart()
 
 function updateSchoolN(num) {
   $('#txtSchoolNum').text(num)
-}
-
-function updateCulturalN(num = 'TBD') {
-  $('#txtCulturalNum').text(num)
 }
