@@ -346,7 +346,7 @@ function reset() {
  */
 function getBolognaSchools() {
 
-  let bologna_school_url = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/dataset/geo/bologna.json'
+  let bologna_school_url = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/dataset/geo/scuole_bologna.json'
 
   $.ajax({
       url: bologna_school_url,
@@ -360,22 +360,17 @@ function getBolognaSchools() {
 
       for (let school of schools) {
 
-        let circle = L.circle([school.posizione.lat, school.posizione.lon], {
-          color: '#434A54',
-          fillColor: '#AC92EC',
-          fillOpacity: 0.5,
-          radius: 50,
-          codice_scuola: school.codice_scuola
-        }).addTo(bologna_school_group)
+        L.circle([school.posizione.lat, school.posizione.lon], {
+            color: '#434A54',
+            fillColor: '#AC92EC',
+            fillOpacity: 0.5,
+            radius: 50,
+            codice_scuola: school.codice_scuola
+          }).on('click', function (e) {
+            showCardSchool(e.sourceTarget.options.codice_scuola)
+          })
+          .addTo(bologna_school_group)
 
-        circle.on('click', function (e) {
-
-          console.log(bologna_school)
-
-          console.log(e.sourceTarget.options.codice_scuola)
-
-          showCardSchool(e.sourceTarget.options.codice_scuola)
-        })
       }
     })
 }
@@ -399,10 +394,6 @@ function hideBolognaSchools() {
 $(document).ready(function () {
 
   getBolognaSchools()
-
-  $('#btn_reset_view').on('click', function () {
-    reset()
-  })
 })
 
 function updateMeanItaly() {
@@ -571,7 +562,7 @@ function getRightTrafficLight(number) {
   let yellow = $(`<i class="fas fa-lightbulb text-warning muted"></i>`)
   let green = $(`<i class="fas fa-lightbulb text-success muted"></i>`)
 
-  if (number > 0 && number <= 33.3)
+  if (number >= 0 && number <= 33.3)
     red.removeClass(muted)
 
   if (number > 33.3 && number <= 66.6)
@@ -630,7 +621,7 @@ function showCardSchool(school_code) {
 
       CardSchool.find('#school_score').text(school.punteggio)
       CardSchool.find('#school_num_c').text(school.num_cultural_institute)
-      CardSchool.find('#school_certificates')[0].outerHTML = getRightTrafficLight(school.percentage)
+      CardSchool.find('#txtConstructionMean')[0].outerHTML = getRightTrafficLight(school.percentage)
 
       $('[data-toggle="tooltip"]').tooltip()
     }
