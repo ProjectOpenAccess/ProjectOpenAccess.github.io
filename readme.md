@@ -3,10 +3,14 @@ Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visual
 Scrivere criteri che abbiamo usato per rappresentare le percentuali edilizie/numero di cultural institutes
 Creare bibliografia
 An etica: rispetto a dataset originale usate percentuali per le certificazioni dell'edilizia per non fare vedere esattamente che certificato manca
-Compilazioni ambigue in dataset edilizia es. non richiesto e vuoto
 Riferimento a legge open data
 Inserire link dataset 
 4.1 check con Bruno
+Completa tabella summary
+
+
+Aggiungere in sito How to read the viz with links to our dataset and originals
+
 
  # School self-evaluation, building certifications and cultural institutes: what relationship?
 
@@ -153,17 +157,27 @@ Finally, the CSV dataset obtained was transformed into a RDF dataset through an 
 
 ### 4.1 Information quality
 
-In this section we make some observations related to information quality in the main datasets used (D1, D2, D3).
+In this section we make some observations related to information quality in the main datasets used in SEBuCCI (D1, D2, D3) according to the ["Linee guida per la valorizzazione del patrimonio informativo pubblico" by AGID](https://www.agid.gov.it/it/agenzia/stampa-e-comunicazione/notizie/2017/08/03/open-data-online-linee-guida-valorizzazione-del-patrimonio-informativo-pubblico). 
 
-1. Dataset D1 and D2 do not feature school names. Schools are indeed identyfied by school codes only. This made it necessary to use an auxiliary datset (D4.2) in order to disambiguate school names.
+|  | accuracy | coherence | completeness | currentness | 
+|----|-------------------------|------------------|-------------------------|------------------|
+| D1 | No. See point 1. | No. See point 6. | No. See points 2 and 3. | Yes |
+| D2 | No. See points 1 and 4. | Yes. | No. See points 1 and 4. | Yes |
+| D3 | No. See point 7. | Yes. | Unknown. | No. See point 5. |
 
-2. Dataset D1 lists school self-evaluation criteria, but does not provide any information about the meaning of such criteria. In order to fill this gap, we used an auxiliary dataset (D4.1). 
-In addition, there are fields filled with sporadic full stops, whose meaning remains unclear. 
+1. D1 and D2 do not feature school names. Schools are indeed identyfied by school codes only. This made it necessary to use an auxiliary datset (D4.2) in order to disambiguate school names.
 
-3. Dataset D2 features ambiguous information about the situation of safety certificates. Normal values are YES or NO. However, 'Non richiesto' (Not requested) and '-' can also be found in the dataset without any accompanying explanation on their meaning.
+2. D1 lists school self-evaluation criteria, but does not provide any information about the meaning of such criteria. In order to fill this gap, we used an auxiliary dataset (D4.1). 
 
-4. Dataset D3, in Turtle RDF, is well-structured and makes good use of ontologies and namespaces. However, information does not appear up-to-date for what concerns Sardinia provinces, which changed in 2016 going from a total of 8 to a total of 4 ((see Legge Regionale 4 Febbraio 2016 n.2)[http://www.regione.sardegna.it/j/v/1270?s=300929&v=2&c=13906&t=1&anno]) . 
-<!-- check con Bruno Nel dataset D3 e D4.3 le province della sardegna non sono state aggiornate secondo la legge regionale 4 febbraio 2016 n.2 sul riordino del sistema delle autonomie locali. In questa legge le province della sardegna sono passate da 8 a 4 (cagliari è diventata da provincia a città metropolitana mentre alcune province sono state inglobate da altre ed è stata formata la provincia  "sud sardegna" http://www.regione.sardegna.it/j/v/1270?s=300929&v=2&c=13906&t=1&anno )_ -->
+3. D1 features fields filled with sporadic full stops, whose meaning remains unclear, in place of explanations of self-evaluation results. 
+
+4. D2 features ambiguous information about the situation of safety certificates. Normal values are YES or NO. However, 'Non richiesto' (Not requested) and '-' can also be found in the dataset without any accompanying explanation on their meaning.
+
+5. In D3 information does not appear up-to-date for what concerns Sardinia provinces, which changed in 2016 going from a total of 8 to a total of 4 ((see Legge Regionale 4 Febbraio 2016 n.2)[http://www.regione.sardegna.it/j/v/1270?s=300929&v=2&c=13906&t=1&anno]). As such, province boundaries are not up-to-date in the demo visualization.
+
+6. According to the metadata, D1 should feature school self-evaluations. However, the self-evaluations are grouped according to 'Codice istituto comprensivo' (Comprehensive school ID), instead of being listed by 'Codice scuola' (School ID). 
+
+7. D3 containst some incorrect postal codes. The issue is that postal codes were coded as integer values. This causes problems with postal codes starting with one or more 0, which are automatically deleted by the machine.  
 
 ### 4.2 Juridical and ethical analysis (privacy, licenses, purposes, etc.)
 
@@ -205,7 +219,7 @@ Durations in CSV could be specified as a time interval according to the standard
 </MIUR:MOTIVAZIONEPUNTEGGIOSCUOLA>
 ```
 
-3. _nella versione XML/RDF dei dataset MIUR sono specificati vari namespace fra i quali dicat, ma nessuno di essi è effettivamente impiegato_
+3. The XML/RDF version of D1 and D2 makes an incorrect use of namespaces and ontologies, which are declared but not used.
 
 4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in section 5.1
 
