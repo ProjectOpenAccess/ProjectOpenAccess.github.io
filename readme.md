@@ -173,7 +173,7 @@ In this section we make some observations related to information quality in the 
 
 4. D2 features ambiguous information about the situation of safety certificates. Normal values are YES or NO. However, 'Non richiesto' (Not requested) and '-' can also be found in the dataset without any accompanying explanation on their meaning.
 
-5. In D3 information does not appear up-to-date for what concerns Sardinia provinces, which changed in 2016 going from a total of 8 to a total of 4 ((see Legge Regionale 4 Febbraio 2016 n.2)[http://www.regione.sardegna.it/j/v/1270?s=300929&v=2&c=13906&t=1&anno]). As such, province boundaries are not up-to-date in the demo visualization.
+5. In D3 information does not appear up-to-date for what concerns Sardinia provinces, which changed in 2016 going from a total of 8 to a total of 4 ([see Legge Regionale 4 Febbraio 2016 n.2](http://www.regione.sardegna.it/j/v/1270?s=300929&v=2&c=13906&t=1&anno)). As such, province boundaries are not up-to-date in the demo visualization.
 
 6. According to the metadata, D1 should feature school self-evaluations. However, the self-evaluations are grouped according to 'Codice istituto comprensivo' (Comprehensive school ID), instead of being listed by 'Codice scuola' (School ID). 
 
