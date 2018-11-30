@@ -75,8 +75,9 @@ var url_provinces = {
   basilicata: "https://raw.githubusercontent.com/Dataninja/geo-shapes/master/italy/regions/17/provinces.geojson",
   calabria: "https://raw.githubusercontent.com/Dataninja/geo-shapes/master/italy/regions/18/provinces.geojson",
   sicilia: "https://raw.githubusercontent.com/Dataninja/geo-shapes/master/italy/regions/19/provinces.geojson",
-  sardegna: "https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/dataset/geo/sardegna_prov01012018.geojson"
-  //sardegna: "https://raw.githubusercontent.com/Dataninja/geo-shapes/master/italy/regions/20/provinces.geojson"
+  // Sardegna updated 2018
+  // sardegna: "https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/dataset/geo/sardegna_prov01012018.geojson"
+  sardegna: "https://raw.githubusercontent.com/Dataninja/geo-shapes/master/italy/regions/20/provinces.geojson"
 }
 
 var region_style = {
@@ -91,7 +92,7 @@ var region_style = {
 
 var province_style = {
   style: {
-    fillColor: '#DA4453',
+    fillColor: '#5D9CEC',
     opacity: 1,
     color: '#434A54',
     fillOpacity: 0.5
