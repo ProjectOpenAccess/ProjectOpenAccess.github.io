@@ -181,12 +181,12 @@ After the semi-automatic mashup, D5-alpha was edited to remove unnecessary data 
 
 Finally, the CSV dataset obtained was transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to RDF properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), [GeoNames](https://www.geonames.org/), [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
 
-### D6 Dataset Revision
+### D6 (Revision)
 
 Dataset: https://github.com/sebucci/sebucci.github.io/blob/master/dataset/culturalinstituterevised.csv
 Metadata: https://github.com/sebucci/sebucci.github.io/blob/master/metadati/metadata.ttl
 
-We decided to make a revision on D3, that includes a correction on some UTF-8 characters that got encoded wrong and also an update on Sardinia's Provinces (problem discussed [below](). Moreover, we took out some elements of the original dataset that we didn't need for the visualization.
+We decided to make a revision on D3, that includes a correction on some UTF-8 characters that got encoded wrong and also an update on Sardinia's Provinces (problem discussed [below](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#41-information-quality). Moreover, we took out some elements of the original dataset that we didn't need for the visualization.
 
 ## 4. Datasets analysis
 
@@ -269,7 +269,7 @@ Durations in CSV could be specified as a time interval according to the standard
 
 3. The XML/RDF version of D1 and D2 makes an incorrect use of namespaces and ontologies, which are declared but not used.
 
-4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1), despite this is encouraged by the ["Linee guida per la valorizzazione del patrimonio informativo pubblico" by AGID](https://www.agid.gov.it/it/agenzia/stampa-e-comunicazione/notizie/2017/08/03/open-data-online-linee-guida-valorizzazione-del-patrimonio-informativo-pubblico). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in section 5.1
+4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1), despite this is encouraged by the ["Linee guida per la valorizzazione del patrimonio informativo pubblico" by AGID](https://www.agid.gov.it/it/agenzia/stampa-e-comunicazione/notizie/2017/08/03/open-data-online-linee-guida-valorizzazione-del-patrimonio-informativo-pubblico). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in [section 5.1]()
 
 ### 4.5 Updating the dataset over time
 
