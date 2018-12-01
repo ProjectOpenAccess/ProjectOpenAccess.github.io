@@ -1,11 +1,3 @@
-TO DO
-Bruno: inserire SPARQL D3
-Bruno: inserire link a legge privacy
-Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo.
-Creare bibliografia
-Completa tabella summary
-
-
  # School self-evaluation, building certifications and cultural institutes: what relationship?
 
 Francesca Giovannetti  
@@ -21,10 +13,10 @@ Another much debated topic is school safety. In 2016, about 44 structural failur
 On the positive side, Italy is known all over the world for its rich cultural heritage. Collaboration between cultural institutions and schools is crucial in order to build a connection between the youngest generations and the cultural richness of their country. 
 
 In this light, two questions naturally arise:
-1. Does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact the way schools evaluate their teaching performance? 
+1. Does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact in some way schools evaluate their teaching performance? 
 2. Do building certifications also play a role in school self-evaluation?
 
-This project will look at school self-evaluations from a particular perspective to find out whether the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance. Because of the topics it deals with, we named the project SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
+This project will look at school self-evaluations from a particular perspective to find out whether **the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance**. Because of the topics it deals with, we named the project SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
 
 ## 2. Application scenario
 
@@ -63,7 +55,9 @@ In the context of E-Governance, SEBuCCI might play a role in:
 
 - promoting debate among citizens, who could press municipalities for an increase of the presence of cultural institutions such as libraries in the areas where these are not available.
 
-- helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.  
+- helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.
+
+- raising awareness over school's general building certificates status.
 
 ### 2.4 Rationale of SEBuCCI 
 
@@ -97,6 +91,46 @@ License: https://creativecommons.org/licenses/by/3.0/
 
 Content description: This dataset lists all cultural institutions in Italy and provides information about their location, identification and services.
 
+Note: this dataset has been used for visualization purposes only and it's not directly downloadable in easily computable format (like csv). In order to obtain it we used the [SPARQL endpoint](http://dati.beniculturali.it/sparql) of dati.beniculturali.it with this query
+
+```sparql
+select * where {
+
+select distinct ?s as ?subject
+
+?Nome_Istituzionale
+?Descrizione
+?ISILIdentifier
+?Latitudine
+?Longitudine
+?Disciplina
+?Indirizzo
+?Codice_postale
+?Comune
+?Provincia
+
+where {
+
+graph <http://dati.beniculturali.it/mibact/luoghi> {
+
+?s rdf:type cis:CulturalInstituteOrSite ;
+cis:institutionalName ?Nome_Istituzionale .
+optional { ?s cis:description ?Descrizione }
+optional { ?s cis:ISILIdentifier ?ISILIdentifier }
+optional { ?s geo:lat ?Latitudine }
+optional { ?s geo:long ?Longitudine }
+optional { ?s cis:hasDiscipline [cis:name ?Disciplina] }
+optional {
+?s cis:hasSite [cis:hasAddress ?address ] .
+optional { ?address cis:fullAddress ?Indirizzo   }
+optional { ?address cis:postCode ?Codice_postale }
+optional { ?address cis:postName ?Comune         }
+optional { ?address cis:adminUnitL2 ?Provincia   }
+}
+}
+}
+}
+```
 ### D4.1 (auxiliary dataset)
 
 MIUR, 13 February 2018, Rubrica di valutazione utilizzata dalla scuola per l'autovalutazione, electronic dataset, Portale Unico dei Dati della Scuola, viewed 11 November 2018, http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0540RUBRICA_VAL
@@ -147,6 +181,13 @@ After the semi-automatic mashup, D5-alpha was edited to remove unnecessary data 
 
 Finally, the CSV dataset obtained was transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to RDF properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), [GeoNames](https://www.geonames.org/), [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
 
+### D6 (Revision)
+
+Dataset: https://github.com/sebucci/sebucci.github.io/blob/master/dataset/culturalinstituterevised.csv
+Metadata: https://github.com/sebucci/sebucci.github.io/blob/master/metadati/metadata.ttl
+
+We decided to make a revision on D3, that includes a correction on some UTF-8 characters that got encoded wrong and also an update on Sardinia's Provinces (problem discussed [below](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#41-information-quality)). Moreover, we took out some elements of the original dataset that we didn't need for the visualization.
+
 ## 4. Datasets analysis
 
 ### 4.1 Information quality
@@ -157,7 +198,7 @@ In this section we make some observations related to information quality in the 
 |----|-------------------------|------------------|-------------------------|------------------|
 | D1 | No. See point 1. | No. See point 6. | No. See points 2 and 3. | Yes |
 | D2 | No. See points 1 and 4. | Yes. | No. See points 1 and 4. | Yes |
-| D3 | No. See point 7. | Yes. | Unknown. | No. See point 5. |
+| D3 | Yes. | Yes. | No see point 7. | No. See point 5. |
 
 1. D1 and D2 do not feature school names. Schools are indeed identyfied by school codes only. This made it necessary to use an auxiliary datset (D4.2) in order to disambiguate school names.
 
@@ -171,13 +212,26 @@ In this section we make some observations related to information quality in the 
 
 6. According to the metadata, D1 should feature school self-evaluations. However, the self-evaluations are grouped according to 'Codice istituto comprensivo' (Comprehensive school ID), instead of being listed by 'Codice scuola' (School ID). 
 
-7. D3 containst some incorrect postal codes. The issue is that postal codes were coded as integer values. This causes problems with postal codes starting with one or more 0, which are automatically deleted by the machine.  
+7. D3 contains a column called "ISILIdentifier" and all the cells below this column are empty.
 
 ### 4.2 Juridical and ethical analysis (privacy, licenses, purposes, etc.)
 
 #### Privacy
 
-Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it could still be possible to trace the individuals referenced. This is against the  Some significant examples are:
+Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it could still be possible to trace the individuals referenced. 
+
+This is against various italian acts and laws:
+
+- [DECRETO DEL PRESIDENTE DELLA REPUBBLICA 24 giugno 1998, n. 249](http://www.gazzettaufficiale.it/eli/id/1998/07/29/098G0305/sg) In particular art.2 comma 2: "La  comunita'  scolastica  promuove  la solidarieta' tra i suoi
+componenti e tutela il diritto dello studente alla riservatezza." and art.2 comma 7: "Gli  studenti  stranieri  hanno  diritto al rispetto della vita culturale  e  religiosa  della  comunita' alla quale appartengono. La scuola  promuove e favorisce iniziative volte alla accoglienza e alla tutela  della loro lingua e cultura e alla realizzazione di attivita' interculturali."
+
+- [DECRETO LEGISLATIVO 30 giugno 2003, n. 196](http://www.gazzettaufficiale.it/eli/id/2003/07/29/003G0218/sg) Art. 50 comma 1: "1. Il divieto di cui all'articolo 13 del decreto del Presidente della Repubblica 22 settembre
+1988, n. 448, di pubblicazione e divulgazione con qualsiasi mezzo di notizie o immagini
+idonee a consentire l'identificazione di un minore si osserva anche in caso di
+coinvolgimento a qualunque titolo del minore in procedimenti giudiziari in **materie diverse
+da quella penale.**"
+
+Some significant examples are:
 
 * "[...] come nella classe dove essendoci un alunno affetto da ipoacusia; tutta la classe ha voluto integrare il proprio curriculum con l'apprendimento del LIS (linguaggio dei segni) supportati dall'assistente alla comunicazione."
 * "Nell'anno scolastico in corso sono stati sospesi due alunni della scuola primaria per lesioni ai compagni."
@@ -215,7 +269,7 @@ Durations in CSV could be specified as a time interval according to the standard
 
 3. The XML/RDF version of D1 and D2 makes an incorrect use of namespaces and ontologies, which are declared but not used.
 
-4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1), despite this is encouraged by the ["Linee guida per la valorizzazione del patrimonio informativo pubblico" by AGID](https://www.agid.gov.it/it/agenzia/stampa-e-comunicazione/notizie/2017/08/03/open-data-online-linee-guida-valorizzazione-del-patrimonio-informativo-pubblico). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in section 5.1
+4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1), despite this is encouraged by the ["Linee guida per la valorizzazione del patrimonio informativo pubblico" by AGID](https://www.agid.gov.it/it/agenzia/stampa-e-comunicazione/notizie/2017/08/03/open-data-online-linee-guida-valorizzazione-del-patrimonio-informativo-pubblico). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in [section 5.1](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#51-data-processing)
 
 ### 4.5 Updating the dataset over time
 
@@ -229,6 +283,9 @@ We do not plan to update SEBuCCI as it takes a picture of a specific school year
 | D1 | Indirect information about individuals | 3 | Semantics, Privacy | Remove information |
 | D3, D4.3 | Incorrect information about Sardinia's provinces | 2.5 | Outdated content | Combination of manual and automatic methods to redistribute data in the correct provinces |
 | D1 | Encoding of the dataset not specified | 2 | Technical | Include a note on the download page of the dataset stating its encoding |
+| D1 | Ambiguity between title and content (school/institutes ID)| 2 | Semantics | Disambiguation through alignment scripts with other datasets |
+| D2 | Ambiguity with the content of the cells (-, "Non richiesto") | 2 | Semantics | Our solution was to consider them both as "NO" |
+| D3 | ISILIdentifier content  missing | 1.5 | Sparceness | Deleted the column because all the information was missing |
    
 
 ## 5. Visualization
@@ -250,14 +307,7 @@ def process_data(source_csv_file_path):
             data.append(x)
     return data
  ```
-We then developed algorithms to calculate percentages and extract data specifically useful for the final visualization:
-
-```python
-import json
-def ansia(data):
-	return None
-```
-
+We then developed algorithms to calculate percentages and extract data specifically useful for the final visualization.
 Once the final sub-datasets that were used for computation were acquired, we used the JSON Python library to convert them into a json format as it was one of the inputs requested by the visualization library.
 
 ```python
@@ -267,6 +317,7 @@ def jsonize(data,nome):
     json_data = json.dumps(data)  #converts the data into json format
     risultatojson.write(json_data) #writes on the new file the converted data
 ```
+*\*_All the other scripts can be seen in the [Script Directory](https://github.com/sebucci/sebucci.github.io/blob/master/script/)_*
 
 **Get latitude and longitude of schools from address:**
 
@@ -337,4 +388,160 @@ For Italy, each region, each province, each school we established the following 
 -green light bulb > 66%.
 
 ## 6. Final considerations
+
+### 6.1 General Conclusions
+
+#### 6.1.1 Building Certificates
+
+According the statisticswith , and the only province in italy with the "green bulb" on building certificates (average of more than 66%) is **Prato**. The top **16** of Italy in this side is:
+
+1.	Prato (**best**)
+2.	Ancona
+3.	Mantova
+4.	Livorno
+5.	Ravenna
+6.	Pistoia
+7.	Monza E Della Brianza
+8.	Torino
+9.	Lodi
+10.	Savona
+11.	Rimini
+12.	Biella
+13.	Venezia
+14.	Bari
+15.	Udine
+16.	Como
+
+
+The situation is quite different for the opposite: in fact 15 provinces have the "red bulb" (<33%). The worst 16 are:
+
+1.	Pescara (**worst**)
+2.	Nuoro 
+3.	Reggio Calabria
+4.	Vibo Valentia
+5.	L'aquila
+6.	Crotone
+7.	Foggia 
+8.	Catanzaro 
+9.	Teramo
+10.	Chieti
+11.	Trieste
+12.	Roma
+13.	Isernia
+14.	Caserta
+15.	Frosinone
+16.	Rieti
+
+
+#### 6.1.2 Cultural Institutes
+
+If we look at that on the "Cultural Institutes / Km^2" side, the provinces with have at least a 0.044 (double of italy average) are 14, and the top 16 is: 
+
+1.	Trieste (**best**)
+2.	Napoli
+3.	Genova
+4.	Roma
+5.	Prato
+6.	Firenze
+7.	Milano
+8.	Imperia
+9.	Pistoia
+10.	Varese
+11.	Rimini
+12.	Ascoli Piceno
+13.	Macerata
+14.	Gorizia
+15.	Ancona
+16.	Livorno
+
+
+On the other hand, the provinces with the lowest values (<0.022) are **57**, the worst 16 are: 
+
+1.	Belluno (**worst**)
+2.	Caltanissetta
+3.	Enna
+4.	Rovigo
+5.	Foggia
+6.	Potenza
+7.	Rieti
+8.	Agrigento
+9.	Sondrio
+10.	Matera
+11.	Taranto
+12.	Sassari
+13.	Treviso
+14.	Crotone
+15.	Nuoro
+16.	Sud Sardegna 
+
+
+#### 6.1.3 Self-Evaluation
+
+According to self evaluation, the top 16 provinces are (we calculated sum of the percentages of 5-6-7 minus the sum of the percentages of 1-2-3-4): 
+
+1.	Isernia (**best**)
+2.	Terni
+3.	Verbano-Cusio-Ossola
+4.	Benevento
+5.	Cremona
+6.	Ascoli Piceno
+7.	Campobasso
+8.	Udine
+9.	Alessandria
+10.	Catanzaro
+11.	Rimini
+12.	Pordenone
+13.	Arezzo
+14.	Barletta-Andria-Trani
+15.	Vibo Valentia
+16.	Perugia.
+
+The worst 16 are:
+
+1.	Rovigo (**worst**)
+2.	Sassari
+3.	Cagliari
+4.	Sud Sardegna
+5.	Novara
+6.	Nuoro
+7.	Pistoia
+8.	Imperia
+9.	Biella
+10.	Napoli
+11.	Pavia
+12.	Parma
+13.	Trieste
+14.	Modena
+15.	Chieti
+16.	Catania
+
+### 6.2 Verification on our Thesis:
+
+#### 6.2.1 Building Certification Verification
+
+According to our thesis, building certificate (as an element to represent the general construction of schools) may influence  students' grades and general results. 
+
+If we look at the best provinces on both Self-evaluation and Building Certificates Percentages, only **Rimini** and **Pordenone** appear on both the list. We can conclude that, given our data, **having a good percentage of building certificates has no apparent relation with the students results**.
+
+Moreover, if we look at the worst building certificates percentage provinces and the worst self evaluation, only **Nuoro**, **Trieste** and **Chieti** appear on both lists. From this we can assume that **having a bad percentage of building certificates has no apparent relation with the students results.
+
+Finally, we can assume that, in general, **building certificate percentages do not have apparent relation with the students results.**.
+
+#### 6.2.1 Cultural Institutes Verification
+
+According to our thesis, the number of cultural institutes around the schools may influence students' grades and general results.
+
+If we look at the best provinces on both Self-evaluation and CI/Km^2, only **Rimini** and **Ascoli Piceno** appear on both lists. Given that, we can assume that **having a high number of CI around a school has no apparent relation with the students results**.
+
+Moreover, if we look at both the provinces with less CI/Km^2 and the worst in self-evaluation, we notice that **Rovigo**, **Sassari**, **Nuoro** and **Sud Sardegna** appear on both lists. Given that, we can assume that **having a low number of CI around a school may slightly influence students results in a negative way**
+
+Finally, we can assume that, in general, **the number of CI around a school very slightly influences students performance**. 
+
+### 6.3 Final Verdict
+
+Overall, given the results presented above, we can say that unfortunately our initial thesis was not verified by our data analysis. 
+
+
+
+
 
