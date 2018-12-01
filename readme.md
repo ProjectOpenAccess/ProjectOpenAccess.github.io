@@ -1,9 +1,3 @@
-TO DO
-Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo.
-Creare bibliografia
-Completa tabella summary
-
-
  # School self-evaluation, building certifications and cultural institutes: what relationship?
 
 Francesca Giovannetti  
@@ -19,10 +13,10 @@ Another much debated topic is school safety. In 2016, about 44 structural failur
 On the positive side, Italy is known all over the world for its rich cultural heritage. Collaboration between cultural institutions and schools is crucial in order to build a connection between the youngest generations and the cultural richness of their country. 
 
 In this light, two questions naturally arise:
-1. Does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact the way schools evaluate their teaching performance? 
+1. Does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact in some way schools evaluate their teaching performance? 
 2. Do building certifications also play a role in school self-evaluation?
 
-This project will look at school self-evaluations from a particular perspective to find out whether the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance. Because of the topics it deals with, we named the project SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
+This project will look at school self-evaluations from a particular perspective to find out whether **the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance**. Because of the topics it deals with, we named the project SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
 
 ## 2. Application scenario
 
@@ -61,7 +55,9 @@ In the context of E-Governance, SEBuCCI might play a role in:
 
 - promoting debate among citizens, who could press municipalities for an increase of the presence of cultural institutions such as libraries in the areas where these are not available.
 
-- helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.  
+- helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.
+
+- raising awareness over school's general building certificates status.
 
 ### 2.4 Rationale of SEBuCCI 
 
@@ -184,6 +180,13 @@ def Aligner(source1,source2,nomeoutput,campo):
 After the semi-automatic mashup, D5-alpha was edited to remove unnecessary data such as data related to "Scuola dell'infanzia", not covered by this project. Subsequently, the headings of the CSV dataset were modified in order to facilitate further computation processes (see [below](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#51-processing-data-through-computation))
 
 Finally, the CSV dataset obtained was transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to RDF properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), [GeoNames](https://www.geonames.org/), [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
+
+### D6 Dataset Revision
+
+Dataset: https://github.com/sebucci/sebucci.github.io/blob/master/dataset/culturalinstituterevised.csv
+Metadata: https://github.com/sebucci/sebucci.github.io/blob/master/metadati/metadata.ttl
+
+We decided to make a revision on D3, that includes a correction on some UTF-8 characters that got encoded wrong and also an update on Sardinia's Provinces (problem discussed [below](). Moreover, we took out some elements of the original dataset that we didn't need for the visualization.
 
 ## 4. Datasets analysis
 
@@ -385,4 +388,160 @@ For Italy, each region, each province, each school we established the following 
 -green light bulb > 66%.
 
 ## 6. Final considerations
+
+### 6.1 General Conclusions
+
+#### 6.1.1 Building Certificates
+
+According the statisticswith , and the only province in italy with the "green bulb" on building certificates (average of more than 66%) is **Prato**. The top **16** of Italy in this side is:
+
+1.	Prato (**best**)
+2.	Ancona
+3.	Mantova
+4.	Livorno
+5.	Ravenna
+6.	Pistoia
+7.	Monza E Della Brianza
+8.	Torino
+9.	Lodi
+10.	Savona
+11.	Rimini
+12.	Biella
+13.	Venezia
+14.	Bari
+15.	Udine
+16.	Como
+
+
+The situation is quite different for the opposite: in fact 15 provinces have the "red bulb" (<33%). The worst 16 are:
+
+1.	Pescara (**worst**)
+2.	Nuoro 
+3.	Reggio Calabria
+4.	Vibo Valentia
+5.	L'aquila
+6.	Crotone
+7.	Foggia 
+8.	Catanzaro 
+9.	Teramo
+10.	Chieti
+11.	Trieste
+12.	Roma
+13.	Isernia
+14.	Caserta
+15.	Frosinone
+16.	Rieti
+
+
+#### 6.1.2 Cultural Institutes
+
+If we look at that on the "Cultural Institutes / Km^2" side, the provinces with have at least a 0.044 (double of italy average) are 14, and the top 16 is: 
+
+1.	Trieste (**best**)
+2.	Napoli
+3.	Genova
+4.	Roma
+5.	Prato
+6.	Firenze
+7.	Milano
+8.	Imperia
+9.	Pistoia
+10.	Varese
+11.	Rimini
+12.	Ascoli Piceno
+13.	Macerata
+14.	Gorizia
+15.	Ancona
+16.	Livorno
+
+
+On the other hand, the provinces with the lowest values (<0.022) are **57**, the worst 16 are: 
+
+1.	Belluno (**worst**)
+2.	Caltanissetta
+3.	Enna
+4.	Rovigo
+5.	Foggia
+6.	Potenza
+7.	Rieti
+8.	Agrigento
+9.	Sondrio
+10.	Matera
+11.	Taranto
+12.	Sassari
+13.	Treviso
+14.	Crotone
+15.	Nuoro
+16.	Sud Sardegna 
+
+
+#### 6.1.3 Self-Evaluation
+
+According to self evaluation, the top 16 provinces are (we calculated sum of the percentages of 5-6-7 minus the sum of the percentages of 1-2-3-4): 
+
+1.	Isernia (**best**)
+2.	Terni
+3.	Verbano-Cusio-Ossola
+4.	Benevento
+5.	Cremona
+6.	Ascoli Piceno
+7.	Campobasso
+8.	Udine
+9.	Alessandria
+10.	Catanzaro
+11.	Rimini
+12.	Pordenone
+13.	Arezzo
+14.	Barletta-Andria-Trani
+15.	Vibo Valentia
+16.	Perugia.
+
+The worst 16 are:
+
+1.	Rovigo (**worst**)
+2.	Sassari
+3.	Cagliari
+4.	Sud Sardegna
+5.	Novara
+6.	Nuoro
+7.	Pistoia
+8.	Imperia
+9.	Biella
+10.	Napoli
+11.	Pavia
+12.	Parma
+13.	Trieste
+14.	Modena
+15.	Chieti
+16.	Catania
+
+### 6.2 Verification on our Thesis:
+
+#### 6.2.1 Building Certification Verification
+
+According to our thesis, building certificate (as an element to represent the general construction of schools) may influence  students' grades and general results. 
+
+If we look at the best provinces on both Self-evaluation and Building Certificates Percentages, only **Rimini** and **Pordenone** appear on both the list. We can conclude that, given our data, **having a good percentage of building certificates has no apparent relation with the students results**.
+
+Moreover, if we look at the worst building certificates percentage provinces and the worst self evaluation, only **Nuoro**, **Trieste** and **Chieti** appear on both lists. From this we can assume that **having a bad percentage of building certificates has no apparent relation with the students results.
+
+Finally, we can assume that, in general, **building certificate percentages do not have apparent relation with the students results.**.
+
+#### 6.2.1 Cultural Institutes Verification
+
+According to our thesis, the number of cultural institutes around the schools may influence students' grades and general results.
+
+If we look at the best provinces on both Self-evaluation and CI/Km^2, only **Rimini** and **Ascoli Piceno** appear on both lists. Given that, we can assume that **having a high number of CI around a school has no apparent relation with the students results**.
+
+Moreover, if we look at both the provinces with less CI/Km^2 and the worst in self-evaluation, we notice that **Rovigo**, **Sassari**, **Nuoro** and **Sud Sardegna** appear on both lists. Given that, we can assume that **having a low number of CI around a school may slightly influence students results in a negative way**
+
+Finally, we can assume that, in general, **the number of CI around a school very slightly influences students performance**. 
+
+### 6.3 Final Verdict
+
+Overall, given the results presented above, we can say that unfortunately our initial thesis was not verified by our data analysis. 
+
+
+
+
 
