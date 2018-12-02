@@ -515,7 +515,7 @@ In the same way, by looking at the worst provinces for school self-evaluation an
 
 In conclusion, **the number of cultural institutions nearby the school very slightly influence student performance**.
 
-#### School safety certificates
+#### School safety certificates
 
 By looking at the best provinces on both school self-evaluation and school safety certificates, **Rimini** and **Pordenone** are the only provinces on both lists. We can conclude that, according to our data, **having a good percentage of school safety certificates has no apparent relation with student performance**.
 
