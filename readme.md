@@ -22,7 +22,7 @@ SEBuCCI will look at school self-evaluations from a particular perspective to fi
 
 SEBuCCI aligns data from different sources in order to gain insight, through to data, into school self-evaluations. In particular, SEBuCCI looks at available school safety certificates and cultural institutions, such as libraries and museums, as possible reasons behind positive school self-evaluation results. 
 
-In order to achieve this, the project aligns 1) the results of school self-evaluation for school year 2016-2017; 2) the data related to school building certificates (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. The result will be a an explorable map which allows users to visualize relevant data for each school in Italy.
+In order to achieve this, the project aligns 1) the results of school self-evaluation for school year 2016-2017; 2) the data related to school building certificates (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. The result will be a an explorable map which allows users to visualize data about school self-evaluations, school safety certificates and cultural institutions for each school in Italy.
 
 ### 2.1 School self-evaluation
 
@@ -43,7 +43,7 @@ SEBuCCI focuses on criterion 21 'Risultati Scolastici' (Overall student performa
 
 ### 2.2 The data
 
-Every year, MIUR (Italian Ministry of Education, University and Research) makes available the open datasets containing the results of school self-evaluations. Specifically, the datasets feature assigned grades and textual explanations for the grades. 
+Every year, MIUR (Italian Ministry of Education, University and Research) makes available open datasets containing the results of school self-evaluations. Specifically, the datasets feature school self-evaluation results and free-text result explanations. 
 
 MIUR also publishes irregular updates on school safety certificates as open data. 
 
