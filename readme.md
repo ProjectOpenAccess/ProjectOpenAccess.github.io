@@ -1,15 +1,4 @@
-<<<<<<< HEAD
-TO DO
-Bruno: inserire SPARQL D3
-Bruno: inserire link a legge privacy
-Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo.
-Creare bibliografia (se tempo)
-Completa tabella summary
-
-
-=======
->>>>>>> 403a6353f2f87d26fd9e019f45b28baa96061897
- # School self-evaluation, building certifications and cultural institutes: what relationship?
+# School self-evaluation, building certifications and cultural institutes: what relationship?
 
 Francesca Giovannetti  
 Bruno Sartini  
