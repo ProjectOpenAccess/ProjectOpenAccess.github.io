@@ -10,10 +10,10 @@ In recent years, Italy's school system has become a hot topic. The Italian educa
 
 School safety is another much debated topic. In 2016, about 44 structural failures and collapses in Italian schools have been registered (see [Corriere della Sera](https://www.corriere.it/scuola/medie/17_novembre_22/edilizia-scolastica-44-crolli-all-anno-MIUR-piu-due-miliardi-arrivo-ce09130a-cf75-11e7-a1da-9278adb4d756.shtml)).
 
-On the positive side, Italy is known all over the world for its rich cultural heritage. Collaboration between cultural institutions and schools is crucial in order to build a connection between the youngest generations and the cultural richness of their country. 
+On the positive side, Italy is known all over the world for its rich cultural heritage. The SEBuCCI project promotes the idea that collaboration between cultural institutions and schools is crucial in order to build a connection between the youngest generations and the cultural richness of their country. 
 
 In this light, two questions naturally arise:
-1. Does the presence of libraries, museums and other cultural institutions in the surroundings of schools impact in some way schools evaluate their teaching performance? 
+1. Does the presence of libraries, museums and other cultural institutions in school surroundings impact how schools evaluate their teaching performance? 
 2. Do building certifications also play a role in school self-evaluation?
 
 This project will look at school self-evaluations from a particular perspective to find out whether **the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance**. Because of the topics it deals with, we named the project SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
