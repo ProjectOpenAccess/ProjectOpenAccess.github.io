@@ -49,7 +49,7 @@ SEBuCCI aligns school self-evaluations with school safety certificates to find o
 
 SEBuCCI makes also use of the open dataset of 'Luoghi culturali' (Cultural institutions) published by MiBACT (Italian Ministry of Cultural Heritage and Activities) to identify and locate cultural institutions and their proximity to schools in Italy. 
 
-### 2.3 How SEBuCCI may contribute to E-Governance
+### 2.3 How SEBuCCI can contribute to E-Governance
 
 In the context of E-Governance, SEBuCCI might play a role in:
 
@@ -61,7 +61,7 @@ In the context of E-Governance, SEBuCCI might play a role in:
 
 ### 2.4 Rationale of SEBuCCI 
 
-The aim of this project is to gain insight -  through data - into the reasons behind the result of school self-evaluations, in order to find out whether building certifications and nearby cultural institutions affect the results of school evaluations.
+The aim of this project is to gain insight,through data,into the reasons behind the result of school self-evaluations, in order to find out whether building certifications and nearby cultural institutions affect the results of school evaluations.
 
 In order to achieve this, the project aligns 1) the results of school self-evaluation for school year 2016-2017; 2) the data related to school building certificates (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. The result will be a an explorable map visualizing these data for each school in Italy.
 
@@ -250,9 +250,9 @@ We propose three possibile solutions:
 
 #### Licenses
 
-D1, D2, D4.1 and D4.2 (MIUR) are licensed under the Italian Open Data License (IODL) v2.0, very similar to a CC-BY 4.0. Each dataset is accompanyed by a clear license declaration. However, the whole website is covered by a "All rights reserved" copyright statement, which does not explicitly mentions the exclusion of the contents accompanied by a IODL 2.0 license. 
+D1, D2, D4.1 and D4.2 (MIUR) are licensed under the Italian Open Data License (IODL) v2.0, which is very similar to a CC-BY 4.0. Each dataset is accompanyed by a clear license declaration. However, the whole website is covered by a "All rights reserved" copyright statement, which does not explicitly mentions the exclusion of the contents accompanied by a IODL 2.0 license. 
 
-The metadata of D3 (MiBACT) do not specify a license e.g. by using the property `dcterms:license` (see http://dati.beniculturali.it/lodview/resource/datasetLuoghiDellaCultura.html). Information about licenses is featured in the website footer only. The dataset about "Luoghi culturali" is licensed under CC BY-SA 3.0, which requires attribution and share-alike.
+The metadata of D3 (MiBACT) do not specify a license e.g. by using the property `dcterms:license` (see http://dati.beniculturali.it/lodview/resource/datasetLuoghiDellaCultura.html). The website footer includes a license for all website contents (CC-BY-SA-3.0.) and points to a separate webpage which lists exceptions, among which is our "Luoghi culturali" dataset, licensed under a CC-BY 3.0.
 
 ### 4.3 Technical analysis (formats, metadata, URIs, provenance)
 
