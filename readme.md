@@ -20,7 +20,7 @@ SEBuCCI will look at school self-evaluations from a particular perspective to fi
 
 ## 2. Application scenario
 
-SEBuCCI aligns data from different sources in order to achieve the objective of gaining insight, thanks to data, into school self-evaluations. In particular SEBuCCI looks at the availability or absence of school safety certifications and cultural institutions, such as libraries and museums, as possible reasons behind school self-evaluation results. 
+SEBuCCI aligns data from different sources in order to gain insight, through to data, into school self-evaluations. In particular, SEBuCCI looks at available school safety certificates and cultural institutions, such as libraries and museums, as possible reasons behind positive school self-evaluation results. 
 
 ### 2.1 School self-evaluation
 
@@ -85,7 +85,7 @@ Content description: This dataset provides the list of building safety certifica
 
 ### D3
 
-MiBACT, 10 November 2018 (modified), Luoghi della cultura, electronic dataset, Gli Open Data, viewed 11 November 2018, http://dati.beniculturali.it/dataset/dataset-luoghi.ttl  
+MiBACT, 10 November 2018 (modified), Luoghi della cultura, electronic dataset, Gli Open Data, viewed 11 November 2018, http://dati.beniculturali.it/datasets/luoghi-della-cultura  
 
 License: https://creativecommons.org/licenses/by/3.0/
 
