@@ -89,9 +89,9 @@ MiBACT, 10 November 2018 (modified), Luoghi della cultura, electronic dataset, G
 
 License: https://creativecommons.org/licenses/by/3.0/
 
-Content description: This dataset lists all cultural institutions in Italy and provides information about their location, identification and services.
+Content description: This dataset lists cultural institutions in Italy providing information about their location, identification and services.
 
-Note: this dataset has been used for visualization purposes only and it's not directly downloadable in easily computable format (like csv). In order to obtain it we used the [SPARQL endpoint](http://dati.beniculturali.it/sparql) of dati.beniculturali.it with this query
+Note: this dataset is available as RDF Turtle only and it is used in SEBuCCI just for visualization purposes. In order to extract the data we used the [SPARQL endpoint](http://dati.beniculturali.it/sparql) of dati.beniculturali.it with the following query:
 
 ```sparql
 select * where {
