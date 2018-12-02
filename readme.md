@@ -16,7 +16,7 @@ In this light, two questions naturally arise:
 1. Does the presence of libraries, museums and other cultural institutions in school surroundings impact how schools evaluate their teaching performance? 
 2. Do building certifications also play a role in school self-evaluation?
 
-This project will look at school self-evaluations from a particular perspective to find out whether **the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance**. Because of the topics it deals with, we named the project SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions).
+SEBuCCI will look at school self-evaluations from a particular perspective to find out whether **the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance**. We named the project SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions) because of the topics it focuses on.
 
 ## 2. Application scenario
 
