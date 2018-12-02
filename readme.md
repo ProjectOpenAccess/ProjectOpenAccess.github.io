@@ -265,11 +265,11 @@ Durations in CSV could be specified as a time interval according to the standard
 
 4. In the MIUR page of the csv D1 dataset there is no indication about the encoding of the file (if it's ASCII, ISO-8859-1), despite this is encouraged by the ["Linee guida per la valorizzazione del patrimonio informativo pubblico" by AGID](https://www.agid.gov.it/it/agenzia/stampa-e-comunicazione/notizie/2017/08/03/open-data-online-linee-guida-valorizzazione-del-patrimonio-informativo-pubblico). This problem can create various problems in the automatic computation of the data. In fact, a wrong encoding declaration during the analysis may create incorrect data results (some cells may be skipped for example). After trying multiple encodings, the only one that seemed to work without corrupting, using Python library "csv", was "utf-8-sig" ([see Python documentation about it here](https://docs.python.org/2/library/codecs.html#encodings-and-unicode)). An example of a script using that encoding can be seen in [section 5.1](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#51-data-processing)
 
-### 4.5 Updating the dataset over time
+### 4.4 Updating the dataset over time
 
 We do not plan to update SEBuCCI as it takes a picture of a specific school year, namely 2016-2017. However, it would be interesting to create new datasets for the following school years to be able to make comparisons between datasets.
 
-### 4.6 Summary
+### 4.5 Summary
 
 | Id | Problem description | Severity (1-3) | Type (Syntax/Semantics) | Proposed solution |
 |-------------------------------|----------------------------|----------------|-------------------------|----------------------------|
@@ -311,7 +311,7 @@ def jsonize(data,nome):
 ```
 *\*_All the other scripts can be seen in the [Script Directory](https://github.com/sebucci/sebucci.github.io/blob/master/script/)_*
 
-#### 5.1.1. Get school coordinates from address:
+#### 5.1.1 Get school coordinates from address:
 
 In order to get the latitude and longitude of schools knowing their addresses, we employed the following script: [address2latlon.py](https://github.com/sebucci/sebucci.github.io/blob/master/script/address2latlon.py).
 
@@ -327,7 +327,7 @@ In order to visualize the data the following libraries were used:
 * **Chart.js**: Simple yet flexible JavaScript charting for designers and developers.
 * **Bootstrap**: Build responsive, mobile-first projects on the web with the world's most popular front-end component library.
 
-#### 5.2.2 Further information and licenses
+#### 5.2.1 Further information and licenses
 
 **Leaflet.js**
 
@@ -506,7 +506,7 @@ On the other hand, the worst 16 are:
 1. Does the presence of libraries, museums and other cultural institutions in school surroundings impact how schools evaluate their teaching performance? 
 2. Do building certifications also play a role in school self-evaluation? 
 
-*Cultural institutions*
+#### Cultural institutions
 
 By looking at the best provinces for school self-evaluation and cultural institutions per Km^2, we see that only **Rimini** and **Ascoli Piceno** appear on both lists. On this basis, we can state that **having a high number of cultural institutions nearby the school has no apparent relation with student performance**.
 
@@ -515,7 +515,7 @@ In the same way, by looking at the worst provinces for school self-evaluation an
 
 In conclusion, **the number of cultural institutions nearby the school very slightly influence student performance**.
 
-*School safety certificates* 
+#### School safety certificates
 
 By looking at the best provinces on both school self-evaluation and school safety certificates, Rimini** and **Pordenone** are the only provinces on both lists. We can conclude that, according to our data, **having a good percentage of school safety certificates has no apparent relation with student performance**.
 
