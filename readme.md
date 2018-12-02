@@ -517,7 +517,7 @@ In conclusion, **the number of cultural institutions nearby the school very slig
 
 #### School safety certificates
 
-By looking at the best provinces on both school self-evaluation and school safety certificates, Rimini** and **Pordenone** are the only provinces on both lists. We can conclude that, according to our data, **having a good percentage of school safety certificates has no apparent relation with student performance**.
+By looking at the best provinces on both school self-evaluation and school safety certificates, **Rimini** and **Pordenone** are the only provinces on both lists. We can conclude that, according to our data, **having a good percentage of school safety certificates has no apparent relation with student performance**.
 
 In the same way, by looking at the provinces having the lowest percentage of school safety certificates and the lowest school self-evaluation results, we can see that only **Nuoro**, **Trieste** and **Chieti** are included in both lists. From this, we can state that **having a bad percentage of school safety certificates has no apparent relation with student performance**.
 
