@@ -2,7 +2,7 @@ TO DO
 Bruno: inserire SPARQL D3
 Bruno: inserire link a legge privacy
 Inserire veloce sezione sui risultati finora ottenuti nei limiti dei dati visualizzabili in demo.
-Creare bibliografia
+Creare bibliografia (se tempo)
 Completa tabella summary
 
 
