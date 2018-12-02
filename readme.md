@@ -1,4 +1,4 @@
-# The SEBuCCI project. School self-evaluation, building certifications and cultural institutes: what relationship?
+# The SEBuCCI project. School self-evaluation, building certifications and cultural instututions: what relationship?
 
 Francesca Giovannetti  
 Bruno Sartini  
@@ -21,6 +21,8 @@ SEBuCCI will look at school self-evaluations from a particular perspective to fi
 ## 2. Application scenario
 
 SEBuCCI aligns data from different sources in order to gain insight, through to data, into school self-evaluations. In particular, SEBuCCI looks at available school safety certificates and cultural institutions, such as libraries and museums, as possible reasons behind positive school self-evaluation results. 
+
+In order to achieve this, the project aligns 1) the results of school self-evaluation for school year 2016-2017; 2) the data related to school building certificates (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. The result will be a an explorable map which allows users to visualize relevant data for each school in Italy.
 
 ### 2.1 School self-evaluation
 
@@ -57,13 +59,7 @@ In the context of E-Governance, SEBuCCI might play a role in:
 
 - helping schools to become aware of the presence of nearby cultural institutions so to increase collaborative projects and visits.
 
-- raising awareness over school's general building certificates status.
-
-### 2.4 Rationale of SEBuCCI 
-
-The aim of this project is to gain insight,through data,into the reasons behind the result of school self-evaluations, in order to find out whether building certifications and nearby cultural institutions affect the results of school evaluations.
-
-In order to achieve this, the project aligns 1) the results of school self-evaluation for school year 2016-2017; 2) the data related to school building certificates (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. The result will be a an explorable map visualizing these data for each school in Italy.
+- raising awareness over the status of school safety certificates.
 
 ## 3. Original datasets and mashup
 
@@ -212,8 +208,6 @@ In this section we make some observations related to information quality in the 
 
 6. According to the metadata, D1 should feature school self-evaluations. However, the self-evaluations are grouped according to 'Codice istituto comprensivo' (Comprehensive school ID), instead of being listed by 'Codice scuola' (School ID). 
 
-7. D3 contains a column called "ISILIdentifier" and all the cells below this column are empty.
-
 ### 4.2 Juridical and ethical analysis (privacy, licenses, purposes, etc.)
 
 #### Privacy
@@ -319,7 +313,7 @@ def jsonize(data,nome):
 ```
 *\*_All the other scripts can be seen in the [Script Directory](https://github.com/sebucci/sebucci.github.io/blob/master/script/)_*
 
-#### 5.1.1. Get schools' coordinates from address:
+#### 5.1.1. Get school coordinates from address:
 
 In order to get the latitude and longitude of schools knowing their addresses, we employed the following script: [address2latlon.py](https://github.com/sebucci/sebucci.github.io/blob/master/script/address2latlon.py).
 
@@ -367,7 +361,7 @@ v4.1.3., Code &copy; MIT, Docs CC BY 3.0.
 The visualization makes use of visual metaphors to synthetically represent the data. 
 
 #### 5.3.1 Cultural intitutions
-N. of cultural institutes divided by Km^2.
+N. of cultural instututions divided by Km^2.
 
 For Italy, each region, each province we established the following threshold:
 
@@ -387,11 +381,9 @@ For Italy, each region, each province, each school we established the following 
 
 ## 6. Final considerations
 
-### 6.1 General Conclusions
+### 6.1 School safety certificates
 
-#### 6.1.1 Building Certificates
-
-According the statisticswith , and the only province in italy with the "green bulb" on building certificates (average of more than 66%) is **Prato**. The top **16** of Italy in this side is:
+According to statistics, **Prato** is the only Italian province with a green light as concerns building certificates (>66%). Alongside with Prato, the top **16** provinces of Italy are:
 
 1.	Prato (**best**)
 2.	Ancona
@@ -410,8 +402,7 @@ According the statisticswith , and the only province in italy with the "green bu
 15.	Udine
 16.	Como
 
-
-The situation is quite different for the opposite: in fact 15 provinces have the "red bulb" (<33%). The worst 16 are:
+On the opposite side, the following provinces get a red light (<33%):
 
 1.	Pescara (**worst**)
 2.	Nuoro 
@@ -430,10 +421,9 @@ The situation is quite different for the opposite: in fact 15 provinces have the
 15.	Frosinone
 16.	Rieti
 
+### 6.2 Cultural institutions
 
-#### 6.1.2 Cultural Institutes
-
-If we look at that on the "Cultural Institutes / Km^2" side, the provinces with have at least a 0.044 (double of italy average) are 14, and the top 16 is: 
+The Italian provinces with double the number of cultural institutions compared to the Italian average per square kilometer are 14. The top 16 are:
 
 1.	Trieste (**best**)
 2.	Napoli
@@ -453,7 +443,7 @@ If we look at that on the "Cultural Institutes / Km^2" side, the provinces with 
 16.	Livorno
 
 
-On the other hand, the provinces with the lowest values (<0.022) are **57**, the worst 16 are: 
+On the other hand, the provinces with the lowest values (<0.022) are **57**, among which the worst 16 are: 
 
 1.	Belluno (**worst**)
 2.	Caltanissetta
@@ -473,9 +463,9 @@ On the other hand, the provinces with the lowest values (<0.022) are **57**, the
 16.	Sud Sardegna 
 
 
-#### 6.1.3 Self-Evaluation
+### 6.3 School self-evaluation
 
-According to self evaluation, the top 16 provinces are (we calculated sum of the percentages of 5-6-7 minus the sum of the percentages of 1-2-3-4): 
+As regards school self-evaluation results (sum of percentage of 5,6 and 7 minus sum of percentage of 1,2,3 and 4), the top 16 Italian provinces are:
 
 1.	Isernia (**best**)
 2.	Terni
@@ -494,7 +484,7 @@ According to self evaluation, the top 16 provinces are (we calculated sum of the
 15.	Vibo Valentia
 16.	Perugia.
 
-The worst 16 are:
+On the other hand, the worst 16 are:
 
 1.	Rovigo (**worst**)
 2.	Sassari
@@ -513,31 +503,27 @@ The worst 16 are:
 15.	Chieti
 16.	Catania
 
-### 6.2 Verification on our Thesis:
+### 6.2 What about our initial questions? 
 
-#### 6.2.1 Building Certification Verification
+1. Does the presence of libraries, museums and other cultural institutions in school surroundings impact how schools evaluate their teaching performance? 
+2. Do building certifications also play a role in school self-evaluation? 
 
-According to our thesis, building certificate (as an element to represent the general construction of schools) may influence  students' grades and general results. 
+*School safety certificates* 
 
-If we look at the best provinces on both Self-evaluation and Building Certificates Percentages, only **Rimini** and **Pordenone** appear on both the list. We can conclude that, given our data, **having a good percentage of building certificates has no apparent relation with the students results**.
+By looking at the best provinces on both school self-evaluation and school safety certificates, Rimini** and **Pordenone** are the only provinces on both lists. We can conclude that, according to our data, **having a good percentage of school safety certificates has no apparent relation with student performance**.
 
-Moreover, if we look at the worst building certificates percentage provinces and the worst self evaluation, only **Nuoro**, **Trieste** and **Chieti** appear on both lists. From this we can assume that **having a bad percentage of building certificates has no apparent relation with the students results.
+In the same way, by looking at the provinces having the lowest percentage of school safety certificates and the lowest school self-evaluation results, we can see that only **Nuoro**, **Trieste** and **Chieti** are included in both lists. From this, we can state that **having a bad percentage of school safety certificates has no apparent relation with student performance**.
 
-Finally, we can assume that, in general, **building certificate percentages do not have apparent relation with the students results.**.
+In conclusion, **the percentage of school safety certificates do not have an apparent relation with student performance**.
 
-#### 6.2.1 Cultural Institutes Verification
+*Cultural institutions*
 
-According to our thesis, the number of cultural institutes around the schools may influence students' grades and general results.
+By looking at the best provinces for school self-evaluation and cultural institutions per Km^2, we see that only **Rimini** and **Ascoli Piceno** appear on both lists. On this basis, we can state that **having a high number of cultural institutions nearby the school has no apparent relation with student performance**.
 
-If we look at the best provinces on both Self-evaluation and CI/Km^2, only **Rimini** and **Ascoli Piceno** appear on both lists. Given that, we can assume that **having a high number of CI around a school has no apparent relation with the students results**.
 
-Moreover, if we look at both the provinces with less CI/Km^2 and the worst in self-evaluation, we notice that **Rovigo**, **Sassari**, **Nuoro** and **Sud Sardegna** appear on both lists. Given that, we can assume that **having a low number of CI around a school may slightly influence students results in a negative way**
+In the same way, by looking at the worst provinces for school self-evaluation and cultural institutions per Km^2, we see that only **Rovigo**, **Sassari**, **Nuoro** and **Sud Sardegna** appear on both lists. On this basis, we can state that **having a low number of cultural institutions nearby the school may slightly have a negative influence on student performance**.
 
-Finally, we can assume that, in general, **the number of CI around a school very slightly influences students performance**. 
-
-### 6.3 Final Verdict
-
-Overall, given the results presented above, we can say that unfortunately our initial thesis was not verified by our data analysis. 
+In conclusion, **the number of cultural institutions nearby the school very slighly influence students performance**.
 
 
 
