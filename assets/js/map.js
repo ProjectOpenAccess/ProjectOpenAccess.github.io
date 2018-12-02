@@ -44,12 +44,14 @@ var Thunderforest_SpinalMap = L.tileLayer('https://{s}.tile.thunderforest.com/sp
 $('#txt_selected').text('Italy')
 
 updateMeanItaly()
+updateCulturalPlacesItaly()
 
 // Add tile
 mymap.addLayer(Wikimedia)
 
 // Init school array
 var bologna_school_group = L.featureGroup()
+var bologna_school = []
 
 // Add GeoJson layer online from the url
 var url_regions = "https://raw.githubusercontent.com/stefanocudini/leaflet-geojson-selector/master/examples/italy-regions.json"
@@ -92,7 +94,7 @@ var region_style = {
 
 var province_style = {
   style: {
-    fillColor: '#5D9CEC',
+    fillColor: '#4FC1E9',
     opacity: 1,
     color: '#434A54',
     fillOpacity: 0.5
@@ -147,6 +149,7 @@ region_layer.on('click', function (e) {
   // Update chart
   updateChartRegion(region_name)
   updateMeanRegion(region_name)
+  updateCulturalPlacesRegion(region_name)
 
 
   // Add province layer
@@ -322,12 +325,10 @@ function handleProvinceClick(e) {
 
   updateChartProvince(province_name)
   updateMeanProvince(province_name)
+  updateCulturalPlacesProvince(province_name)
 
   if (province_name == 'BOLOGNA')
     showBolognaSchools()
-
-
-
 
   // Move bounds to province
   mymap.fitBounds(e.layer.getBounds())
@@ -345,7 +346,7 @@ function reset() {
  */
 function getBolognaSchools() {
 
-  let bologna_school_url = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/dataset/geo/bologna.json'
+  let bologna_school_url = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/dataset/geo/scuole_bologna.json'
 
   $.ajax({
       url: bologna_school_url,
@@ -355,22 +356,21 @@ function getBolognaSchools() {
     .done(function (schools) {
 
       schools = JSON.parse(schools)
+      bologna_school = schools
 
       for (let school of schools) {
 
-        let circle = L.circle([school.posizione.lat, school.posizione.lon], {
-          color: '#37BC9B',
-          fillColor: '#48CFAD',
-          fillOpacity: 0.5,
-          radius: 50
-        }).addTo(bologna_school_group)
+        L.circle([school.posizione.lat, school.posizione.lon], {
+            color: '#434A54',
+            fillColor: '#AC92EC',
+            fillOpacity: 0.5,
+            radius: 50,
+            codice_scuola: school.codice_scuola
+          }).on('click', function (e) {
+            showCardSchool(e.sourceTarget.options.codice_scuola)
+          })
+          .addTo(bologna_school_group)
 
-        circle.on('click', function () {
-
-          showCardSchool(school)
-        })
-
-        //circle.bindPopup(school.nome_scuola)
       }
     })
 }
@@ -394,10 +394,6 @@ function hideBolognaSchools() {
 $(document).ready(function () {
 
   getBolognaSchools()
-
-  $('#btn_reset_view').on('click', function () {
-    reset()
-  })
 })
 
 function updateMeanItaly() {
@@ -414,9 +410,27 @@ function updateMeanItaly() {
 
       let mean = Number(rows[0].perc).toFixed(1)
 
-      let content = getRightTrafficLight(mean)
-
       $('#txtConstructionMean')[0].outerHTML = getRightTrafficLight(mean)
+
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+}
+
+function updateCulturalPlacesItaly() {
+
+  let url_cultural_italy = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/Json/italialuoghiperkm2.json'
+
+  $.ajax({
+      url: url_cultural_italy,
+    })
+
+    .done(function (rows) {
+
+      rows = JSON.parse(rows)
+
+      let number = Number(rows[0].cikm2).toFixed(4)
+
+      $('#txtCulturalNum')[0].outerHTML = getRightCulturalPlaces(number)
 
       $('[data-toggle="tooltip"]').tooltip()
     })
@@ -447,6 +461,29 @@ function updateMeanRegion(region_name) {
     })
 }
 
+function updateCulturalPlacesRegion(region_name) {
+
+  let url_cultural_region = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/Json/regioniluoghiperkm2.json'
+
+  $.ajax({
+      url: url_cultural_region,
+    })
+
+    .done(function (rows) {
+
+      rows = JSON.parse(rows)
+
+      let number
+
+      for (let region of rows)
+        if (region['regione'] == region_name)
+          number = Number(region.cikm2).toFixed(4)
+
+      $('#txtCulturalNum')[0].outerHTML = getRightCulturalPlaces(number)
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+}
+
 function updateMeanProvince(province_name) {
 
   let url_mean_province = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/Json/mediaediliziaprovincia.json'
@@ -472,6 +509,29 @@ function updateMeanProvince(province_name) {
     })
 }
 
+function updateCulturalPlacesProvince(province_name) {
+
+  let url_cultural_province = 'https://raw.githubusercontent.com/sebucci/sebucci.github.io/master/Json/provluoghiperkm2.json'
+
+  $.ajax({
+      url: url_cultural_province,
+    })
+
+    .done(function (rows) {
+
+      rows = JSON.parse(rows)
+
+      let number
+
+      for (let province of rows)
+        if (province['provincia'] == province_name.toLowerCase())
+          number = Number(province.luogoperkm2).toFixed(4)
+
+      $('#txtCulturalNum')[0].outerHTML = getRightCulturalPlaces(number)
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+}
+
 function selectItaly() {
 
   showCardInfo()
@@ -490,6 +550,9 @@ function selectItaly() {
 
   // UpdateMeanItaly
   updateMeanItaly()
+
+  // UpdateCulturalPlaces
+  updateCulturalPlacesItaly()
 }
 
 function getRightTrafficLight(number) {
@@ -499,7 +562,7 @@ function getRightTrafficLight(number) {
   let yellow = $(`<i class="fas fa-lightbulb text-warning muted"></i>`)
   let green = $(`<i class="fas fa-lightbulb text-success muted"></i>`)
 
-  if (number > 0 && number <= 33.3)
+  if (number >= 0 && number <= 33.3)
     red.removeClass(muted)
 
   if (number > 33.3 && number <= 66.6)
@@ -515,6 +578,25 @@ function getRightTrafficLight(number) {
   </span>`
 }
 
+function getRightCulturalPlaces(number) {
+
+  let cultural_place = $(`<i class="fas fa-university"></i>`)
+
+  number = Number(number)
+
+  if (number > 0 && number < 0.0224)
+    return `<span id="txtCulturalNum" data-html="true" data-toggle="tooltip" data-placement="top" title="${number}/km<sup>2</sup>">${cultural_place[0].outerHTML}</span>`
+
+  if (number >= 0.0224 && number < 0.0448)
+    return `<span id="txtCulturalNum" data-html="true" data-toggle="tooltip" data-placement="top" title="${number}/km<sup>2</sup>">${cultural_place[0].outerHTML}${cultural_place[0].outerHTML}</span>`
+
+  if (number >= 0.0448)
+    return `<span id="txtCulturalNum" data-html="true" data-toggle="tooltip" data-placement="top" title="${number}/km<sup>2</sup>">${cultural_place[0].outerHTML}${cultural_place[0].outerHTML}${cultural_place[0].outerHTML}</span>`
+
+  else
+    return `<span id="txtCulturalNum"></span>`
+}
+
 let cardInfo = $('#cardInfo')
 let CardSchool = $('#CardSchool')
 let cardChart = $('#cardChart')
@@ -526,18 +608,21 @@ function showCardInfo() {
   CardSchool.hide()
 }
 
-function showCardSchool(school) {
+function showCardSchool(school_code) {
 
   CardSchool.show()
   cardChart.hide()
   cardInfo.hide()
 
-  CardSchool.find('#school_title').text(school.nome_scuola)
-  CardSchool.find('#school_address').text(school.indirizzo)
+  for (let school of bologna_school)
+    if (school_code == school.codice_scuola) {
+      CardSchool.find('#school_title').text(school.nome_scuola)
+      CardSchool.find('#school_address').text(school.indirizzo)
 
-  CardSchool.find('#school_score').text(school.punteggio)
-  CardSchool.find('#school_num_c').text(school.num_cultural_institute)
-  CardSchool.find('#school_certificates')[0].outerHTML = getRightTrafficLight(school.percentage)
+      CardSchool.find('#school_score').text(school.punteggio)
+      CardSchool.find('#school_num_c').text(school.num_cultural_institute)
+      CardSchool.find('#txtConstructionMean')[0].outerHTML = getRightTrafficLight(school.percentage)
 
-  $('[data-toggle="tooltip"]').tooltip()
+      $('[data-toggle="tooltip"]').tooltip()
+    }
 }
