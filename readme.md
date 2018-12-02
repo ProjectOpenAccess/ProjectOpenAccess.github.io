@@ -319,9 +319,13 @@ def jsonize(data,nome):
 ```
 *\*_All the other scripts can be seen in the [Script Directory](https://github.com/sebucci/sebucci.github.io/blob/master/script/)_*
 
-**Get latitude and longitude of schools from address:**
+#### 5.1.1. Get schools' coordinates from address:
 
-In order to get the latitude and longitude of schools knowing their addresses, we employed the following script: [address2latlon.py](https://github.com/sebucci/sebucci.github.io/blob/master/script/address2latlon.py)
+In order to get the latitude and longitude of schools knowing their addresses, we employed the following script: [address2latlon.py](https://github.com/sebucci/sebucci.github.io/blob/master/script/address2latlon.py).
+
+It uses the library [GeoPy](https://geopy.readthedocs.io/en/stable/), which is a client for several popular geocoding web services (under [MIT license](https://github.com/geopy/geopy/blob/master/LICENSE)). Using this library we were able to retrieve geographical coordinates of schools, but only for the province of Bologna, because it has a limiter in usage, so we decided to reduce the set of schools (sebucci is still a demo).
+
+We faced another problem here: according to our dataset we should have 430 schools, but we were able to retrieve only 298 of them. Their addresses are difficult to parse, because they are not well formed.
 
 ### 5.2 Handling the visualization (technical description)
 
@@ -331,13 +335,7 @@ In order to visualize the data the following libraries were used:
 * **Chart.js**: Simple yet flexible JavaScript charting for designers and developers.
 * **Bootstrap**: Build responsive, mobile-first projects on the web with the world's most popular front-end component library.
 
-#### Steps
-
-1. Created the webpage using Github pages.
-2. Added the map using **leaflet.js**, and we added GeoJSON data (regions and provinces) to draw layers on it
-3. todo
-
-#### Further information and licenses
+#### 5.2.2 Further information and licenses
 
 **Leaflet.js**
 
