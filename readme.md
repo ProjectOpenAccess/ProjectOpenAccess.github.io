@@ -1,4 +1,4 @@
-# The SEBuCCI project. School self-evaluation, building certifications and cultural instututions: what relationship?
+# The SEBuCCI project. School self-evaluation, building certifications and cultural institutions: what relationship?
 
 Francesca Giovannetti  
 Bruno Sartini  
@@ -16,7 +16,7 @@ In this light, two questions naturally arise:
 1. Does the presence of libraries, museums and other cultural institutions in school surroundings impact how schools evaluate their teaching performance? 
 2. Do building certifications also play a role in school self-evaluation?
 
-SEBuCCI will look at school self-evaluations from a particular perspective to find out whether **the presence or lack of cultural institutions and of building certifications are among the factors affecting school performance**. We named the project SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions) because of the topics it focuses on.
+SEBuCCI will look at school self-evaluations from a particular perspective to find out whether **the presence or lack of cultural institutions and of building certifications is among the factors affecting school performance**. We named the project SEBuCCI (Self-Evaluation, Buildings Certificates, Cultural Institutions) because of the topics it focuses on.
 
 ## 2. Application scenario
 
@@ -26,9 +26,9 @@ In order to achieve this, the project aligns 1) the results of school self-evalu
 
 ### 2.1 School self-evaluation
 
-School self-evaluation is a reflective process of internal school review. Every year, italian schools are required to assess themselves on the basis of 11 criteria.
+School self-evaluation is a reflective process of internal school review. Every year, Italian schools are required to assess themselves on the basis of 11 criteria.
 
-Schools follow a provided list of questions on the basis of which assign themselves a grade for each criteron according to a 1-7 scale:
+Schools follow a provided list of questions on the basis of which assign themselves a grade for each criterion according to a 1-7 scale:
 - 1 = Extremely critical
 - 3 = Moderately critical
 - 5 = Positive
@@ -133,7 +133,7 @@ MIUR, 13 February 2018, Rubrica di valutazione utilizzata dalla scuola per l'aut
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: This dataset is an explicatory guide that refers to the criteria used in D1. It is pre-compiled by MIUR and it gives our contextual information about every criterium. 
+Content description: This dataset is an explicatory guide that refers to the criteria used in D1. It is pre-compiled by MIUR and it gives our contextual information about every criterion. 
 
 ### D4.2 (auxiliary dataset)
 
@@ -196,7 +196,7 @@ In this section we make some observations related to information quality in the 
 | D2 | No. See points 1 and 4. | Yes. | No. See points 1 and 4. | Yes |
 | D3 | Yes. | Yes. | No see point 7. | No. See point 5. |
 
-1. D1 and D2 do not feature school names. Schools are indeed identyfied by school codes only. This made it necessary to use an auxiliary datset (D4.2) in order to disambiguate school names.
+1. D1 and D2 do not feature school names. Schools are indeed identified by school codes only. This made it necessary to use an auxiliary dataset (D4.2) in order to disambiguate school names.
 
 2. D1 lists school self-evaluation criteria, but does not provide any information about the meaning of such criteria. In order to fill this gap, we used an auxiliary dataset (D4.1). 
 
@@ -214,7 +214,7 @@ In this section we make some observations related to information quality in the 
 
 Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it could still be possible to trace the individuals referenced. 
 
-This is against various italian acts and laws:
+This is does not comply with different Italian acts and laws:
 
 - [DECRETO DEL PRESIDENTE DELLA REPUBBLICA 24 giugno 1998, n. 249](http://www.gazzettaufficiale.it/eli/id/1998/07/29/098G0305/sg) In particular art.2 comma 2: "La  comunita'  scolastica  promuove  la solidarieta' tra i suoi
 componenti e tutela il diritto dello studente alla riservatezza." and art.2 comma 7: "Gli  studenti  stranieri  hanno  diritto al rispetto della vita culturale  e  religiosa  della  comunita' alla quale appartengono. La scuola  promuove e favorisce iniziative volte alla accoglienza e alla tutela  della loro lingua e cultura e alla realizzazione di attivita' interculturali."
@@ -237,14 +237,14 @@ Some significant examples are:
 * "Solo un'alunna delle nostre classi quinte dell'a.s. 2015/16 non e' stata ammessa alla classe successiva nella scuola secondaria di primo grado nel corrente anno scolastico."
 * "1 alunna disabile per fermo pedagogico e 4 trasferiti a.s. 2014/15"
 
-We propose three possibile solutions:
+We propose three possible solutions:
 1. Remove all free-text explanations for school self-evaluation;
 2. Provide schools with pre-compiled questionnaire in place of guidelines;
 3. Check text semi-automatically before publication (most ideal in order not to loose interesting information, but also most expensive).
 
 #### Licenses
 
-D1, D2, D4.1 and D4.2 (MIUR) are licensed under the Italian Open Data License (IODL) v2.0, which is very similar to a CC-BY 4.0. Each dataset is accompanyed by a clear license declaration. However, the whole website is covered by a "All rights reserved" copyright statement, which does not explicitly mentions the exclusion of the contents accompanied by a IODL 2.0 license. 
+D1, D2, D4.1 and D4.2 (MIUR) are licensed under the Italian Open Data License (IODL) v2.0, which is very similar to a CC-BY 4.0. Each dataset is accompanied by a clear license declaration. However, the whole website is covered by a "All rights reserved" copyright statement, which does not explicitly mentions the exclusion of the contents accompanied by a IODL 2.0 license. 
 
 The metadata of D3 (MiBACT) do not specify a license e.g. by using the property `dcterms:license` (see http://dati.beniculturali.it/lodview/resource/datasetLuoghiDellaCultura.html). The website footer includes a license for all website contents (CC-BY-SA-3.0.) and points to a separate webpage which lists exceptions, among which is our "Luoghi culturali" dataset, licensed under a CC-BY 3.0.
 
@@ -253,11 +253,11 @@ The metadata of D3 (MiBACT) do not specify a license e.g. by using the property 
 1. All MIUR datasets taken into consideration (D1, D2, D4.1 and D4.2) use the following date format: full year plus second half of following year with no white spaces or slashes between the two (e.g. 201617). This makes it difficult for machines as well as humans to clearly identify the nature of these particular pieces of data (i.e. the fact that they represent consecutive years and not year plus month if last two digits go from 1 to 12). Furthermore the datasets cover an academic year, meaning that the data do not cover the period going from e.g. January 2016 to December 2017.  
 Durations in CSV could be specified as a time interval according to the standard ISO_8601: YYYY-MM-DD/YYYY-MM-DD (e.g. 2016-09-01/2017-08-31).
 
-2. D1 features text in slovenian (slovenian schools in Friuli Venezia Giulia express their self-evaluation in slovenian rather than italian). Languages should be declared at least in the XML/RDF dataset as shown below.
+2. D1 features text in Slovenian (Slovenian schools in Friuli Venezia Giulia express their self-evaluation in Slovenian rather than Italian). Languages should be declared at least in the XML/RDF dataset as shown below.
 
 ```xml
 <MIUR:MOTIVAZIONEPUNTEGGIOSCUOLA xml:lang="sl">
-	[description in slovenian]
+	[description in Slovenian]
 </MIUR:MOTIVAZIONEPUNTEGGIOSCUOLA>
 ```
 
@@ -278,15 +278,13 @@ We do not plan to update SEBuCCI as it takes a picture of a specific school year
 | D3, D4.3 | Incorrect information about Sardinia's provinces | 2.5 | Outdated content | Combination of manual and automatic methods to redistribute data in the correct provinces |
 | D1 | Encoding of the dataset not specified | 2 | Technical | Include a note on the download page of the dataset stating its encoding |
 | D1 | Ambiguity between title and content (school/institutes ID)| 2 | Semantics | Disambiguation through alignment scripts with other datasets |
-| D2 | Ambiguity with the content of the cells (-, "Non richiesto") | 2 | Semantics | Our solution was to consider them both as "NO" |
-| D3 | ISILIdentifier content  missing | 1.5 | Sparceness | Deleted the column because all the information was missing |
-   
+| D2 | Ambiguity with the content of the cells (-, "Non richiesto") | 2 | Semantics | Our solution was to consider them both as "NO" | 
 
 ## 5. Visualization
 
 ### 5.1 Data processing
 
-Although the final dataset has been released in RDF format, the CSV has also been made available on the project GitHub repository as it was used to extract the data needed in order to produce a visualization. 
+Although the final dataset has been released in RDF format, the CSV has also been made available on the project GitHub repository as it was used to extract the data needed in order to produce the visualization. 
 
 Python was used to process the CSV dataset. Each row of the CSV was converted into a list of dictionaries with the help of the "CSV" library:
 
@@ -360,8 +358,8 @@ v4.1.3., Code &copy; MIT, Docs CC BY 3.0.
 ### 5.3 Behind the icons (light bulbs and museum buildings)
 The visualization makes use of visual metaphors to synthetically represent the data. 
 
-#### 5.3.1 Cultural intitutions
-N. of cultural instututions divided by Km^2.
+#### 5.3.1 Cultural institutions
+N. of cultural institutions divided by Km^2.
 
 For Italy, each region, each province we established the following threshold:
 
@@ -423,7 +421,7 @@ On the opposite side, the following provinces get a red light (<33%):
 
 ### 6.2 Cultural institutions
 
-The Italian provinces with double the number of cultural institutions compared to the Italian average per square kilometer are 14. The top 16 are:
+The Italian provinces with double the number of cultural institutions compared to the Italian average per square kilometre are 14. The top 16 are:
 
 1.	Trieste (**best**)
 2.	Napoli
@@ -503,7 +501,7 @@ On the other hand, the worst 16 are:
 15.	Chieti
 16.	Catania
 
-### 6.2 What about our initial questions? 
+### 6.4 What about our initial questions? 
 
 1. Does the presence of libraries, museums and other cultural institutions in school surroundings impact how schools evaluate their teaching performance? 
 2. Do building certifications also play a role in school self-evaluation? 
@@ -523,7 +521,7 @@ By looking at the best provinces for school self-evaluation and cultural institu
 
 In the same way, by looking at the worst provinces for school self-evaluation and cultural institutions per Km^2, we see that only **Rovigo**, **Sassari**, **Nuoro** and **Sud Sardegna** appear on both lists. On this basis, we can state that **having a low number of cultural institutions nearby the school may slightly have a negative influence on student performance**.
 
-In conclusion, **the number of cultural institutions nearby the school very slighly influence students performance**.
+In conclusion, **the number of cultural institutions nearby the school very slightly influence student performance**.
 
 
 
