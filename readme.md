@@ -506,14 +506,6 @@ On the other hand, the worst 16 are:
 1. Does the presence of libraries, museums and other cultural institutions in school surroundings impact how schools evaluate their teaching performance? 
 2. Do building certifications also play a role in school self-evaluation? 
 
-*School safety certificates* 
-
-By looking at the best provinces on both school self-evaluation and school safety certificates, Rimini** and **Pordenone** are the only provinces on both lists. We can conclude that, according to our data, **having a good percentage of school safety certificates has no apparent relation with student performance**.
-
-In the same way, by looking at the provinces having the lowest percentage of school safety certificates and the lowest school self-evaluation results, we can see that only **Nuoro**, **Trieste** and **Chieti** are included in both lists. From this, we can state that **having a bad percentage of school safety certificates has no apparent relation with student performance**.
-
-In conclusion, **the percentage of school safety certificates do not have an apparent relation with student performance**.
-
 *Cultural institutions*
 
 By looking at the best provinces for school self-evaluation and cultural institutions per Km^2, we see that only **Rimini** and **Ascoli Piceno** appear on both lists. On this basis, we can state that **having a high number of cultural institutions nearby the school has no apparent relation with student performance**.
@@ -523,6 +515,13 @@ In the same way, by looking at the worst provinces for school self-evaluation an
 
 In conclusion, **the number of cultural institutions nearby the school very slightly influence student performance**.
 
+*School safety certificates* 
+
+By looking at the best provinces on both school self-evaluation and school safety certificates, Rimini** and **Pordenone** are the only provinces on both lists. We can conclude that, according to our data, **having a good percentage of school safety certificates has no apparent relation with student performance**.
+
+In the same way, by looking at the provinces having the lowest percentage of school safety certificates and the lowest school self-evaluation results, we can see that only **Nuoro**, **Trieste** and **Chieti** are included in both lists. From this, we can state that **having a bad percentage of school safety certificates has no apparent relation with student performance**.
+
+In conclusion, **the percentage of school safety certificates do not have an apparent relation with student performance**.
 
 
 
