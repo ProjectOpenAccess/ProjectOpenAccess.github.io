@@ -8,7 +8,7 @@ Gianmarco Spinaci
 
 In recent years, Italy's school system has become a hot topic. The Italian education system is often put in comparison with other European systems; for instance as concerns fundings and student performance (see articles by [Il Sole 24 ORE](https://www.ilsole24ore.com/art/notizie/2017-08-29/italia-terzultima-europa-spesa-istruzione-germania-spende-doppio-190050.shtml?uuid=AE8jEVJC) and [Repubblica](https://www.repubblica.it/scuola/2016/12/06/news/ocse_scuola_studenti_nord_e_sud-153559264/).   
 
-School safety is another much debated topic. In 2016, about 44 structural failures and collapses in Italian schools have been registered (see [Corriere della Sera](https://www.corriere.it/scuola/medie/17_novembre_22/edilizia-scolastica-44-crolli-all-anno-MIUR-piu-due-miliardi-arrivo-ce09130a-cf75-11e7-a1da-9278adb4d756.shtml)).
+School safety is another much debated topic. In 2016, about 44 structural failures and collapses in Italian schools have been registered (see [Corriere della Sera](https://www.corriere.it/scuola/medie/17_novembre_22/edilizia-scolastica-44-crolli-all-anno-miur-piu-due-miliardi-arrivo-ce09130a-cf75-11e7-a1da-9278adb4d756.shtml)).
 
 On the positive side, Italy is known all over the world for its rich cultural heritage. The SEBuCCI project promotes the idea that collaboration between cultural institutions and schools is crucial in order to build a connection between the youngest generations and the cultural richness of their country. 
 
@@ -20,7 +20,7 @@ SEBuCCI will look at school self-evaluations from a particular perspective to fi
 
 ## 2. Application scenario
 
-SEBuCCI aligns data from different sources in order to gain insight, through to data, into school self-evaluations. In particular, SEBuCCI looks at available school safety certificates and cultural institutions, such as libraries and museums, as possible reasons behind positive school self-evaluation results. 
+SEBuCCI aligns data from different sources in order to gain insight, through data, into school self-evaluations. In particular, SEBuCCI looks at available school safety certificates and cultural institutions, such as libraries and museums, as possible reasons behind positive school self-evaluation results. 
 
 In order to achieve this, the project aligns 1) the results of school self-evaluation for school year 2016-2017; 2) the data related to school building certificates (especially habitability and earthquake resistance); 3) the geo-data about cultural institutions such as libraries and museums in the school surroundings. The result will be a an explorable map which allows users to visualize data about school self-evaluations, school safety certificates and cultural institutions for each school in Italy.
 
@@ -69,7 +69,7 @@ MIUR, 13 February 2018, Autovalutazione della scuola sezione Esiti. Scuola stata
 
 License: https://www.dati.gov.it/content/italian-open-data-license-v20
 
-Content description: This dataset lists all Italian institutes by institute code and stores for each institute self-evaluations for every criterion of the Esiti section ((see 2.1)[https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#21-school-self-evaluation])
+Content description: This dataset lists all Italian institutes by institute code and stores for each institute self-evaluations for every criterion of the Esiti section ([see 2.1](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#21-school-self-evaluation))
 
 ### D2
 
@@ -96,7 +96,6 @@ select distinct ?s as ?subject
 
 ?Nome_Istituzionale
 ?Descrizione
-?ISILIdentifier
 ?Latitudine
 ?Longitudine
 ?Disciplina
@@ -112,7 +111,6 @@ graph <http://dati.beniculturali.it/mibact/luoghi> {
 ?s rdf:type cis:CulturalInstituteOrSite ;
 cis:institutionalName ?Nome_Istituzionale .
 optional { ?s cis:description ?Descrizione }
-optional { ?s cis:ISILIdentifier ?ISILIdentifier }
 optional { ?s geo:lat ?Latitudine }
 optional { ?s geo:long ?Longitudine }
 optional { ?s cis:hasDiscipline [cis:name ?Disciplina] }
@@ -175,7 +173,7 @@ def Aligner(source1,source2,nomeoutput,campo):
 
 After the semi-automatic mashup, D5-alpha was edited to remove unnecessary data such as data related to "Scuola dell'infanzia", not covered by this project. Subsequently, the headings of the CSV dataset were modified in order to facilitate further computation processes (see [below](https://github.com/sebucci/sebucci.github.io/blob/master/readme.md#51-processing-data-through-computation))
 
-Finally, the CSV dataset obtained was transformed into a RDF dataset through an XSLT script. For each school an RDF description was created where the column headings of the CSV input dataset were converted to RDF properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), [GeoNames](https://www.geonames.org/), [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
+Finally, the CSV dataset obtained was transformed into a RDF dataset through an [XSLT script](https://github.com/sebucci/sebucci.github.io/tree/master/script/CSVtoRDF). For each school an RDF description was created where the column headings of the CSV input dataset were converted to RDF properties. The RDF dataset obtained makes use of different ontologies, such as [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/), [Dublin Core Metadata Element Set](http://www.dublincore.org/documents/dces/), [GeoNames](https://www.geonames.org/), [FOAF](http://xmlns.com/foaf/spec/), [Cultural-ON (Cultural ONtology)](http://dati.beniculturali.it/lodview/cis/.html).
 
 ### D6 (Revision)
 
@@ -192,9 +190,9 @@ In this section we make some observations related to information quality in the 
 
 |  | accuracy | coherence | completeness | currentness | 
 |----|-------------------------|------------------|-------------------------|------------------|
-| D1 | No. See point 1. | No. See point 6. | No. See points 2 and 3. | Yes |
-| D2 | No. See points 1 and 4. | Yes. | No. See points 1 and 4. | Yes |
-| D3 | Yes. | Yes. | No see point 7. | No. See point 5. |
+| D1 | No. See point 1. | No. See point 6. | No. See points 2 and 3. | Yes. |
+| D2 | No. See points 1 and 4. | Yes. | No. See points 1 and 4. | Yes. |
+| D3 | Yes. | Yes. | Yes. | No. See point 5. |
 
 1. D1 and D2 do not feature school names. Schools are indeed identified by school codes only. This made it necessary to use an auxiliary dataset (D4.2) in order to disambiguate school names.
 
@@ -212,7 +210,7 @@ In this section we make some observations related to information quality in the 
 
 #### Privacy
 
-Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it could still be possible to trace the individuals referenced. 
+Although it does not contain any direct reference to natural persons (e.g. name, address, driving license, detailed physical description), D1 includes indirect information from which it could still be possible to trace the individuals, in this case **minors**, referenced. 
 
 This is does not comply with different Italian acts and laws:
 
