@@ -28,7 +28,7 @@
 	a dcatapit:Dataset , dcat:Dataset ;
 	dct:identifier "SEBuCCI:D.1" ;
 	dct:title "SEBuCCI"@en ;
-	dct:description "Il dataset del progetto SEBuCCI (School self-Evaluation, Building Certifications and Cultural Institutes: what relationship?)" ;
+	dct:description "Dataset of SEBuCCI Project (School self-Evaluation, Building Certifications and Cultural Institutes: what relationship?) It contains information about school's self evaluation, location and building certificates."@en ;
 	dcat:theme <http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
 	dct:subject <http://eurovoc.europa.eu/668> , <http://eurovoc.europa.eu/c_9a9e5627> , <http://eurovoc.europa.eu/5309>; #education , monitoring report , building safety
 	dct:issued "2018-11-20"^^xsd:date ;
@@ -54,7 +54,7 @@
 	a dcatapit:Dataset , dcat:Dataset ;
 	dct:identifier "SEBuCCI:D.2" ;
 	dct:title "SEBuCCI Cultural Institutes"@en ;
-	dct:description "Dataset of SEBuCCI project (School self-Evaluation, Building Certifications and Cultural Institutes: what relationship?). This dataset contains information about the location of cultural institutes in Italy (with updated provinces of Sardinia)"@en ;
+	dct:description "Dataset of SEBuCCI project (School self-Evaluation, Building Certifications and Cultural Institutes: what relationship?). It contains information about the location of cultural institutes in Italy (with updated provinces of Sardinia)"@en ;
 	dcat:theme <http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
 	dct:subject <http://www.eionet.europa.eu/gemet/concept/1911> , <http://eurovoc.europa.eu/2278> ; #cultural facility
 	dct:issued "2018-11-24"^^xsd:date ;
