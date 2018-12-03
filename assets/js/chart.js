@@ -145,7 +145,7 @@ function setupChart() {
       updateSchoolN(school_num)
 
       // Labels
-      var labels = ["1", "2", "3", "4", "5", "6", "7"]
+      var labels = ["Score 1", "Score 2", "Score 3", "Score 4", "Score 5", "Score 6", "Score 7"]
 
       chart = new Chart(ctx, {
         // The type of chart we want to create
@@ -178,7 +178,7 @@ function setupChart() {
             mode: 'single',
             callbacks: {
               label: function (tooltipItems, data) {
-                return tooltipItems.yLabel + '%';
+                return tooltipItems.yLabel + '% of schools';
               }
             }
           },

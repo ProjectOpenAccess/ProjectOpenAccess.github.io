@@ -54,8 +54,8 @@
   </nav>
 
   <!-- Alert -->
-  <div class="alert alert-primary text-center" role="alert">
-    <b>ATTENTION:</b> SEBuCCI is only a demo! The only populated province is <b>BOLOGNA</b>!
+  <div class="alert alert-danger text-center" role="alert">
+    <b>ATTENTION:</b> SEBuCCI is only a demo! The schools will be shown only in the province of <b>BOLOGNA</b>!
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -85,7 +85,7 @@
                   <h2 id="txt_selected" class="card-title text-uppercase"> </h2>
                   <p>
                     <small>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title="The number of schools is the selected area">
+                      <a href="#" data-toggle="tooltip" data-placement="top" title="The number of schools in the selected area">
                         <i class="fas fa-info-circle"></i>
                       </a>
                     </small>
@@ -95,7 +95,7 @@
 
                     <small>
                       <a target="_blank" href="https://github.com/sebucci/sebucci.github.io#531-cultural-intitutions"
-                        data-html="true" data-toggle="tooltip" data-placement="top" title="N. of cultural institutes divided by Km<sup>2</sup>.<br><span class='text-primary'>Click for more info</span>.">
+                        data-html="true" data-toggle="tooltip" data-placement="top" title="N° of cultural institutes divided by Km<sup>2</sup>.<br><span class='text-primary'>Click for more info</span>.">
                         <i class="fas fa-info-circle"></i>
                       </a>
                     </small>
@@ -105,7 +105,7 @@
 
                     <small>
                       <a target="_blank" href="https://github.com/sebucci/sebucci.github.io#532-school-building-safety-certificates"
-                        data-html="true" data-toggle="tooltip" data-placement="top" title="School building safety certificates.<br><span class='text-primary'>Click for more info</span>.">
+                        data-html="true" data-toggle="tooltip" data-placement="top" title="% of school building safety certificates.<br><span class='text-primary'>Click for more info</span>.">
                         <i class="fas fa-info-circle"></i>
                       </a>
                     </small>
@@ -153,6 +153,9 @@
                         href="https://github.com/sebucci/sebucci.github.io#21-school-self-evaluation"><i class="fas fa-info-circle"></i></a></small>Self-evaluation
                     score
                   </h3>
+
+                  <p class="text-muted">Hovering a bar of the chart, is shown the percentage of schools with
+                    the selected score.</p>
 
                   <canvas id="chart_autovalutazione"></canvas>
 
